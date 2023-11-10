@@ -1,0 +1,8 @@
+Nom: DUpont
+Prénom: Marcel
+Adresse: 12 avenue du roi vert 56212 Montvers
+Âge: 23 ans
+Téléphone: 06 08 52 36 24
+Email: sdsd
+Répertoire par défaut: ./data
+Nom de fichier: test+27-10-23
