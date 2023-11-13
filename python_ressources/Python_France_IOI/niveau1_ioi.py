@@ -4,7 +4,7 @@ class Main {
    }
 }
 
-///////////////////////////////////
+########///
 print("Ma devise est 'Parler peu mais parler bien'.")
 print("Je m'appelle Camthalion")
 print("Coucou !")
@@ -17,13 +17,13 @@ class Main {
    }
 }
 
-//////////////////////
-Tout droit tu grimperas,
-La clé tu trouveras,
-Habile tu seras,
-Quand tu les porteras,
-Et avec le chef tu reviendras !
-///////////////////////////////
+#####//
+# Tout droit tu grimperas,
+# La clé tu trouveras,
+# Habile tu seras,
+# Quand tu les porteras,
+# Et avec le chef tu reviendras !
+#######///
 class Main {
    public static void main(String[] args) {
       System.out.println("Tout droit tu grimperas,");
@@ -33,7 +33,7 @@ class Main {
       System.out.println("Et avec le chef tu reviendras !");
    }
 }
-//////////////////////////////
+#######//
 from robot import *
 haut()
 haut()
@@ -43,7 +43,7 @@ droite()
 bas()
 bas()
 droite()
-//////////////////////
+#####//
 import static algorea.Robot.*;
 class Main {
    public static void main(String[] args) {
@@ -59,10 +59,10 @@ class Main {
 }
 
 from robot import *
-deplacer(1, 3)
-deplacer(1, 2)
-deplacer(3, 1)
-/////////////////////////////
+# deplacer(1, 3)
+# deplacer(1, 2)
+# deplacer(3, 1)
+#######/
 n=4
 print ("tour Hanoi avec ", n ," plateaux")
 def hanoi(n,a=1,b=2,c=3):
@@ -71,24 +71,24 @@ def hanoi(n,a=1,b=2,c=3):
         print ("deplacer ", a ,"sur", c)
         hanoi(n-1, b , a , c)
 hanoi(n,a=1,b=2,c=3)
-/////////////////////////////////////
+#########/
 from robot import *
-deplacer( 1 , 2 )
-deplacer( 1 , 3 )
-deplacer( 2 , 3 )
-deplacer( 1 , 2 )
-deplacer( 3 , 1 )
-deplacer( 3 , 2 )
-deplacer( 1 , 2 )
-deplacer( 1 , 3 )
-deplacer( 2 , 3 )
-deplacer( 2 , 1 )
-deplacer( 3 , 1 )
-deplacer( 2 , 3 )
-deplacer( 1 , 2 )
-deplacer( 1 , 3 )
-deplacer( 2 , 3 )
-/////////////////
+# deplacer( 1 , 2 )
+# deplacer( 1 , 3 )
+# deplacer( 2 , 3 )
+# deplacer( 1 , 2 )
+# deplacer( 3 , 1 )
+# deplacer( 3 , 2 )
+# deplacer( 1 , 2 )
+# deplacer( 1 , 3 )
+# deplacer( 2 , 3 )
+# deplacer( 2 , 1 )
+# deplacer( 3 , 1 )
+# deplacer( 2 , 3 )
+# deplacer( 1 , 2 )
+# deplacer( 1 , 3 )
+# deplacer( 2 , 3 )
+####/
 n=4
 print ("tour Hanoi avec ", n ," plateaux")
 def hanoi(n,a=1,b=2,c=3):
@@ -97,7 +97,7 @@ def hanoi(n,a=1,b=2,c=3):
         print ("deplacer( ", a ,",", c," )")
         hanoi(n-1, b , a , c)
 hanoi(n,a=1,b=2,c=3)
-/////////////////////
+#####/
 import static algorea.Robot.*;
 class Main {
    public static void main(String[] args) {
@@ -127,18 +127,18 @@ class Main {
    }
 }
 
-//////////////
+###//
 from robot import *
-remplir(3)
-transferer(3, 5)
-remplir(3)
-transferer(3, 5)
-vider(5)
-transferer(3, 5)
-remplir(3)
-transferer(3, 5)
+# remplir(3)
+# transferer(3, 5)
+# remplir(3)
+# transferer(3, 5)
+# vider(5)
+# transferer(3, 5)
+# remplir(3)
+# transferer(3, 5)
 
-/////////////
+###/
 import static algorea.Robot.*;
 class Main {
    public static void main(String[] args) {
@@ -150,14 +150,14 @@ class Main {
       transferer(5, 3);
    }
 }
-///////////////////////
+#####///
 for loop in range(135):
    print("Je dois respecter le Grand Sorcier.")
 
 for loop in range(13):
    print("9 * 8 = 72")
 
-/////////////////
+####/
 class Main {
    public static void main(String[] args) {
       for (int loop = 1; loop <= 135; loop = loop + 1) {
@@ -165,7 +165,7 @@ class Main {
       }
    }
 }
-///////////////////////
+#####///
 gauche()
 droite()
 ramasser()
@@ -181,7 +181,7 @@ for loop in range(32):
    droite()
 deposer()
 
-///////////////////////
+#####///
 import static algorea.Robot.*;
 class Main {
    public static void main(String[] args) {
@@ -196,7 +196,7 @@ class Main {
    }
 }
 
-/////////////////////////////
+#######/
 from robot import *
 droite()
 ramasser()
@@ -230,7 +230,7 @@ for loop in range(15):
 droite()
 deposer()
 
-///////////////////
+####///
 import static algorea.Robot.*;
 class Main {
    public static void main(String[] args) {
@@ -242,7 +242,7 @@ class Main {
       deposer();
    }
 }
-//////////////////////
+#####//
 
 from robot import *
 for loop in range(21):
@@ -252,7 +252,7 @@ for loop in range(21):
 	gauche()
 	bas()
 
-////////
+##
 import static algorea.Robot.*;
 class Main {
    public static void main(String[] args) {
@@ -266,7 +266,7 @@ class Main {
       }
    }
 }
-//////////////
+###//
 for loop in range(30):
    print("a_", end = "")
 print("")
@@ -276,7 +276,7 @@ print("")
 for loop in range(30):
    print("c_", end = "")
 print("")
-////////////////////////
+######
 
 for loop in range(20):
     for loop in range(20):
@@ -287,7 +287,7 @@ for loop in range(20):
         print("X", end = "")
         print("O", end = "")
     print()
-//////////////
+###//
 for loop in range(20):
    for loop in range(20):
       print("OX", end = "")
@@ -295,7 +295,7 @@ for loop in range(20):
    for loop in range(20):
       print("XO", end = "")
    print()	
-/////////////////////
+#####/
 class Main {
    public static void main(String[] args) {
       for (int loop = 1; loop <= 20; loop = loop + 1) {
@@ -311,7 +311,7 @@ class Main {
       }
    }
 }	
-///////////////
+###///
 
 from robot import *
 
@@ -324,7 +324,7 @@ for loop in range(108):
 		bas()
 	for loop in range(13):
 		gauche()
-/////////////////////
+#####/
 import static algorea.Robot.*;
 class Main {
    public static void main(String[] args) {
@@ -344,7 +344,7 @@ class Main {
       }
    }
 }
-///////////////////
+####///
 Aller à gauche
 Aller à droite
 Ramasser les raisins
@@ -364,7 +364,7 @@ for loop in range(20):
    for loop in range(15):
       gauche()
 	
-//////////////////
+####//
 import static algorea.Robot.*;
 class Main {
    public static void main(String[] args) {
@@ -380,7 +380,7 @@ class Main {
       }
    }
 }
-/////////////////
+####/
 from robot import *
 haut()
 haut()
@@ -439,7 +439,7 @@ for loop in range(9):
 for loop in range(9):
     gauche()
 	
-	///////////////////
+	####///
 	from robot import *
 haut()
 # Allers-retours sur les 9 lignes du haut, pour les 8 premières colonnes
@@ -459,7 +459,7 @@ for loop in range(9):
 # Et on rentre à la position de départ
 for loop in range(9):
    gauche()
-   ///////////////////////
+   #####///
  
 import static algorea.Robot.*;
 class Main {
@@ -493,9 +493,9 @@ class Main {
       }
    }
 }
-/////////////////////
+#####/
 print(12581 -11937)
-///////////
+##///
 #L'école est formée de 4 classes, constituées respectivement de 25, 30, 27 et 22 élèves. 
 #Cependant, 8 élèves sont absents aujourd'hui. Sachant que chaque élève présent doit recevoir 3 bonbons,
 #écrivez un programme qui calcule puis affiche le nombre total de bonbons nécessaires.
@@ -503,7 +503,7 @@ nombreEnfants=25+30+27+22-8
 print(nombreEnfants*3)
 
 
-/////////////////
+####/
 # L'algoréathlon se constitue de trois étapes à effectuer chaque jour : 
 # 2 km de natation, 34 km de cyclisme et 6 km de course à pied.
 # Sachant qu'un sportif répète ces trois étapes pendant 3 jours de suite,
@@ -520,7 +520,7 @@ print("distance en  une journée: ",distanceJournaliere,end = " ")
 print("distance en  2 journées: ",distanceJournaliere*2,end = " ")
 print("distance en  3 journées: ",distanceJournaliere*3)
 
-///////////////////
+####///
 # # Ce que doit faire votre programme :
 # # La cour carrée a été mesurée avec quatre bâtons de longueurs 
 # respectives 17 m, 7 m, 5 m et 2 m. La longueur du côté de la cour est égale à 5 fois 
@@ -540,7 +540,7 @@ print(surfaceCour)
 perimetreCour=longeurCoteCour*4
 print(perimetreCour)
 
-///////////////////
+####///
 # Le robot devra compter jusqu'à 100, c'est à dire afficher les entiers de 1 à 100,
  # un par ligne, et ensuite afficher
  # « J'arrive ! ». Ainsi, s'il ne devait compter que jusqu'à 3 au lieu de 100, 
@@ -550,7 +550,7 @@ for loop in range(100):
 	print(n)
 	n=n+1
 print(	"J'arrive !")
-/////////////
+###/
 class Main {
    public static void main(String[] args) {
       int compte = 1;
@@ -561,7 +561,7 @@ class Main {
       System.out.println("J'arrive !");
    }
 }
-/////////////////////
+#####/
 # Ce que doit faire votre programme :
 # Vous devez lire attentivement les programmes donnés ci-dessous 
 # pour déterminer s'ils sont valides ou non, et ce sans essayer de les exécuter.
@@ -578,7 +578,7 @@ print("I")
 print("V")
 print("I") 
 print("I") 
-////////////////////
+#####
 # Votre programme devra lancer le décompte en partant de 100
  # puis annoncer le décollage, c'est-à-dire afficher une séquence d'annonces de la forme :
  
@@ -588,7 +588,7 @@ for loop in range(101):
 	n=n-1
 print("Décollage !")
 
-////////////////
+####
 class Main {
    public static void main(String[] args) {
       int compte = 100;
@@ -599,7 +599,7 @@ class Main {
       System.out.println("Décollage !");
    }
 }
-/////////////
+###/
 # Ce que doit faire votre programme :
 # Sachant qu'il y a actuellement 1337 crapauds et que 
 # leur nombre double chaque semaine, votre programme devra afficher
@@ -612,14 +612,14 @@ for loop in range(12):
 print(nbreCrapauds)
 
 
-///////////////////
+####///
 totalBonbons = 0
 numTir = 1
 for loop in range(50):
    totalBonbons = totalBonbons + numTir
    print(totalBonbons)
    numTir = numTir + 1
-   /////////////////////
+   #####/
  from robot import *
 droite()
 ramasser()
@@ -651,7 +651,7 @@ for loop in range(10):
       gauche()  
    deposer()
    anneau = anneau + 1
-   /////////////////////////////
+   #######/
    Ce que doit faire votre programme :
 # L'objectif est de construire une tour à l'aide de petits 
 # cubes en bois, sachant que la forme de cette tour consiste 
@@ -676,7 +676,7 @@ for loop in range(9):
 	somme=somme+nbreCubesRdc
 #	print(nbreCubesRdc)
 print(somme)
-////////////////////////
+######
 nbCubes = 0
 largeurArête = 1
 for loop in range(9):
@@ -695,7 +695,7 @@ print(nbCubes)
 # n**2*(2*n**2-1)
 # somme==9**2*(2*9**2-1)=13041
 
-////////////////////
+#####
 	
 ligne = 1
 for loop in range(20):
@@ -705,7 +705,7 @@ for loop in range(20):
       colonne = colonne + 1
    print()
    ligne = ligne + 1
-//////////////////
+####//
 class Main {
    public static void main(String[] args) {
       int ligne = 1;
@@ -720,13 +720,13 @@ class Main {
       }
    }
 }
-////////////////////////// 
+######// 
 
 largeur = int(input())
 longeur = int(input())
 print(largeur * longeur)  
 
-/////////////////////////////
+#######/
 nbJours = int(input())
 print(60 * 60 * 16 * nbJours
 
@@ -740,7 +740,7 @@ class Main {
    }
 }
 	
-/////////////////////////////////////
+#########/
 âgeCadet = int(input())
 âgeAîné = int(input())
 différence = âgeAîné - âgeCadet
@@ -759,7 +759,7 @@ class Main {
    }
 }
 
-/////////////////////////////////////////
+##########/
 nbLignes = int(input())
 for loop in range(nbLignes):
     print("Je dois suivre en cours")
@@ -775,7 +775,7 @@ class Main {
    }
 }
 
-////////////////////////////
+#######
 tempMin = int(input())
 tempMax = int(input())
 temperature = tempMin
@@ -797,7 +797,7 @@ class Main {
       }
    }
 }
-///////////////////////////////////
+########///
 # Le nombre 1 × 2 × 3 × … × n s'appelle la factorielle de n (ou « factorielle n »)
  # et se note « n! ». La factorielle est très utilisée en combinatoire 
  # car elle correspond en particulier au nombre de manières d'ordonner n éléments.
@@ -823,7 +823,7 @@ class Main {
       }
    }
 }
-///////////////////////////
+######///
 # validation
 # Il y a trois entiers à lire : la position de départ positionDepart,
  # la largeur d'un emplacement largeurEmplacement et le nombre de vendeurs nbVendeurs.
@@ -857,7 +857,7 @@ class Main {
 }   
    
    
-///////////////////////////
+######///
 totalKarvas = 0
 for loop in range(20):
    nbBêtes = int(input())
@@ -876,7 +876,7 @@ class Main {
       System.out.println(totalKarvas);
    }
 }
-/////////////////////////////
+#######/
 largeurBas = int(input())
 largeurHaut = int(input())
  
@@ -904,7 +904,7 @@ class Main {
    }
 }
 
-# ////////////////////////////
+# #######
 #poids, son âge, la longueur de ses cornes et la hauteur au garrot
 #afficher sa note,sachant qu'elle s'obtient en multipliant la longueur des cornes
 #par la hauteur au garrot, 
@@ -944,7 +944,7 @@ class Main {
       }
    }
 }
-# ////////////////////////////////////
+# #########
 
 nbPaquets = int(input())
 poidsPaquet = int(input())
@@ -964,7 +964,7 @@ class Main {
    }
 }  
 
-/////////////////////////////
+#######/
 numéroMatin = int(input())
 numéroSoir = int(input())
 écart = numéroSoir - numéroMatin
@@ -985,7 +985,7 @@ class Main {
       System.out.println(écart);
    }
 }
-/////////////////////////////
+#######/
 #Votre programme lira un entier, l'heure d'arrivée, qui sera compris entre 0 et 12 inclus.
 ##0 correspond à midi, 1 à 1h de l'après-midi, etc. et 12 à minuit.
 #Le prix de la chambre est de 10 pièces à midi, et augmente de 5 pièces chaque heure après midi.
@@ -1012,7 +1012,7 @@ class Main {
    
    
    }
-  ////////////////////////////////////////
+  ##########
 # Votre programme devra lire deux entiers, la superficie d'un champ des Arignon
  # et la superficie d'un champ des Evaran. Si l'un des champs est plus grand 
  # d'au moins 10 m² (strictement) que l'autre champ, alors il faudra afficher le texte 
@@ -1042,7 +1042,7 @@ class Main {
    }
 }
 
-////////////////////////////////////////////////
+############
 
 # Votre programme doit lire l'âge d'une personne et 
 # afficher soit « Tarif réduit » si cette personne a strictement moins de 21 ans, 
@@ -1072,7 +1072,7 @@ class Main {
 }
 
 
-////////////////////////////////////////////
+###########
 # Votre programme devra lire un premier entier : le nombre
  # de membres nbMembres qui constituent une équipe. Ensuite, 
  # il devra lire les poids (en kilogrammes), au total nbMembres × 2, sachant que le premier poids est celui d'un joueur de la 1re équipe, le deuxième poids celui d'un joueur de la 2e équipe, le troisième la 1re équipe, le quatrième la 2e équipe, etc.
@@ -1146,7 +1146,7 @@ class Main {
       System.out.println("Poids total pour l'équipe 2 : " + totalÉquipe2);
    }
 }
-////////////////////////////////////////////////////////////////////////////
+###################
 # Votre programme doit lire un entier : le code fourni par
 # l'utilisateur. Si ce code correspond au code secret, qui est 64 741,
  # alors le programme devra afficher le texte « Bon festin ! ».
@@ -1183,7 +1183,7 @@ class Main {
 
 
 
-///////////////////////////////////////////
+##########///
 
 
 
