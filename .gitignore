@@ -136,3 +136,5 @@ cython_debug/
 
 # VS Code
 .vscode/
+/datas/fd_Basic_*
+/datas/fd_Basic_LinkedInDataExport_11-11-2023.zip
