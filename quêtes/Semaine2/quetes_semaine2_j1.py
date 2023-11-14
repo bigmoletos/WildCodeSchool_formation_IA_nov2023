@@ -106,7 +106,8 @@ Attention, pour cette mission, chaque variable n'est utilisable qu'une seule foi
 
 ################################################################
 # """
-# Pour cette mission, inspirée d'un jeu télévisé, tu vas essayer de résoudre le problème suivant: Tu dois combiner les variables avec des opérateurs mathématiques (*+-/) pour trouver le résultat 466.
+# Pour cette mission, inspirée d'un jeu télévisé, tu vas essayer de résoudre 
+# le problème suivant: Tu dois combiner les variables avec des opérateurs mathématiques (*+-/) pour trouver le résultat 466.
 # Tu assigneras le résultat à la variable answer.
 # Attention, pour cette mission, chaque variable n'est utilisable qu'une seule fois.
 # """
@@ -168,7 +169,7 @@ Attention, pour cette mission, chaque variable n'est utilisable qu'une seule foi
 #             print(f"Solution trouvée : {expression} = {resultat_attendu}")
 
 # print(liste_solutions)
-################################################################
+# ################################################################
 # Pour cette mission, tu vas devoir concaténer des variables pour reproduire la phrase suivante:
 
 # "1 bouche bouche bée qu'1 bouche bouche la bouche de douche de la boucherie."
@@ -463,51 +464,51 @@ Lists B and C have the most common elements!
 
 # Define three lists containing no duplicates.
 # list_a=[random.randint(0,100) for _ in range (10)]
-import random
-list_a = random.sample(range(0, 15), 10)
-list_b = random.sample(range(0, 15), 10)
-list_c = random.sample(range(0, 15), 10)
+# import random
+# list_a = random.sample(range(0, 15), 10)
+# list_b = random.sample(range(0, 15), 10)
+# list_c = random.sample(range(0, 15), 10)
 
-print("list_a: ",list_a)
-print("list_b: ",list_b)
-print("list_c: ",list_c)
-# Then, indicate (however you like) the two that have the
-#  most elements in common (or all three if there's a tie).
-# onn transforme les listes en ensemble
-ensemble_list_a = set(list_a)
-ensemble_list_b = set(list_b)
-ensemble_list_c = set(list_c)
-print(ensemble_list_a)
-print(ensemble_list_b)
-print(ensemble_list_c)
-#  recherche des points commun des ensembles
-# points_communs1 = ensemble_list_a & ensemble_list_b & ensemble_list_c
-list_points_communs_ab = ensemble_list_a & ensemble_list_b
-list_points_communs_bc = ensemble_list_b & ensemble_list_c
-list_points_communs_ac = ensemble_list_a & ensemble_list_c
-# print(list_points_communs_ab)
-# print(list_points_communs_bc)
-# print(list_points_communs_ac)
-points_communs_ab = len(ensemble_list_a & ensemble_list_b)
-points_communs_bc = len(ensemble_list_b & ensemble_list_c)
-points_communs_ac = len(ensemble_list_a & ensemble_list_c)
-# print(points_communs_ab)
-# print(points_communs_bc)
-# print(points_communs_ac)
-max_points_commun = max(
-    points_communs_ab, points_communs_bc, points_communs_ac)
-# print(max_points_commun)
+# print("list_a: ",list_a)
+# print("list_b: ",list_b)
+# print("list_c: ",list_c)
+# # Then, indicate (however you like) the two that have the
+# #  most elements in common (or all three if there's a tie).
+# # onn transforme les listes en ensemble
+# ensemble_list_a = set(list_a)
+# ensemble_list_b = set(list_b)
+# ensemble_list_c = set(list_c)
+# print(ensemble_list_a)
+# print(ensemble_list_b)
+# print(ensemble_list_c)
+# #  recherche des points commun des ensembles
+# # points_communs1 = ensemble_list_a & ensemble_list_b & ensemble_list_c
+# list_points_communs_ab = ensemble_list_a & ensemble_list_b
+# list_points_communs_bc = ensemble_list_b & ensemble_list_c
+# list_points_communs_ac = ensemble_list_a & ensemble_list_c
+# # print(list_points_communs_ab)
+# # print(list_points_communs_bc)
+# # print(list_points_communs_ac)
+# points_communs_ab = len(ensemble_list_a & ensemble_list_b)
+# points_communs_bc = len(ensemble_list_b & ensemble_list_c)
+# points_communs_ac = len(ensemble_list_a & ensemble_list_c)
+# # print(points_communs_ab)
+# # print(points_communs_bc)
+# # print(points_communs_ac)
+# max_points_commun = max(
+#     points_communs_ab, points_communs_bc, points_communs_ac)
+# # print(max_points_commun)
 
-#  cherche les  liste ayant le plus de points commun
-if points_communs_ab == max_points_commun:
-    print("les listes a et b ont le plus de points commun")
-    print(list_points_communs_ab)
-elif points_communs_bc == max_points_commun:
-    print("les listes b et c ont le plus de points commun")
-    print(list_points_communs_ab)
-elif points_communs_ac == max_points_commun:
-    print("les listes a et c ont le plus de points commun")
-    print(list_points_communs_ac)
+# #  cherche les  liste ayant le plus de points commun
+# if points_communs_ab == max_points_commun:
+#     print("les listes a et b ont le plus de points commun")
+#     print(list_points_communs_ab)
+# elif points_communs_bc == max_points_commun:
+#     print("les listes b et c ont le plus de points commun")
+#     print(list_points_communs_ab)
+# elif points_communs_ac == max_points_commun:
+#     print("les listes a et c ont le plus de points commun")
+#     print(list_points_communs_ac)
 
 
 # list_points_communs_ab2=" ".join(list_points_communs_ab)
