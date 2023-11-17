@@ -239,7 +239,7 @@ Here's a tuple:
 
 my_tuple = ("data analyst", "data scientist", "data engineer", "data architect")
 
-Ask the user for a string, then for an integer position. 
+Ask the user for a string, then for an integer position.
 Create an altered copy of my_tuple where the element at the given position is now the given string.
 
 """
@@ -502,8 +502,8 @@ Create an altered copy of my_tuple where the element at the given position is no
 #     # print(division_rate)
 #     sum_last_numbers=sum(numbers[3:]) # on additionne tous les termes à partir de 3éme
 #     print(sum_last_numbers)
-#     result = division_rate + numbers[2] + sum_last_numbers 
-#     # if sum_last_numbers >= 0 : result = division_rate + numbers[2]+ sum_last_numbers 
+#     result = division_rate + numbers[2] + sum_last_numbers
+#     # if sum_last_numbers >= 0 : result = division_rate + numbers[2]+ sum_last_numbers
 #     result=round(result,2)
 #     cas1=" + " if numbers[2]>0 else ' - '
 #     cas2="+ la somme des autres chiffres " if sum_last_numbers >=0 else "- la somme des autres chiffres "
@@ -511,7 +511,7 @@ Create an altered copy of my_tuple where the element at the given position is no
 #     return
 #     # print(f"le resultat de {numbers[0]}/{numbers[1]}{" + " if numbers[2]>0 else ' - '}{abs(numbers[2])} {"+ la somme des autres chiffres " if sum_last_numbers >=0 else "- la somme des autres chiffres "}({sum_last_numbers}) = {result}   ")
 #     # return
-    
+
 
 # # test
 # if __name__ == '__main__':
@@ -547,7 +547,7 @@ Create an altered copy of my_tuple where the element at the given position is no
 
 
 ################################################################
-# Mission 8: Create a function that can swap the values of any two variables, 
+# Mission 8: Create a function that can swap the values of any two variables,
 # such as if variable A = 1 and variable B = 2, after applying the function, variable A = 2 and B = 1
 import random
 def swap_number(a, b):
@@ -555,7 +555,7 @@ def swap_number(a, b):
     a,b=b,a
     print(a,b)
     return
-    
+
 
 
 # # test de la fonction
@@ -564,6 +564,37 @@ number2=random.randint(1,10) # creation d'un nombre aleatoire
 swap_number(number1, number2)
 
 ################################################################
+# OS et GLOB
 ################################################################
-################################################################
-################################################################
+import os
+import glob
+# repertoire actuel
+repertoire_actuel=os.getcwd()
+print("repertoire_actuel:",repertoire_actuel)
+
+# liste des repertoire du dossier
+print("liste des fichiers")
+print(glob.glob("*"))
+print("liste des fichiers txt")
+print(glob.glob("*.txt"))  #filtre les fichiers txt
+print("liste des repertoires")
+print(glob.glob(repertoire_actuel))
+
+filenames=glob.glob("*.py")
+print("liste des fichiers python",filenames)
+
+# lecture du contenu de tous les fichiers python de mon repertoire
+for file in filenames:
+    with open(file,'r') as f:
+        print(f.read() )
+    f.close()
+
+
+with open("fichier.txt", "r") as f:
+    liste=f.read().splitlines()
+
+liste=[line.strip() for line in open("fichier.txt", "r")]
+
+#############################################
+#############################################
+#############################################
