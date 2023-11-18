@@ -86,6 +86,7 @@
 #         "sunday": "monday"
 #     }
 #     return days.get(your_day.lower())
+###########################
 # # test de la fonction
 # if __name__ == '__main__':
 #     your_day1="dimanche"
@@ -100,23 +101,23 @@ Mission 10: Create a function that fills an empty list with values (words) from 
 # "After twelve soft showers are the arch-duchess' socks dry, arch-dry?"
 """
 
-def transform_sentence_in_words_list(sentence):
-    list_words=[]
-    # list_words = re.sub(r'[^\w\s]', '', sentence).split() # autre solution on ne garde que les lettres
-    # Ou utilisation de translate et maketrans pour remplacer la ponctuation par des espaces vides
-    table = str.maketrans(",", " ", "'?!.:")
-    list_words =sentence.translate(table).split()
-    # list_words=sentence.replace(",", "").replace("'", "").replace("?", "").split(" ")
-    return list_words
+# def transform_sentence_in_words_list(sentence):
+#     list_words=[]
+#     # list_words = re.sub(r'[^\w\s]', '', sentence).split() # autre solution on ne garde que les lettres
+#     # Ou utilisation de translate et maketrans pour remplacer la ponctuation par des espaces vides
+#     table = str.maketrans(",", " ", "'?!.:")
+#     list_words =sentence.translate(table).split()
+#     # list_words=sentence.replace(",", "").replace("'", "").replace("?", "").split(" ")
+#     return list_words
 
 
-
-# test de la fonction
-if __name__ == '__main__':
-    my_sentence="After twelve soft showers are the arch-duchess' socks dry, arch-dry?"
-    name_function=transform_sentence_in_words_list( my_sentence)
-    message=f"Resultat fonction "
-    print(message,name_function)
+###########################
+# # test de la fonction
+# if __name__ == '__main__':
+#     my_sentence="After twelve soft showers are the arch-duchess' socks dry, arch-dry?"
+#     name_function=transform_sentence_in_words_list( my_sentence)
+#     message=f"Resultat fonction "
+#     print(message,name_function)
 
 ###############################################################################
 
@@ -127,12 +128,49 @@ if __name__ == '__main__':
 # Example: antithetical -> AntithEtIcAl
 # Example: marvelously -> marvElOuslY
 """
+def change_vowels(your_word):
+    # list_vowels=[]
+    voyelles = 'aeiouyéèêëàâôûùïîüÿ'
+    your_word=list(your_word.lower())
+    for index,letter in enumerate(your_word):
+        if index%2 ==0 and letter in voyelles:
+            your_word[index]=letter.upper()
+    your_word="".join(your_word)
+    return your_word
+
+###########################
+# test de la fonction
+if __name__ == '__main__':
+    your_word="antithetical"
+    your_word2="marvelously"
+
+    name_function=change_vowels( your_word)
+    name_function2=change_vowels( your_word2)
+    message=f"Resultat fonction "
+
+    print(message,name_function)
+    print(message,name_function2)
+
 ###############################################################################
 
 """
     # Mission 12: Create a function that takes a number n as parameter, and then returns a list containing n lists, each containing n empty lists.
 """
+def create_list(size_of_list):
+    
+    return
+###########################
+# test de la fonction
+if __name__ == '__main__':
+    size_of_list=4
+    size_of_list2=5
 
+    name_function=create_list(size_of_list)
+    name_function2=create_list(size_of_list2)
+    message=f"Resultat fonction "
+
+    print(message,name_function)
+    print(message,name_function2)
 ###############################################################################
 """
     # Mission 13: Create a function that takes two inputs, their year of birth and first name.
@@ -141,6 +179,20 @@ if __name__ == '__main__':
 # When testing the function, ask the user for the parameters!
 
 """
+
+
+###########################
+# test de la fonction
+if __name__ == '__main__':
+    your_word="antithetical"
+    your_word2="marvelously"
+
+    name_function=change_vowels( your_word)
+    name_function2=change_vowels( your_word2)
+    message=f"Resultat fonction "
+
+    print(message,name_function)
+    print(message,name_function2)
 ###############################################################################
 ###############################################################################
 ###############################################################################
