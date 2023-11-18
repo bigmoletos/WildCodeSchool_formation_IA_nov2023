@@ -18,31 +18,131 @@ already display stuff).
 
 def get_next_day(your_day):
     list_days=["monday","thuesday","wednesday","thursday","friday","saturday","sunday"]
-    if your_day.lower() in list_days:
-        nextday = list_days.index(your_day.lower())
-        print(nextday)
-        # nextday = (nextday + 1) % 7
-        nextday = [
-            (nextday + 1)
-            if not (nextday + 1)==7
-            else 0
-            for i in range(6)
-              ]
-        print(nextday)
-        list_days=list_days[nextday]
-    else:
+    next_days=""
+    french_langage=False
+    english_days,french_days=traduire_jour(your_day)
+    # print("french:",french_days)
+    # print("english:",english_days)
+    if your_day.lower() in list_days: #si jour en anglais
+        index_day = list_days.index(your_day.lower())
+    elif english_days in list_days: #si jour en francais
+        index_day = list_days.index(english_days)
+        french_langage=True
+        # print("index_day:",index_day)
+        # nextday = (nextday + 1) % 7  #autre solution avec le modulo7 si on arrive à 6-> 6+1=7 7%7=0
+    # print("index_next_day:",index_nextday)
+    else :
+        print("Votre saisie ne correspond pas à un jour de la semaine ")
         return
-    # print("the next day: ", list_days)
-    return list_days
 
+    index_nextday =(index_day + 1) if not (index_day + 1)==7 else 0
+    if french_langage:
+        next_days=list_days[index_nextday]
+        english_days,french_days=traduire_jour(next_days)
+        next_days=french_days
+        # print("nextdays french",next_days)
+    else:
+        next_days=list_days[index_nextday]
+        # print("nextdays gb",next_days)
+
+
+    return next_days
+
+
+def traduire_jour(jour):
+    jours = {
+        "lundi": "monday",
+        "mardi": "tuesday",
+        "mercredi": "wednesday",
+        "jeudi": "thursday",
+        "vendredi": "friday",
+        "samedi": "saturday",
+        "dimanche": "sunday"
+    }
+
+    jours_inverse = {v: k for k, v in jours.items()}  # Crée un dictionnaire inversé
+    # print("traduire 1  :        ",jours.get(jour.lower()))
+    # print("traduire 2  :        ",jours_inverse.get("sunday"))
+    english_days=jours.get(jour.lower())
+    french_days=jours_inverse.get(jour.lower())
+    return english_days,french_days
+
+#  autre possibilité avec une table de correspondance
+def get_next_day2(your_day):
+    days = {
+        "lundi": "mardi",
+        "mardi": "mercredi",
+        "mercredi": "jeudi",
+        "jeudi": "vendredi",
+        "vendredi": "samedi",
+        "samedi": "dimanche",
+        "dimanche": "lundi",
+        "monday": "tuesday",
+        "tuesday": "wednesday",
+        "wednesday": "thursday",
+        "thursday": "friday",
+        "friday": "saturday",
+        "saturday": "sunday",
+        "sunday": "monday"
+    }
+    return days.get(your_day.lower())
+# test de la fonction
+if __name__ == '__main__':
+    your_day1="dimanche"
+    your_day2="monday"
+    print("the next days is: ", get_next_day(your_day1))
+    print("the next days is: ", get_next_day(your_day2))
+
+###############################################################################
+"""
+Mission 10: Create a function that fills an empty list with values (words) from the following string :
+
+# "After twelve soft showers are the arch-duchess' socks dry, arch-dry?"
+"""
+
+def transform_sentence_in_words_list(sentence):
+    list_words=[]
+    return list_words
 
 
 
 # test de la fonction
+if __name__ == '__main__':
+    name_function=transform_sentence_in_words_list
+    message=f"Resultat fonction {name_function}"
+    my_sentence="After twelve soft showers are the arch-duchess' socks dry, arch-dry?"
+    print(message,transform_sentence_in_words_list( my_sentence))
+###############################################################################
 
 
-your_day="sunday"
-print("ma variable: ", get_next_day(your_day))
+"""
+    # Mission 11: Create a function that that takes a string as input, converts all characters to lowercase, and returns a new string where
+# every vowel at an even index is capitalized, keeping all other characters unchanged.
+# Example: antithetical -> AntithEtIcAl
+# Example: marvelously -> marvElOuslY
+"""
+###############################################################################
+
+"""
+    # Mission 12: Create a function that takes a number n as parameter, and then returns a list containing n lists, each containing n empty lists.
+"""
+
+###############################################################################
+"""
+    # Mission 13: Create a function that takes two inputs, their year of birth and first name.
+# Convert the year of birth into an int and subtract it from the current year (you can do it using a certain module :-P).
+# Then display the message: Hello [first name], today you are (or you will be this year) [age] years old.
+# When testing the function, ask the user for the parameters!
+
+"""
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+
+
+
 
 # def next_day(day):
 #     days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
