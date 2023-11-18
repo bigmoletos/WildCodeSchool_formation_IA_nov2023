@@ -1,82 +1,76 @@
- {
-    "Aïssa Maïga": {
-        "prenom": "Aïssa",
-        "nom": "Maïga",
-        "annee_naissance": 1975,
-        "titre": "Mme",
-        "lieu_naissance": "Dakar, Sénégal",
-        "specialite": "Actrice"
+{
+  "Personnalités féminines": [
+    {
+      "Nom": "Aïssa Maïga",
+      "Profession": "Actrice",
+      "Lieu de naissance": "Dakar, Sénégal",
+      "Année de naissance": 1975,
+      "Faits marquants": "Aïssa Maïga est une actrice, réalisatrice, écrivaine, productrice et militante franco-sénégalaise. Elle a travaillé avec des réalisateurs majeurs comme Michael Haneke, Abderrahmane Sissako et Michel Gondry."
     },
-    "Alice Pfeiffer": {
-        "prenom": "Alice",
-        "nom": "Pfeiffer",
-        "annee_naissance": "Inconnue",
-        "titre": "Mme",
-        "lieu_naissance": "France",
-        "specialite": "Journaliste"
+    {
+      "Nom": "Alice Pfeiffer",
+      "Profession": "Journaliste de mode",
+      "Lieu de naissance": "Royaume-Uni",
+      "Année de naissance": "Inconnue",
+      "Faits marquants": "Alice Pfeiffer, franco-britannique, est une journaliste de mode. Après un master en études de genre à la London School of Economics, elle a commencé à écrire pour 'The International Herald Tribune' puis 'The New York Times'."
     },
-    "Mélanie Hong": {
-        "prenom": "Mélanie",
-        "nom": "Hong",
-        "annee_naissance": "Inconnue",
-        "titre": "Mme",
-        "lieu_naissance": "France",
-        "specialite": "Podcaster"
+    {
+      "Nom": "Mélanie Hong",
+      "Profession": "Podcaster",
+      "Lieu de naissance": "France",
+      "Année de naissance": "Inconnue",
+      "Faits marquants": "Mélanie Hong est une podcaster professionnelle qui a quitté une carrière en droit pour se concentrer sur l'histoire du paysage multiculturel de la France."
     },
-    "Simone de Beauvoir": {
-        "prenom": "Simone",
-        "nom": "de Beauvoir",
-        "annee_naissance": 1908,
-        "titre": "Mme",
-        "lieu_naissance": "Paris, France",
-        "specialite": "Philosophe"
+    {
+      "Nom": "Gaëlle Prudencio",
+      "Profession": "Créatrice de mode",
+      "Lieu de naissance": "France",
+      "Année de naissance": "Inconnue",
+      "Faits marquants": "Gaëlle Prudencio est une créatrice de mode et l'une des pionnières du mouvement body-positive en France."
     },
-    "Hannah Arendt": {
-        "prenom": "Hannah",
-        "nom": "Arendt",
-        "annee_naissance": 1906,
-        "titre": "Mme",
-        "lieu_naissance": "Linden, Allemagne",
-        "specialite": "Philosophe"
-    },
-    "Sophie Marceau": {
-        "prenom": "Sophie",
-        "nom": "Marceau",
-        "annee_naissance": "Inconnue",
-        "titre": "Mme",
-        "lieu_naissance": "France",
-        "specialite": "Actrice"
-    },
-    "Omar Sy": {
-        "prenom": "Omar",
-        "nom": "Sy",
-        "annee_naissance": "Inconnue",
-        "titre": "M.",
-        "lieu_naissance": "France",
-        "specialite": "Acteur"
-    },
-    "David Douillet": {
-        "prenom": "David",
-        "nom": "Douillet",
-        "annee_naissance": "Inconnue",
-        "titre": "M.",
-        "lieu_naissance": "France",
-        "specialite": "Sportif"
-    },
-    "Confucius": {
-        "prenom": "Confucius",
-        "nom": "",
-        "annee_naissance": 551,
-        "titre": "M.",
-        "lieu_naissance": "Lu, Chine",
-        "specialite": "Philosophe"
-    },
-    "Friedrich Nietzsche": {
-        "prenom": "Friedrich",
-        "nom": "Nietzsche",
-        "annee_naissance": 1844,
-        "titre": "M.",
-        "lieu_naissance": "Röcken, Allemagne",
-        "specialite": "Philosophe"
+    {
+      "Nom": "Sophie Marceau",
+      "Profession": "Actrice",
+      "Lieu de naissance": "Paris, France",
+      "Année de naissance": "Inconnue",
+      "Faits marquants": "Sophie Marceau est une actrice française qui a acquis une popularité avec ses premiers films La Boum (1980) et La Boum 2 (1982)."
     }
+  ],
+  "Personnalités masculines": [
+    {
+      "Nom": "Omar Sy",
+      "Profession": "Acteur",
+      "Lieu de naissance": "Trappes, France",
+      "Année de naissance": "Inconnue",
+      "Faits marquants": "Omar Sy est un acteur, producteur, réalisateur, scénariste et comédien français qui a acquis une notoriété en formant un duo comique avec Fred Testot."
+    },
+    {
+      "Nom": "David Douillet",
+      "Profession": "Judoka, homme politique",
+      "Lieu de naissance": "Rouen, France",
+      "Année de naissance": "Inconnue",
+      "Faits marquants": "David Douillet est un ancien athlète et homme politique. Il a été deux fois élu personnalité préférée des Français."
+    },
+    {
+      "Nom": "Serge Gainsbourg",
+      "Profession": "Musicien",
+      "Lieu de naissance": "Paris, France",
+      "Année de naissance": 1928,
+      "Faits marquants": "Serge Gainsbourg est un musicien légendaire français qui est considéré comme la version française de Mick Jagger, David Bowie et Sting combinés."
+    },
+    {
+      "Nom": "Johnny Halladay",
+      "Profession": "Chanteur",
+      "Lieu de naissance": "Paris, France",
+      "Année de naissance": 1943,
+      "Faits marquants": "Johnny Halladay était un chanteur français qui a sorti 79 albums français et vendu plus de 110 millions de disques."
+    },
+    {
+      "Nom": "Julien Doré",
+      "Profession": "Chanteur",
+      "Lieu de naissance": "Alès, France",
+      "Année de naissance": 1982,
+      "Faits marquants": "La percée de Julien Doré est venue en tant que gagnant de Nouvelle Star (la version française d'American Idol) qu'il a auditionnée par hasard, pour obtenir une exposition pour son groupe."
+    }
+  ]
 }
