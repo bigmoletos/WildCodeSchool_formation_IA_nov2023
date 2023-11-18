@@ -1,0 +1,82 @@
+ {
+    "Aïssa Maïga": {
+        "prenom": "Aïssa",
+        "nom": "Maïga",
+        "annee_naissance": 1975,
+        "titre": "Mme",
+        "lieu_naissance": "Dakar, Sénégal",
+        "specialite": "Actrice"
+    },
+    "Alice Pfeiffer": {
+        "prenom": "Alice",
+        "nom": "Pfeiffer",
+        "annee_naissance": "Inconnue",
+        "titre": "Mme",
+        "lieu_naissance": "France",
+        "specialite": "Journaliste"
+    },
+    "Mélanie Hong": {
+        "prenom": "Mélanie",
+        "nom": "Hong",
+        "annee_naissance": "Inconnue",
+        "titre": "Mme",
+        "lieu_naissance": "France",
+        "specialite": "Podcaster"
+    },
+    "Simone de Beauvoir": {
+        "prenom": "Simone",
+        "nom": "de Beauvoir",
+        "annee_naissance": 1908,
+        "titre": "Mme",
+        "lieu_naissance": "Paris, France",
+        "specialite": "Philosophe"
+    },
+    "Hannah Arendt": {
+        "prenom": "Hannah",
+        "nom": "Arendt",
+        "annee_naissance": 1906,
+        "titre": "Mme",
+        "lieu_naissance": "Linden, Allemagne",
+        "specialite": "Philosophe"
+    },
+    "Sophie Marceau": {
+        "prenom": "Sophie",
+        "nom": "Marceau",
+        "annee_naissance": "Inconnue",
+        "titre": "Mme",
+        "lieu_naissance": "France",
+        "specialite": "Actrice"
+    },
+    "Omar Sy": {
+        "prenom": "Omar",
+        "nom": "Sy",
+        "annee_naissance": "Inconnue",
+        "titre": "M.",
+        "lieu_naissance": "France",
+        "specialite": "Acteur"
+    },
+    "David Douillet": {
+        "prenom": "David",
+        "nom": "Douillet",
+        "annee_naissance": "Inconnue",
+        "titre": "M.",
+        "lieu_naissance": "France",
+        "specialite": "Sportif"
+    },
+    "Confucius": {
+        "prenom": "Confucius",
+        "nom": "",
+        "annee_naissance": 551,
+        "titre": "M.",
+        "lieu_naissance": "Lu, Chine",
+        "specialite": "Philosophe"
+    },
+    "Friedrich Nietzsche": {
+        "prenom": "Friedrich",
+        "nom": "Nietzsche",
+        "annee_naissance": 1844,
+        "titre": "M.",
+        "lieu_naissance": "Röcken, Allemagne",
+        "specialite": "Philosophe"
+    }
+}

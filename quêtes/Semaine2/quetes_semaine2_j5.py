@@ -152,33 +152,33 @@ Mission 10: Create a function that fills an empty list with values (words) from 
 
 ###############################################################################
 
-"""
-    # Mission 12: Create a function that takes a number n as parameter, and then returns a list containing n lists, each containing n empty lists.
-"""
-import random
+# """
+#     # Mission 12: Create a function that takes a number n as parameter, and then returns a list containing n lists, each containing n empty lists.
+# """
+# import random
 
-def create_list(size_of_list):
-    list_created=[]
-    list_created=[[list_created for _ in range(size_of_list)]  for _ in range(size_of_list)]
-    list_created2=[[size_of_list for _ in range(size_of_list)]  for _ in range(size_of_list)] # idem avec listes vides rempalcées par n
-    return list_created,list_created2
+# def create_list(size_of_list):
+#     list_created=[]
+#     list_created=[[list_created for _ in range(size_of_list)]  for _ in range(size_of_list)]
+#     list_created2=[[size_of_list for _ in range(size_of_list)]  for _ in range(size_of_list)] # idem avec listes vides rempalcées par n
+#     return list_created,list_created2
 
-###########################
-# test de la fonction
-if __name__ == '__main__':
-    size_of_list=random.randint(1,4)
-    size_of_list2=random.randint(1,5)
+# ###########################
+# # test de la fonction
+# if __name__ == '__main__':
+#     size_of_list=random.randint(1,4)
+#     size_of_list2=random.randint(1,5)
 
 
-    name_function,name_function2=create_list(size_of_list)
-    name_function3,name_function4=create_list(size_of_list2)
-    message=f"Resultat avec n={size_of_list} "
-    message2=f"Resultat avec n={size_of_list2} "
+#     name_function,name_function2=create_list(size_of_list)
+#     name_function3,name_function4=create_list(size_of_list2)
+#     message=f"Resultat avec n={size_of_list} "
+#     message2=f"Resultat avec n={size_of_list2} "
 
-    print(message,name_function)
-    print(message,name_function2)
-    print(message2,name_function3)
-    print(message2,name_function4)
+#     print(message,name_function)
+#     print(message,name_function2)
+#     print(message2,name_function3)
+#     print(message2,name_function4)
 ###############################################################################
 """
     # Mission 13: Create a function that takes two inputs, their year of birth and first name.
@@ -187,6 +187,36 @@ if __name__ == '__main__':
 # When testing the function, ask the user for the parameters!
 
 """
+
+import random
+from datetime import datetime
+
+def change_year_of_bearth(year_of_birth,gender, first_name):
+    year_of_birth=int(year_of_birth)
+    # year_of_birth=year_of_birth.strftime('%d-%m-%Y')
+    # Obtenir la date actuelle
+    current_year =datetime.now().year
+    # Formater la date
+    # date_formatee = maintenant.strftime('%d-%m-%Y')
+    old_of_you=current_year -year_of_birth
+    message=f"Hello {gender} {first_name}, if your year of birth is {year_of_birth} today you are (or you will be this year) {old_of_you} years old"
+    return message
+
+# ###########################
+# # test de la fonction
+if __name__ == '__main__':
+    list_of_year=[year for year in range(1900, 2000) for _ in range(10,50)]
+    liste_genre = ['Mr', 'Mme', 'Mlle', 'Dr']
+    # liste_first_name=['Astier','Leodagan','Perceval','Karadoc','Bohort','Lancelot']
+    liste_first_name=['Pasteur', 'Simone de Beauvoir', 'Hannah Arendt', 'Philippa Foot', 'Confucius', 'Aristote', 'Friedrich Nietzsche', 'Platon', 'Socrate', 'Marc Aurèle']
+    birthyear=random.choice(list_of_year) # choix aléatoire de l'année
+    firstname=random.choice(liste_first_name)  # choix d'un nom aleatoire
+    title=random.choice(liste_genre) # choix aléatoire du titre
+
+    name_function=change_year_of_bearth(birthyear,title, firstname)
+    message_print=f"Resultat année={birthyear} et first name={firstname} "
+
+    print(name_function)
 
 
 ###########################
