@@ -122,55 +122,63 @@ Mission 10: Create a function that fills an empty list with values (words) from 
 ###############################################################################
 
 
-"""
-    # Mission 11: Create a function that that takes a string as input, converts all characters to lowercase, and returns a new string where
-# every vowel at an even index is capitalized, keeping all other characters unchanged.
-# Example: antithetical -> AntithEtIcAl
-# Example: marvelously -> marvElOuslY
-"""
-def change_vowels(your_word):
-    # list_vowels=[]
-    voyelles = 'aeiouyéèêëàâôûùïîüÿ'
-    your_word=list(your_word.lower())
-    for index,letter in enumerate(your_word):
-        if index%2 ==0 and letter in voyelles:
-            your_word[index]=letter.upper()
-    your_word="".join(your_word)
-    return your_word
+# """
+#     # Mission 11: Create a function that that takes a string as input, converts all characters to lowercase, and returns a new string where
+# # every vowel at an even index is capitalized, keeping all other characters unchanged.
+# # Example: antithetical -> AntithEtIcAl
+# # Example: marvelously -> marvElOuslY
+# """
+# def change_vowels(your_word):
+#     voyelles = 'aeiouyéèêëàâôûùïîüÿ'
+#     your_word=list(your_word.lower())
+#     for index,letter in enumerate(your_word):
+#         if index%2 ==0 and letter in voyelles:
+#             your_word[index]=letter.upper()
+#     your_word="".join(your_word)
+#     return your_word
 
-###########################
-# test de la fonction
-if __name__ == '__main__':
-    your_word="antithetical"
-    your_word2="marvelously"
+# ###########################
+# # test de la fonction
+# if __name__ == '__main__':
+#     your_word="antithetical"
+#     your_word2="marvelously"
 
-    name_function=change_vowels( your_word)
-    name_function2=change_vowels( your_word2)
-    message=f"Resultat fonction "
+#     name_function=change_vowels( your_word)
+#     name_function2=change_vowels( your_word2)
+#     message=f"Resultat fonction "
 
-    print(message,name_function)
-    print(message,name_function2)
+#     print(message,name_function)
+#     print(message,name_function2)
 
 ###############################################################################
 
 """
     # Mission 12: Create a function that takes a number n as parameter, and then returns a list containing n lists, each containing n empty lists.
 """
+import random
+
 def create_list(size_of_list):
-    
-    return
+    list_created=[]
+    list_created=[[list_created for _ in range(size_of_list)]  for _ in range(size_of_list)]
+    list_created2=[[size_of_list for _ in range(size_of_list)]  for _ in range(size_of_list)] # idem avec listes vides rempalcées par n
+    return list_created,list_created2
+
 ###########################
 # test de la fonction
 if __name__ == '__main__':
-    size_of_list=4
-    size_of_list2=5
+    size_of_list=random.randint(1,4)
+    size_of_list2=random.randint(1,5)
 
-    name_function=create_list(size_of_list)
-    name_function2=create_list(size_of_list2)
-    message=f"Resultat fonction "
+
+    name_function,name_function2=create_list(size_of_list)
+    name_function3,name_function4=create_list(size_of_list2)
+    message=f"Resultat avec n={size_of_list} "
+    message2=f"Resultat avec n={size_of_list2} "
 
     print(message,name_function)
     print(message,name_function2)
+    print(message2,name_function3)
+    print(message2,name_function4)
 ###############################################################################
 """
     # Mission 13: Create a function that takes two inputs, their year of birth and first name.
@@ -182,17 +190,17 @@ if __name__ == '__main__':
 
 
 ###########################
-# test de la fonction
-if __name__ == '__main__':
-    your_word="antithetical"
-    your_word2="marvelously"
+# # test de la fonction
+# if __name__ == '__main__':
+#     your_word="antithetical"
+#     your_word2="marvelously"
 
-    name_function=change_vowels( your_word)
-    name_function2=change_vowels( your_word2)
-    message=f"Resultat fonction "
+#     name_function=change_vowels( your_word)
+#     name_function2=change_vowels( your_word2)
+#     message=f"Resultat fonction "
 
-    print(message,name_function)
-    print(message,name_function2)
+#     print(message,name_function)
+#     print(message,name_function2)
 ###############################################################################
 ###############################################################################
 ###############################################################################
