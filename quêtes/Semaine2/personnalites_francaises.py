@@ -10,36 +10,54 @@ Le programme  demande à l'utlisateur s'il veut modifer le fichier,
 with open(r"quêtes\data\json\liste_personnalite_francaise.json", 'r',encoding='utf-8') as f:
     data = json.load(f)
 # print("data:", data)
-# Choisir une personnalité au hasard avec toutes ses sous categories
-personnalite = [p[key] for categorie in data.values() for p in categorie for key in p if key.startswith('Personnalités')]
-print(f"Personnalité choisie : {personnalite}")
-personnalite = random.choice(personnalite)
-print(f"Personnalité choisie : {personnalite}")
+# Choisir un type de personnalite feminine ou masculine au hasard avec toutes ses sous-categories
+personnalite = [type_personnalite for type_personnalite in data.keys() ]
+# personnalite = [p[key] for categorie in data.values() for p in categorie for key in p if key.startswith('Personnalités')]
+print(f" liste des type de Personnalités  : {personnalite}")
+type_personnalite = random.choice(personnalite)
+print(f"type de personnalité choisie : {type_personnalite}")
 # print(data[personnalite])
 
+##############
+# Choix d'une personnalité de manière aléatoire dans la catégorie spécifiée
+fiche_personnalite_choisie = random.choice(data[type_personnalite])
+print("personnalite_choisie:",fiche_personnalite_choisie)
+
+
+# Maintenant, 'personnalite_choisie' est un dictionnaire contenant les détails de la personnalité choisie
+nom = fiche_personnalite_choisie['Nom']
+print("nom:", nom)
+##############
+# éviter les doublons, vous pouvez convertir categories en un ensemble à la fin
+list_categories = [key for categorie in data.values() for p in categorie for key in p if p['Nom'] == nom]
+list_categories = list(set(list_categories))
+print("list_categories:",list_categories)
+for type_categorie in list_categories :
+    type_categorie = fiche_personnalite_choisie[type_categorie]
+    print(type_categorie)
 # # Créer une liste de tous les noms
 # noms = [personnalite['nom'] for personnalite in data.values()]
 # noms = list(data.keys())
-#  parcourt chaque toutes les sous-categories du champ "Nom" et les mets dans la liste "noms"
-noms = [p['Nom'] for categorie in data.values() for p in categorie]
-print("noms:",noms)
-# Choisir un nom au hasard
-nom = random.choice(noms)
-print("nom:",nom)
+# #  parcourt chaque toutes les sous-categories du champ "Nom" et les mets dans la liste "noms"
+# noms = [p['Nom'] for categorie in data.values() for p in categorie if p['Type'] == type_personnalite]
+# print(" liste des noms:",noms)
+# # Choisir un nom au hasard
+# nom = random.choice(noms)
+# # print("nom:",nom)
 
 
-if nom is not None:
-    print(f"Personnalité choisie : {nom}")
-    # fait une liste de toutes les sous-categories du champ "Nom"
-    #  s'il est égale = nom
-    categorie_nom = [p for categorie in data.values() for p in categorie if p['Nom'] == nom]
-    # categories = [[v for k, v in p.items()] for categorie in data.values() for p in categorie if p['Nom'] == nom]
-    print("categorie_nom",categorie_nom)
-    # Imprimer chaque champ et sa valeur
-    for champ, valeur in nom.items():
-        print(f"{champ}: {valeur}")
-else:
-    print("Aucune personnalité trouvée avec ce nom.")
+# if nom is not None:
+#     print(f"Nom de la personnalité choisie : {nom}")
+#     # fait une liste de toutes les sous-categories du champ "Nom"
+#     #  s'il est égale = nom
+#     categorie_nom = [p for categorie in data.values()  for p in categorie if p['Nom'] == nom]
+#     # categories = [[v for k, v in p.items()] for categorie in data.values() for p in categorie if p['Nom'] == nom]
+#     print("categorie_nom",categorie_nom)
+#     # Imprimer chaque champ et sa valeur
+#     for champ, valeur in nom.items():
+#         print(f"{champ}: {valeur}")
+# else:
+#     print("Aucune personnalité trouvée avec ce nom.")
 
 # Demander à l'utilisateur s'il souhaite modifier le fichier
 # modifier = input("Voulez-vous modifier le fichier ? (oui/non) ")
