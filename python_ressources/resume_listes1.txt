@@ -10,41 +10,96 @@ Itérable : Oui
 Mutable : Oui
 Ordonné : Oui
 Unicité des valeurs : Non
-
+----------------------------------------------------------------
 Tuples :
 Créer : Utilisez tuple = (x, y, z) pour créer un tuple. Par exemple, tuple = (1, 2, 3).
 Lire : Utilisez tuple[i] pour lire un élément à un index spécifique. Par exemple, tuple = (1, 2, 3); print(tuple[0]).
+****************************
 Itérable : Oui
 Mutable : Non
 Ordonné : Oui
 Unicité des valeurs : Non
-
+----------------------------------------------------------------
 Ensembles :
 Ajouter : Utilisez set.add(x) pour ajouter un élément à un ensemble. Par exemple, set = set(); set.add(1).
 Lire : Utilisez for x in set: print(x) pour lire tous les éléments d’un ensemble. Par exemple, set = {1, 2, 3}; for x in set: print(x).
 Supprimer : Utilisez set.remove(x) pour supprimer un élément d’un ensemble. Par exemple, set = {1, 2, 3}; set.remove(1).
 Trier : Utilisez sorted(set) pour obtenir une liste triée des éléments d’un ensemble. Par exemple, set = {3, 1, 2}; sorted(set).
 Concaténer : Utilisez set1.union(set2) pour concaténer deux ensembles. Par exemple, set1 = {1, 2}; set2 = {3, 4}; set1.union(set2).
+****************************
 Itérable : Oui
 Mutable : Oui (mais les éléments à l’intérieur de l’ensemble doivent être immuables)
 Ordonné : Non
 Unicité des valeurs : Oui
-
+----------------------------------------------------------------
 Dictionnaires :
 Ajouter : Utilisez dict[key] = value pour ajouter une paire clé-valeur à un dictionnaire. Par exemple, dict = {}; dict['key'] = 'value'.
 Lire : Utilisez dict[key] pour lire la valeur d’une clé spécifique. Par exemple, dict = {'key': 'value'}; print(dict['key']).
 Supprimer : Utilisez del dict[key] pour supprimer une paire clé-valeur d’un dictionnaire. Par exemple, dict = {'key': 'value'}; del dict['key'].
 Trier : Utilisez sorted(dict) pour obtenir une liste triée des clés d’un dictionnaire. Par exemple, dict = {'b': 1, 'a': 2}; sorted(dict).
 Concaténer : Utilisez {**dict1, **dict2} pour concaténer deux dictionnaires. Par exemple, dict1 = {'a': 1}; dict2 = {'b': 2}; {**dict1, **dict2}.
+****************************
 Itérable : Oui
 Mutable : Oui
 Ordonné : Oui (à partir de Python 3.7)
 Unicité des valeurs : Non (mais les clés doivent être uniques)
-
+----------------------------------------------------------------
+****************************
+----------------------------------------------------------------
 Listes : Les listes en Python sont itérables, mutables et ordonnées. Elles peuvent contenir des valeurs en double. Par exemple, vous pouvez créer une liste avec list = [1, 2, 2, 3], ajouter un élément avec list.append(4), et supprimer un élément avec del list[0].
-
+----------------------------------------------------------------
 Tuples : Les tuples en Python sont itérables et ordonnés, mais ils ne sont pas mutables, ce qui signifie que vous ne pouvez pas modifier leurs éléments une fois qu’ils ont été définis. Ils peuvent également contenir des valeurs en double. Par exemple, vous pouvez créer un tuple avec tuple = (1, 2, 2, 3).
-
+----------------------------------------------------------------
 Ensembles : Les ensembles en Python sont itérables et mutables, mais ils ne sont pas ordonnés. Ils ne peuvent contenir que des valeurs uniques. Par exemple, vous pouvez créer un ensemble avec set = {1, 2, 3}, ajouter un élément avec set.add(4), et supprimer un élément avec set.remove(1).
-
+----------------------------------------------------------------
 Dictionnaires : Les dictionnaires en Python sont itérables, mutables et ordonnés (à partir de Python 3.7). Ils peuvent contenir des valeurs en double, mais les clés doivent être uniques. Par exemple, vous pouvez créer un dictionnaire avec dict = {'a': 1, 'b': 2}, ajouter une paire clé-valeur avec dict['c'] = 3, et supprimer une paire clé-valeur avec del dict['a'].
+
+----------------------------------------------------------------
+
+Les méthodes add(), pop(), update(), insert(), del et remove() sont utilisées pour manipuler différents types de données en Python. Voici comment elles sont utilisées :
+
+- add() : Cette méthode est spécifique aux ensembles (set). Elle permet d'ajouter un élément à un ensemble. Par exemple :
+python
+s = set()
+s.add(1)  # s est maintenant {1}
+
+
+- pop() : Cette méthode est utilisée avec les listes et les ensembles. Pour les listes, elle supprime et renvoie l'élément à un index spécifique (ou le dernier élément si aucun index n'est spécifié). Pour les ensembles, elle supprime et renvoie un élément arbitraire (les ensembles étant non ordonnés). Par exemple :
+python
+list = [1, 2, 3]
+list.pop()  # renvoie 3, list est maintenant [1, 2]
+
+s = {1, 2, 3}
+s.pop()  # renvoie un élément arbitraire, s est maintenant {2, 3} ou {1, 3} ou {1, 2}
+
+
+- update() : Cette méthode est utilisée avec les ensembles et les dictionnaires. Pour les ensembles, elle ajoute tous les éléments d'un autre ensemble (ou d'un autre itérable). Pour les dictionnaires, elle ajoute toutes les paires clé-valeur d'un autre dictionnaire. Par exemple :
+python
+s = {1, 2}
+s.update({3, 4})  # s est maintenant {1, 2, 3, 4}
+
+dict = {'a': 1, 'b': 2}
+dict.update({'c': 3, 'd': 4})  # dict est maintenant {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+- insert() : Cette méthode est spécifique aux listes. Elle insère un élément à un index spécifique. Par exemple :
+python
+list = [1, 2, 3]
+list.insert(1, 'a')  # list est maintenant [1, 'a', 2, 3]
+
+- del : Ce n'est pas une méthode, mais une instruction Python. Elle peut être utilisée pour supprimer des variables ou des éléments de listes ou de dictionnaires. Par exemple :
+python
+list = [1, 2, 3]
+del list[1]  # list est maintenant [1, 3]
+
+dict = {'a': 1, 'b': 2}
+del dict['a']  # dict est maintenant {'b': 2}
+
+
+- remove() : Cette méthode est utilisée avec les listes et les ensembles. Elle supprime le premier élément qui correspond à sa valeur argument. Par exemple :
+python
+list = [1, 2, 3, 2]
+list.remove(2)  # list est maintenant [1, 3, 2]
+
+s = {1, 2, 3}
+s.remove(2)  # s est maintenant {1, 3}
+
