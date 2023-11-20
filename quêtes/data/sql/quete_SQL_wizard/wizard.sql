@@ -14,13 +14,13 @@ CREATE TABLE `wizard` (
     `is_muggle` BOOLEAN NOT NULL,
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-  
- DROP TABLE IF EXISTS `school`; 
+
+DROP TABLE IF EXISTS `school`;
 CREATE TABLE `school` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(100) NOT NULL,
     `country` VARCHAR(100) NOT NULL,
     `capacity` INT,
     PRIMARY KEY (`id`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;  
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
