@@ -24,3 +24,4 @@ CREATE TABLE `school` (
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
