@@ -1,22 +1,27 @@
 from PIL import Image
 
-# Ouvrir les images
-img1 = Image.open('quêtes\images\screenshot7.png')
-img2 = Image.open('quêtes\images\screenshot8.png')
-# img3 = Image.open('quêtes\images\screenshot5.png')
-# img4 = Image.open('quêtes\images\screenshot6.png')
-# ...
+# nombre d'images à merger
+nbre_image = 2
+# taille des images souhaitées
 WIDTH = 1280
 HEIGHT = 800
-# Assurez-vous que toutes les images ont la même taille
+
+
+# Ouvrir les images
+img1 = Image.open('quêtes\images\quetes_wizard\screenshot_and_merge\screenshot7.png')
+img2 = Image.open('quêtes\images\quetes_wizard\screenshot_and_merge\screenshot8.png')
+# img3 = Image.open('quêtes\images\quetes_wizard\screenshot_and_merge\screenshot5.png')
+# img4 = Image.open('quêtes\images\quetes_wizard\screenshot_and_merge\screenshot6.png')
+# ...
+# On met les images avec  la même taille
 img1 = img1.resize((WIDTH, HEIGHT))
 img2 = img2.resize((WIDTH, HEIGHT))
 # img3 = img3.resize((WIDTH, HEIGHT))
 # img4 = img4.resize((WIDTH, HEIGHT))
 # ...
-nbre_image = 2
+
 # Fusionner les images
-# Remplacer N par le nombre d'images
+
 merged = Image.new('RGBA', (WIDTH, HEIGHT * nbre_image))
 merged.paste(img1, (0, 0))
 merged.paste(img2, (0, HEIGHT))
@@ -25,4 +30,4 @@ merged.paste(img2, (0, HEIGHT))
 # ...
 
 # Enregistrer l'image fusionnée
-merged.save('quêtes\images\manipulation_donnees.png')
+merged.save('quêtes\images\quetes_wizard\screenshot_and_merge\manipulation_donnees.png')
