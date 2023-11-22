@@ -61,6 +61,20 @@ GROUP BY nombre_pieces_principales;
 
 -- --------------------
 -- 4. Liste des 10 départements où le prix du mètre carré est le plus élevé.
+select substr(localisation.code_postal,1 ,2) as "départemnetcode", --on extrait les 2 premiers caractéres du code postal
+count(vente.id) as "nombre de vente",
+round(avg(valeur_vente/surface_carrez),2) as "prix au m²"
+from bien
+inner join vente
+on bien.id=vente.id
+
+inner join localisation
+on bien.id=localisation.id
+where type_local="Appartement" and date_vente< "2020-07-01 00:00:00"
+group by "départemnetcode"
+ORDER by "prix au m²" DESC
+limit 10
+;
 
 
 
