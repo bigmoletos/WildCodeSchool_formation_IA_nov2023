@@ -149,12 +149,20 @@ Q2 AS (
     AND surface_reelle >0
 )
 --calcul du taux d'évolution en % arrondi à 2 aprés la virgule
-SELECT round(((Q2."nombre de vente" - Q1."nombre de vente") * 100.0 / Q1."nombre de vente"),2) || ' %' as "taux d'évolution"
+SELECT
+Q1."nombre de vente",
+Q2."nombre de vente",
+round(((Q2."nombre de vente" - Q1."nombre de vente") * 100.0 / Q1."nombre de vente"),2) || ' %' as "taux d'évolution"
 FROM Q1, Q2;
 
 
 -- 2éme solution avec un lag()
 
+SELECT
+    sales,
+    LAG(sales) OVER (ORDER BY date) as previous_sales,
+    ((sales - LAG(sales) OVER (ORDER BY date)) / LAG(sales) OVER (ORDER BY date)) * 100 as growth_rate
+FROM your_table;
 
 
 
@@ -166,12 +174,43 @@ FROM Q1, Q2;
 
 -- --------------------
 -- 9. Liste des communes ayant eu au moins 50 ventes au 1er trimestre
+select substr(localisation.code_postal,1 ,2) as "départemnetcode", --on extrait les 2 premiers caractéres du code postal
+count(vente.id) as "nombre de vente",
+round(avg(valeur_vente/surface_carrez),2) as "prix au m²"
+from bien
+inner join vente
+on bien.id=vente.id
+inner join localisation
+on bien.id=localisation.id
+where type_local="Appartement" and date_vente< "2020-07-01 00:00:00"
+
+group by "départemnetcode"
+having  count(*)>50
+ORDER by "prix au m²" DESC
+;
 
 
 -- --------------------
 -- 10. Différence en pourcentage du prix au mètre carré entre un
 -- appartement de 2 pièces et un appartement de 3 pièces.
 
+WITH
+    avg_price_2 AS (
+        SELECT AVG(valeur_vente/surface_carrez) AS avg_price_per_sqm_2
+        FROM bien
+        INNER JOIN vente ON bien.id = vente.id
+        WHERE type_local = "Appartement" AND nombre_pieces_principales = 2
+    ),
+    avg_price_3 AS (
+        SELECT AVG(valeur_vente/surface_carrez) AS avg_price_per_sqm_3
+        FROM bien
+        INNER JOIN vente ON bien.id = vente.id
+        WHERE type_local = "Appartement" AND nombre_pieces_principales = 3
+    )
+SELECT
+    ((avg_price_3.avg_price_per_sqm_3 - avg_price_2.avg_price_per_sqm_2) / avg_price_2.avg_price_per_sqm_2) * 100 AS percentage_difference
+FROM
+    avg_price_2, avg_price_3
 
 -- --------------------
 -- 11. Les moyennes de valeurs foncières pour le top 3 des communes des
