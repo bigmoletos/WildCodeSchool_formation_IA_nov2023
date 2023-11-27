@@ -54,3 +54,14 @@ inner join wizard w  using(id)
 INNER JOIN team t ON p.team_id = t.id
 WHERE t.name = 'Gryffindor' AND p.role = 'chaser';
 
+-- autre solution
+/*USE wild_db_quest;
+DROP VIEW IF EXISTS Gryffindor_Chasers;
+CREATE VIEW Gryffindor_Chasers AS
+SELECT firstname, lastname, role
+FROM player p
+WHERE name = 'Gryffindor' AND role = 'chaser';
+
+SELECT * FROM Gryffindor_Chasers;*/
+
+
