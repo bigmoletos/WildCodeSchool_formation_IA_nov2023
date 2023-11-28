@@ -134,6 +134,11 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# fd
+# extension des bases de données, des word et excel
+.docx
+.xlsx
+.dbp
 # VS Code
 .vscode/
 /datas/fd_Basic_*
@@ -141,3 +146,6 @@ cython_debug/
 /datas/commandes_git.txt
 /quêtes/Semaine2/live_coding/env
 /Projets/Toys_and_models/Toys_and_models/Toys_and_models-20231125.dbp
+/sauve_google_drive/formation IA-nov2023/quêtes/Semaine1/franck-quête Exceler à Excel semaine1.xlsx
+/Projets/Toys_and_models/Toys_and_models/PROJET 1 _ SQL Model company FR.docx
+
