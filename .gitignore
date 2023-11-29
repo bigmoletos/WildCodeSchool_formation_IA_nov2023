@@ -139,6 +139,7 @@ cython_debug/
 .docx
 .xlsx
 .dbp
+.pbix
 # VS Code
 .vscode/
 /datas/fd_Basic_*
@@ -149,3 +150,5 @@ cython_debug/
 /sauve_google_drive/formation IA-nov2023/quêtes/Semaine1/franck-quête Exceler à Excel semaine1.xlsx
 /Projets/Toys_and_models/Toys_and_models/PROJET 1 _ SQL Model company FR.docx
 
+quêtes/Semaine4/quete_powerBI/2729_pratiques_PowerBI.pbix
+quêtes/Semaine4/quete_powerBI/2729_pratiques_PowerBI_furniture_sales.csv
