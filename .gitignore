@@ -136,10 +136,11 @@ cython_debug/
 
 # fd
 # extension des bases de données, des word et excel
-.docx
-.xlsx
-.dbp
-.pbix
+*.docx
+*.xlsx
+*.dbp
+*.pbix
+*.pdf
 # VS Code
 .vscode/
 /datas/fd_Basic_*
@@ -152,3 +153,61 @@ cython_debug/
 
 quêtes/Semaine4/quete_powerBI/2729_pratiques_PowerBI.pbix
 quêtes/Semaine4/quete_powerBI/2729_pratiques_PowerBI_furniture_sales.csv
+/Presentations/config.py
+stage/Station44 - 2023-7-1 - 2023-8-31 23 59 59.csv
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/03. Power BI _ Dépivoter des colonnes en 3 clics ! - https_--youtu.be-WIcc48tRe80/plan_treso_backend.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/04. Power BI Tutoriel Français _ Créer un Tableau de Bord PAS à PAS - https_--youtu.be-_P2m9GZvBh4/plan_treso_backend.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/06. Power BI _ Les 5 visuels à connaitre sur Power BI ! - https_--youtu.be-qad4lNGljBo/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/07. Power BI _ C_est quoi _ ft. @Elliott Pierret ​- https_--youtu.be-BAxjGdBBfIU/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/08. DAX Power BI Tuto FR _ Fonction CALCULATE en DAX - https_--youtu.be-umx0_6HMSH0/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/09. Power BI _ Comment combiner 2 tables _ - https_--youtu.be-CkG8F5KKdJM/comptabilité_ste_A_202108.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/09. Power BI _ Comment combiner 2 tables _ - https_--youtu.be-CkG8F5KKdJM/comptabilité_ste_A_202109.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/09. Power BI _ Comment combiner 2 tables _ - https_--youtu.be-CkG8F5KKdJM/plan_comptable_ste_A.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/10. DAX Power BI Tuto FR _ 5 formules à connaitre [EXCEL VS DAX] - https_--youtu.be-8pxmxn6N52M/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/11. Power BI _ Comment gérer les caractères spéciaux _ - https_--youtu.be-FoSZv5JV3P4/chiffres-cles.csv
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/12. DAX Power BI Tuto FR _ Comparer 2 années [N vs N-1] - https_--youtu.be-tGoyKBjVhnA/export_erp_societe_83_filiale_02.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/13. DAX Power BI Tuto FR _ Somme cumulée en DAX (YTD) - https_--youtu.be-9VsOM5J9R_8/export_erp_societe_83_filiale_02_ytd.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/12. DAX Power BI Tuto FR _ Comparer 2 années [N vs N-1] - https_--youtu.be-tGoyKBjVhnA/export_erp_societe_83_filiale_02.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/10. DAX Power BI Tuto FR _ 5 formules à connaitre [EXCEL VS DAX] - https_--youtu.be-8pxmxn6N52M/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/01. Power BI Tutoriel Français _ Les bases en 30 min [+ENG SUB] - https_--youtu.be-TYWSfnWnmJs/code_designation.xlsx
+quêtes/Semaine4/quete_powerBI/furniture_sales.csv
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/12. DAX Power BI Tuto FR _ Comparer 2 années [N vs N-1] - https_--youtu.be-tGoyKBjVhnA/export_erp_societe_83_filiale_02.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/10. DAX Power BI Tuto FR _ 5 formules à connaitre [EXCEL VS DAX] - https_--youtu.be-8pxmxn6N52M/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/01. Power BI Tutoriel Français _ Les bases en 30 min [+ENG SUB] - https_--youtu.be-TYWSfnWnmJs/code_designation.xlsx
+quêtes/Semaine4/quete_powerBI/2729_pratiques_PowerBI_furniture_sales - Copie.csv
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/15. Power BI _ Comment agréger des données en quelques clics _ - https_--youtu.be-OIisJG7QQgE/modele_data_groupby.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/16. DAX Power BI Tuto FR _  Compter le nombre d_occurences dans une colonne - https_--youtu.be-3COq9eb5sYY/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/17. Power BI _ Comment créer un modèle de données fiable sur Power BI _ - https_--youtu.be-pCAH1lfm2QQ/datamodel_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/18. Tutoriel Reporting Contrôle de Gestion (Power BI, Sharepoint, SAP) - https_--youtu.be-BUCcXLO96q0/extraction_SAP_83_01_2020.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/18. Tutoriel Reporting Contrôle de Gestion (Power BI, Sharepoint, SAP) - https_--youtu.be-BUCcXLO96q0/extraction_SAP_83_01_2021.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/18. Tutoriel Reporting Contrôle de Gestion (Power BI, Sharepoint, SAP) - https_--youtu.be-BUCcXLO96q0/extraction_SAP_83_01_2022.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/18. Tutoriel Reporting Contrôle de Gestion (Power BI, Sharepoint, SAP) - https_--youtu.be-BUCcXLO96q0/extraction_SAP_83_02_2020.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/18. Tutoriel Reporting Contrôle de Gestion (Power BI, Sharepoint, SAP) - https_--youtu.be-BUCcXLO96q0/extraction_SAP_83_02_2021.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/18. Tutoriel Reporting Contrôle de Gestion (Power BI, Sharepoint, SAP) - https_--youtu.be-BUCcXLO96q0/extraction_SAP_83_02_2022.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/18. Tutoriel Reporting Contrôle de Gestion (Power BI, Sharepoint, SAP) - https_--youtu.be-BUCcXLO96q0/map_centre_cout_code_analytique.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/18. Tutoriel Reporting Contrôle de Gestion (Power BI, Sharepoint, SAP) - https_--youtu.be-BUCcXLO96q0/map_societe_filiale_region.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/19. Le meilleur visuel Power BI pour contrôleur de gestion ! - https_--youtu.be-WOnJd0RsGO0/gestion_projet.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/20. Créer une carte dans Power BI - https_--youtu.be-d6BWJjLzAv4/data_map_powerbi.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/21. Power BI Tuto FR _ Treemap, comment l_utiliser _ - https_--youtu.be-kzprW1bN4D8/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/22. Power BI Tuto FR _ Créer un bouton bascule en 5 min [MAJ 2022] - https_--youtu.be-zlD1kOSJzb8/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/23. Power BI Tuto FR _ Créer un navigateur de pages [MAJ 2022] - https_--youtu.be-bhNyPQmGVF8/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/24. Power BI Tuto FR _ Fonction DAX Related ou Fusion Power Query _ - https_--youtu.be-jpoHkR4u7Dc/marge_prix.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/25. Power BI Tuto DAX FR _ Afficher la date où mon CA est le plus élevé - https_--youtu.be-TGLU8OfGGhs/data_ytd.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/26. Power BI Dashboard _ Challenge 1h pour créer un tableau de bord/Liste écritures 2021.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/26. Power BI Dashboard _ Challenge 1h pour créer un tableau de bord/Liste écritures 2022.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/29. Cloture décalée avec Power BI, Comment faire _/data_ytd.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/30. J_ai essayé Microsoft Copilot dans Power BI et je suis encore sous le choc !/data_ca_powerbi.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/31. Créer un Master Widget KPI/goldfec-fpbi.xlsx
+Stage/Projet_Meteo/Data/Station44 - 2023-7-1 - 2023-8-31 23 59 59.csv
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/01. Power BI Tutoriel Français _ Les bases en 30 min [+ENG SUB] - https_--youtu.be-TYWSfnWnmJs/code_designation.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/10. DAX Power BI Tuto FR _ 5 formules à connaitre [EXCEL VS DAX] - https_--youtu.be-8pxmxn6N52M/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/12. DAX Power BI Tuto FR _ Comparer 2 années [N vs N-1] - https_--youtu.be-tGoyKBjVhnA/export_erp_societe_83_filiale_02.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/23. Power BI Tuto FR _ Créer un navigateur de pages [MAJ 2022] - https_--youtu.be-bhNyPQmGVF8/stocks_exemple.xlsx
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/22. Power BI Tuto FR _ Créer un bouton bascule en 5 min [MAJ 2022] - https_--youtu.be-zlD1kOSJzb8/stocks_exemple.xlsx
+PowerBi/77d8b102577872b5a1bc4c9bd5810924/Report/StaticResources/SharedResources/BaseThemes/CY23SU08.json
+PowerBi/77d8b102577872b5a1bc4c9bd5810924/Report/StaticResources/SharedResources/BuiltInThemes/AccessibleTidal.json
+PowerBi/95a05ff2a7579d918cd459fdb55499d2/Report/StaticResources/SharedResources/BaseThemes/CY22SU11.json
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/14. Importer des factures PDF sur Power BI - https_--youtu.be-ZXleex4TKpE/01_FACTURES_PDF/100-Alexandre-STEVENS.pdf
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/14. Importer des factures PDF sur Power BI - https_--youtu.be-ZXleex4TKpE/01_FACTURES_PDF/101-Robert-AZERTY.pdf
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/14. Importer des factures PDF sur Power BI - https_--youtu.be-ZXleex4TKpE/01_FACTURES_PDF/102-Jean-AZERTY.pdf
+Source_youtube/PowerBI/Alexandre_stevens/PowerBI_Alex_stevens-20231129T100216Z-001/14. Importer des factures PDF sur Power BI - https_--youtu.be-ZXleex4TKpE/01_FACTURES_PDF/103-Salomon-WAXAZ.pdf
