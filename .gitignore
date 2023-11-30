@@ -141,6 +141,7 @@ cython_debug/
 *.dbp
 *.pbix
 *.pdf
+*.zip
 # VS Code
 .vscode/
 /datas/fd_Basic_*
