@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mojo:
+    image: ubuntu:20.04
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    # Montez le répertoire local dans le conteneur
+    volumes:
+      - .:/mojo_ia
+
+    # Définissez l'entrée par défaut pour exécuter Mojo
+    command: ["mojo"]
+
+  notebook:
+    image: mojo_ia:latest
+    # image: jupyter/scipy-notebook:latest
+    volumes:
+      - /home/user/mojo_ia:/mojo_ia
+    # volumes:
+    #   - .:/home/jovyan/work
+    ports:
+      - 8888:8888

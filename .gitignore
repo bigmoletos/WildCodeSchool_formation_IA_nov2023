@@ -143,6 +143,7 @@ cython_debug/
 *.pdf
 *.zip
 *.jpg
+*.pptx
 
 # VS Code
 .vscode/
