@@ -144,6 +144,7 @@ cython_debug/
 *.zip
 *.jpg
 *.pptx
+*.csv
 
 # VS Code
 .vscode/
