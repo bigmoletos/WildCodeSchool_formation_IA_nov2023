@@ -1,6 +1,6 @@
 **Importation de modules** : `import module_name`
 **Création de variables** : `variable = value`
-**Opérations arithmétiques** : `+`, `-`, `*`, `/`, `**` (puissance), `%` (modulo)
+**Opérations arithmétiques** : `+`, `-`, `*`, `/`, `**` (puissance), `%` (modulo), `//` (division entiere)
 **Opérations de comparaison** : `==` (égal à), `!=` (différent de), `<` (inférieur à), `>` (supérieur à), `<=` (inférieur ou égal à), `>=` (supérieur ou égal à)
 **Structures de contrôle** : `if`, `elif`, `else`
 **Boucles** : `for`, `while`

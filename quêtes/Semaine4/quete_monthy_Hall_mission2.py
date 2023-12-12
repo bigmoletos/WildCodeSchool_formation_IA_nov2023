@@ -73,7 +73,8 @@ plot = plt.bar([1, 2],
                [sum(play_many_games("change", 10000)), sum(play_many_games("keep", 10000))],
                tick_label=["Change", "Keep"])
 
-               Ca ne sert à rien mais je ptrouve
+              #  Ca ne sert à rien mais je ptrouve
 # \begin{equation}
 # coefficient\_directeur = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}
 # \end{equation}
+
