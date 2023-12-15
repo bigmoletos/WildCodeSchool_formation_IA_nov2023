@@ -20,4 +20,4 @@ df = pd.read_html(str(table))[0]
 print(df)
 # df.to_csv("weather_data.csv")
 
-ptt
+print(f":{}")
