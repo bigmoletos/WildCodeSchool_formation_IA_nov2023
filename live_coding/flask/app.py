@@ -157,11 +157,12 @@ def formulaireGraphe():
         'species': [prediction]
     })
 
-    # Générer le graphique pour les données du DataFrame
+    # Générer le graphique pour les données du DataFrame avec surcharge de la legende au survol de la souris
     fig = px.scatter(df,
                      x="sepal_width",
                      y="sepal_length",
-                     color="species")
+                     color="species",
+                     hover_data=["species", "sepal_width", "sepal_length", "petal_length", "petal_width"])
 
     # Ajouter le graphique pour les données du formulaire
     # le hover_data rajoute la legende au survol de la souris sur le graphique
