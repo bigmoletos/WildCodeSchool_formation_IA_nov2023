@@ -43,28 +43,49 @@
         <h2 class="mt-4">Résultats</h2>
         <div class="row">
             <div class="col">
-                Avec les valeurs que vous avez saisies nous pensons que votre iris est de l'espèce:
-                <strong>{{resultat}}</strong>
+                <div class="row">
+                    Avec les valeurs que vous avez saisies nous pensons que votre iris est de
+                    l'espèce:<strong>{{resultat}}</strong>
+                </div>
+                <div class="row">
+                    <h5 class="mt-4">Valeurs saisies</h5>
+                    <div class="row">
+                        <div class="col">
+                            Longueur sépale = {{sepal_length}} mm
+                        </div>
+                        <div class="col">
+                            Largeur sépale = {{sepal_width}} mm
+                        </div>
+                        <div class="col">
+                            Longueur pétale = {{petal_length}} mm
+                        </div>
+                        <div class="col">
+                            Largeur pétale = {{petal_width}} mm
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="col">
 
-        <!-- Affichez l'image correspondante ici -->
-                <div class="text-left" >
-            <!-- <div class="text-center" style="height: 20vh;"> -->
-                {% if resultat == 'setosa' %}
-                <img src="{{ url_for('static', filename='images/cetosa.webp') }}" alt="Iris Setosa" width="300" height="300">
-                {% elif resultat == 'versicolor' %}
-                <img src="{{ url_for('static', filename='images/versicolor.jpg') }}" alt="Iris Versicolor" width="300" height="300">
-                {% elif resultat == 'virginica' %}
-                <img src="{{ url_for('static', filename='images/iris_virginica.webp') }}" alt="Iris Virginica" width="300"
-                height="300">
-                {% endif %}
-                    </div>
+                <!-- Affichez l'image correspondante ici -->
+                <div class="text-left">
+                    <!-- <div class="text-center" style="height: 20vh;"> -->
+                    {% if resultat == 'setosa' %}
+                    <img src="{{ url_for('static', filename='images/cetosa.webp') }}" alt="Iris Setosa" width="300"
+                        height="300">
+                    {% elif resultat == 'versicolor' %}
+                    <img src="{{ url_for('static', filename='images/versicolor.jpg') }}" alt="Iris Versicolor"
+                        width="300" height="300">
+                    {% elif resultat == 'virginica' %}
+                    <img src="{{ url_for('static', filename='images/iris_virginica.webp') }}" alt="Iris Virginica"
+                        width="300" height="300">
+                    {% endif %}
+                </div>
             </div>
 
         </div>
-        <h5 class="mt-4">Valeurs saisies</h5>
+        <!-- <h5 class="mt-4">Valeurs saisies</h5>
         <div class="row">
             <div class="col">
                 Longueur sépale = {{sepal_length}} mm
@@ -78,7 +99,7 @@
             <div class="col">
                 Largeur pétale = {{petal_width}} mm
             </div>
-        </div>
+        </div> -->
 
         <!-- Affichez le graphique ici -->
         <div class="container mt-4">
