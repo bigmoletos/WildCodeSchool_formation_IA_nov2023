@@ -16,6 +16,16 @@ pip install flask pandas numpy plotly seaborn scikit-learn
 # Enregistrer les packages installés dans un fichier requirements.txt
 pip freeze > requirements.txt
 
+# lancer le fichier app.py
+[Running] python -u "n:\programmation\WildCodeSchool\Formation_IA_DATA_nov2023\live_coding\flask\sauvegarde\app.py"
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with watchdog (windowsapi)
+ * Debugger is active!
+ * Debugger PIN: 357-821-041
 # Installer les packages à partir du fichier requirements.txt
 pip install -r requirements.txt
 
@@ -23,3 +33,6 @@ pip install -r requirements.txt
 
 # pour arreter l'environnement virtuel
 deactivate
+
+# si besoin de désinstaller des prog
+pip uninstall flask pandas numpy plotly seaborn scikit-learn

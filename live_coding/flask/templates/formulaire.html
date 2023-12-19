@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire</title>
+</head>
+<body>
+    <h1>Mon formulaire {% if resultat %}
+    <p>La valeur est : {{ resultat }}</p>
+{% endif %}</h1>
+    <form action="" method="post">
+    <h4>Comment t'appelles-tu?</h4>
+    <input type="text" name="valeur" required>
+    <input type="submit">
+
+    </form>
+</body>
+</html>
