@@ -12,27 +12,27 @@
         <h1 class="mt-4 mb-4">Modele de reconnaissance des fleurs d'Iris avec graphique</h1>
         <form action="/graphe" method="post">
             <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-sm-4">
                     <label for="sepal_length">Indique la longueur du sépale</label>
                     <input type="number" class="form-control" id="sepal_length" name="sepal_length" step="0.01"
-                        value="5.0" required>
+                        value="{{ sepal_length }}" required>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-sm-4">
                     <label for="sepal_width">Indique la largeur du sépale</label>
                     <input type="number" class="form-control" id="sepal_width" name="sepal_width" step="0.01"
-                        value="3.5" required>
+                        value="{{ sepal_width }}" required>
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-sm-4">
                     <label for="petal_length">Indique la longueur du pétale</label>
                     <input type="number" class="form-control" id="petal_length" name="petal_length" step="0.01"
-                        value="1.4" required>
+                        value="{{ petal_length }}" required>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-sm-4">
                     <label for="petal_width">Indique la largeur du pétale</label>
                     <input type="number" class="form-control" id="petal_width" name="petal_width" step="0.01"
-                        value="0.2" required>
+                        value="{{ petal_width }}" required>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
@@ -40,7 +40,8 @@
 
         <!-- <h4 class="mt-4">Résultat : {{resultat}}</h4> -->
         <h2 class="mt-4">Résultats</h2>
-        <h4 class="mt-4">Avec les valeurs que vous avez saisies nous pensons que votre iris est de l'espèce: {{resultat}}
+        <h4 class="mt-4">Avec les valeurs que vous avez saisies nous pensons que votre iris est de l'espèce:
+            {{resultat}}
         </h4>
         Longueur du sépale = {{sepal_length}}<br>
         Largeur du sépale = {{sepal_width}}<br>
@@ -49,17 +50,17 @@
         <!-- Affichez l'image correspondante ici -->
         <br><br>
         {% if resultat == 'setosa' %}
-        <img src="{{ url_for('static', filename='images/cetosa.webp') }}" alt="Iris Setosa" width="150" height="150">
+        <img src="{{ url_for('static', filename='images/cetosa.webp') }}" alt="Iris Setosa" width="300" height="300">
         {% elif resultat == 'versicolor' %}
-        <img src="{{ url_for('static', filename='images/versicolor.jpg') }}" alt="Iris Versicolor" width="150"
-            height="150">
+        <img src="{{ url_for('static', filename='images/versicolor.jpg') }}" alt="Iris Versicolor" width="300"
+            height="300">
         {% elif resultat == 'virginica' %}
-        <img src="{{ url_for('static', filename='images/iris_virginica.webp') }}" alt="Iris Virginica" width="150"
-            height="150">
+        <img src="{{ url_for('static', filename='images/iris_virginica.webp') }}" alt="Iris Virginica" width="300"
+            height="300">
         {% endif %}
         <!-- Affichez le graphique ici -->
         <h2 class="mt-4">Graphique</h2>
-        <h4 class="mt-4">espéce: {{resultat.upper()}}</h4>
+        <h4 class="mt-4">espèce: {{resultat.upper()}}</h4>
         {{graph|safe}}
     </div>
     <!-- Ajout de Bootstrap JS et ses dépendances -->
