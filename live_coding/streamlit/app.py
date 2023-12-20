@@ -10,6 +10,7 @@ st.write('Hello, world!')
 # Chargement des données
 titanic = sns.load_dataset("titanic").dropna()[
     ["sex", "survived", "class", "age"]]
+# st.write(titanic)
 titanic["sex"] = titanic["sex"].replace(["male", "female"], [0, 1])
 titanic["class"] = titanic["class"].replace(
     ["First", "Second", "Third"], [1, 2, 3])
@@ -28,12 +29,21 @@ rm.fit(X_train, y_train)
 
 # Création de l'interface Streamlit
 sexe = st.radio("Vous êtes un Homme ou une femme", ["Homme", "Femme"])
-classe = st.radio("Quel classe avez-vous choisi pour voyager: 1, 2 ou 3", [1, 2, 3])
+classe = st.radio(
+    "Quel classe avez-vous choisi pour voyager? 1, 2 ou 3", [1, 2, 3])
 age = st.slider("Quel âge avez-vous ?", 1, 99)
-
+st.text(f"D'aprés vos parametres: \nsexe : {sexe}, \nclasse : {classe}, \nage : {age} ans")
 # Prédiction
+# Mapper le choix à une valeur numérique
+sexe = 0 if sexe == "Homme" else 1
 prediction = rm.predict([[sexe, classe, age]])
-st.write(f"La prédiction est : {prediction}")
+saisie_formulaire = [sexe, classe, age]
+# score = rm.score(X_test, saisie_formulaire)
+score = rm.score(X_test, y_test)
+prediction = "Désolé mais vous avez trés peu de chance de survivre au naufrage" if prediction == 0 else "Bravo vous avez de grandes chances de survivre au naufrage"
+st.text(f"La prédiction est : \n{prediction}, \navec un pourcentage de {score*100:.2f}%")
+
+st.write(titanic)
 
 df = px.data.iris()
 bar = px.bar(df, x='sepal_length')
