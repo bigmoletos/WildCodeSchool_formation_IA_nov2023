@@ -32,7 +32,7 @@ sexe = st.radio("Vous êtes un Homme ou une femme", ["Homme", "Femme"])
 classe = st.radio(
     "Quel classe avez-vous choisi pour voyager? 1, 2 ou 3", [1, 2, 3])
 age = st.slider("Quel âge avez-vous ?", 1, 99)
-st.text(f"D'aprés vos parametres: \nsexe : {sexe}, \nclasse : {classe}, \nage : {age} ans")
+st.text(f"D'aprés vos parametres: \nsexe : {        sexe}, \nclasse : {classe}, \nage : {age} ans")
 # Prédiction
 # Mapper le choix à une valeur numérique
 sexe = 0 if sexe == "Homme" else 1
@@ -41,7 +41,7 @@ saisie_formulaire = [sexe, classe, age]
 # score = rm.score(X_test, saisie_formulaire)
 score = rm.score(X_test, y_test)
 prediction = "Désolé mais vous avez trés peu de chance de survivre au naufrage" if prediction == 0 else "Bravo vous avez de grandes chances de survivre au naufrage"
-st.text(f"La prédiction est : \n{prediction}, \navec un pourcentage de {score*100:.2f}%")
+st.text(f"La prédiction est : \n{ prediction}, \navec un pourcentage de {score*100:.2f}%")
 
 st.write(titanic)
 
