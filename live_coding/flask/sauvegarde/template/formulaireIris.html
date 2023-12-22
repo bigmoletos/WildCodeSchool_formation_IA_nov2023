@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire IRIS</title>
+</head>
+<body>
+    <h1>Mon formulaire IRIS {{resultat}}</h1>
+    <form action="/formulaireIris" method="post">
+    <h4>Indique la longueur du sépale</h4>
+    <input type="number" name="sepal_length" step="0.01" required>
+    <h4>Indique la largeur du sépale</h4>
+    <input type="number" name="sepal_width" step="0.01"required>
+    <h4>Indique la longueur du pétale</h4>
+    <input type="number" name="petal_length" step="0.01"required>
+    <h4>Indique la largeur du pétale</h4>
+    <input type="number" name="petal_width" step="0.01" required>
+
+    <input type="submit">
+
+    </form>
+    <h4>Résultat : {{resultat}}</h4>
+</body>
+</html>

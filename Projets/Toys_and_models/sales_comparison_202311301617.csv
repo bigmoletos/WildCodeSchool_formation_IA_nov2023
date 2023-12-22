@@ -1,0 +1,155 @@
+"year","month","category","products_sold","products_sold_last_year","growth_rate"
+2022,May,Vintage Cars,676,356,"89.89 %"
+2022,November,Planes,434,248,"75.00 %"
+2023,March,Ships,649,601,"7.99 %"
+2023,April,Vintage Cars,283,167,"69.46 %"
+2023,March,Vintage Cars,2181,2053,"6.23 %"
+2023,February,Vintage Cars,1755,1653,"6.17 %"
+2022,October,Classic Cars,1312,862,"52.20 %"
+2022,August,Planes,424,401,"5.74 %"
+2022,June,Vintage Cars,831,144,"477.08 %"
+2023,February,Trains,320,221,"44.80 %"
+2023,March,Motorcycles,1349,940,"43.51 %"
+2022,October,Ships,327,62,"427.42 %"
+2023,February,Ships,906,636,"42.45 %"
+2023,April,Classic Cars,670,131,"411.45 %"
+2023,March,Planes,1278,903,"41.53 %"
+2022,July,Trains,137,27,"407.41 %"
+2023,February,Planes,875,834,"4.92 %"
+2023,May,Planes,445,322,"38.20 %"
+2023,May,Vintage Cars,933,676,"38.02 %"
+2023,February,Classic Cars,2889,2118,"36.40 %"
+2023,May,Classic Cars,1521,1119,"35.92 %"
+2022,June,Ships,319,71,"349.30 %"
+2023,April,Planes,405,91,"345.05 %"
+2023,January,Vintage Cars,585,446,"31.17 %"
+2022,July,Classic Cars,797,608,"31.09 %"
+2022,August,Classic Cars,866,662,"30.82 %"
+2023,February,Motorcycles,919,886,"3.72 %"
+2022,December,Vintage Cars,1513,401,"277.31 %"
+2022,November,Trains,135,106,"27.36 %"
+2022,August,Vintage Cars,872,244,"257.38 %"
+2022,June,Motorcycles,493,399,"23.56 %"
+2022,December,Planes,384,123,"212.20 %"
+2022,August,Trains,131,42,"211.90 %"
+2022,November,Classic Cars,1331,438,"203.88 %"
+2022,October,Vintage Cars,923,362,"154.97 %"
+2022,May,Classic Cars,1119,454,"146.48 %"
+2022,October,Motorcycles,493,431,"14.39 %"
+2022,December,Classic Cars,1702,766,"122.19 %"
+2022,June,Classic Cars,1312,603,"117.58 %"
+2022,September,Classic Cars,805,793,"1.51 %"
+2023,January,Motorcycles,430,425,"1.18 %"
+2022,July,Trucks and Buses,34,372,-90.86 %
+2022,August,Motorcycles,63,463,-86.39 %
+2023,January,Ships,55,346,-84.10 %
+2023,January,Classic Cars,399,1637,-75.63 %
+2022,June,Planes,424,460,-7.83 %
+2023,June,Classic Cars,419,1312,-68.06 %
+2023,May,Motorcycles,429,460,-6.74 %
+2022,April,Vintage Cars,167,373,-55.23 %
+2022,September,Vintage Cars,342,759,-54.94 %
+2022,July,Vintage Cars,255,563,-54.71 %
+2022,August,Ships,305,323,-5.57 %
+2023,May,Trucks and Buses,337,355,-5.07 %
+2023,June,Vintage Cars,485,831,-41.64 %
+2023,January,Trucks and Buses,392,410,-4.39 %
+2022,December,Motorcycles,467,487,-4.11 %
+2022,May,Trucks and Buses,355,370,-4.05 %
+2023,March,Trains,185,276,-32.97 %
+2022,November,Trucks and Buses,380,393,-3.31 %
+2023,February,Trucks and Buses,833,861,-3.25 %
+2023,June,Trucks and Buses,268,351,-23.65 %
+2023,April,Trains,76,78,-2.56 %
+2023,January,Planes,360,448,-19.64 %
+2022,November,Ships,267,318,-16.04 %
+2023,March,Classic Cars,3261,3821,-14.66 %
+2023,March,Trucks and Buses,1064,1242,-14.33 %
+2022,November,Vintage Cars,481,559,-13.95 %
+2023,April,Ships,286,332,-13.86 %
+2022,October,Planes,415,416,-0.24 %
+2021,May,Ships,230,,
+2021,June,Planes,460,,
+2021,June,Ships,71,,
+2021,June,Vintage Cars,144,,
+2021,June,Motorcycles,399,,
+2021,June,Classic Cars,603,,
+2021,July,Classic Cars,608,,
+2021,July,Vintage Cars,563,,
+2021,July,Trucks and Buses,372,,
+2021,July,Trains,27,,
+2021,August,Classic Cars,662,,
+2021,August,Vintage Cars,244,,
+2022,June,Trucks and Buses,351,,
+2022,June,Trains,73,,
+2022,May,Planes,322,,
+2022,May,Motorcycles,460,,
+2022,April,Planes,91,,
+2022,July,Ships,321,,
+2022,July,Planes,408,,
+2022,July,Motorcycles,361,,
+2022,April,Ships,332,,
+2022,April,Trains,78,,
+2022,August,Trucks and Buses,353,,
+2022,April,Classic Cars,131,,
+2022,March,Motorcycles,940,,
+2022,March,Planes,903,,
+2022,March,Ships,601,,
+2022,September,Motorcycles,473,,
+2022,March,Trucks and Buses,1242,,
+2022,March,Vintage Cars,2053,,
+2022,March,Classic Cars,3821,,
+2022,October,Trucks and Buses,414,,
+2022,October,Trains,77,,
+2022,February,Motorcycles,886,,
+2022,February,Planes,834,,
+2022,February,Ships,636,,
+2022,February,Trains,221,,
+2022,February,Trucks and Buses,861,,
+2022,March,Trains,276,,
+2022,February,Vintage Cars,1653,,
+2022,November,Motorcycles,422,,
+2022,February,Classic Cars,2118,,
+2022,December,Trucks and Buses,766,,
+2022,January,Motorcycles,425,,
+2022,December,Trains,197,,
+2022,December,Ships,542,,
+2022,January,Planes,448,,
+2022,January,Ships,346,,
+2021,April,Vintage Cars,373,,
+2022,January,Trains,93,,
+2022,January,Vintage Cars,446,,
+2022,January,Trucks and Buses,410,,
+2022,January,Classic Cars,1637,,
+2021,December,Vintage Cars,401,,
+2021,December,Classic Cars,766,,
+2021,December,Planes,123,,
+2021,December,Motorcycles,487,,
+2021,November,Planes,248,,
+2021,November,Ships,318,,
+2021,November,Trains,106,,
+2021,November,Trucks and Buses,393,,
+2021,November,Classic Cars,438,,
+2021,May,Classic Cars,454,,
+2021,October,Classic Cars,862,,
+2021,October,Motorcycles,431,,
+2021,August,Planes,401,,
+2021,May,Trucks and Buses,370,,
+2021,October,Planes,416,,
+2021,October,Vintage Cars,362,,
+2023,April,Trucks and Buses,82,,
+2021,May,Vintage Cars,356,,
+2021,October,Ships,62,,
+2021,May,Trains,119,,
+2021,November,Vintage Cars,559,,
+2023,April,Motorcycles,423,,
+2021,September,Trains,116,,
+2021,September,Trucks and Buses,408,,
+2021,September,Vintage Cars,759,,
+2023,May,Trains,79,,
+2023,May,Ships,320,,
+2021,September,Classic Cars,793,,
+2021,August,Motorcycles,463,,
+2021,August,Ships,323,,
+2021,August,Trains,42,,
+2021,September,Ships,257,,
