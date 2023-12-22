@@ -1,0 +1,17 @@
+#https://openclassrooms.com/fr/courses/4262331-demarrez-votre-projet-avec-python/4263931-rangez-des-donnees-dans-des-listes
+
+characters=["titi","gros minet","peggy",'Mowgli','ratz']
+print (characters)
+characters.remove("peggy")
+print (characters)
+characters.append("fleche bleue")
+print (characters)
+[x if x=='Mowgli' else x=='balou' for x in characters]
+#characters[4] = "Balou"
+print (characters)
+def replace_(characters,old,new):
+    for idx, i in enumerate(characters):
+             if i == old:
+                     characters[idx] = new
+replace_(characters, 'Mowgli', 'balou')
+print (characters)
