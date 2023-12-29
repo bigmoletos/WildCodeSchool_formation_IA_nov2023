@@ -3,9 +3,10 @@ import plotly.express as px
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
 
 st.title('Le Titanic')
-st.write('Hello, world!')
+st.write('Auriez-vous survecu au nauvrage du Titanic!')
 
 # Chargement des données
 titanic = sns.load_dataset("titanic").dropna()[
@@ -44,6 +45,20 @@ prediction = "Désolé mais vous avez trés peu de chance de survivre au naufrag
 st.text(f"La prédiction est : \n{ prediction}, \navec un pourcentage de {score*100:.2f}%")
 
 st.write(titanic)
+pairplot=sns.pairplot(titanic)
+# Afficher le graphique
+st.pyplot(pairplot.fig)
+
+# Graphe heatmap avec ploty
+fig, ax = plt.subplots()
+sns.heatmap(titanic.corr(), ax=ax)
+# Afficher le graphique
+st.pyplot(fig)
+
+# graphe chart DataFrame
+fig = px.imshow(titanic.corr())
+# Afficher le graphique
+st.plotly_chart(fig)
 
 df = px.data.iris()
 bar = px.bar(df, x='sepal_length')

@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=N:\programmation\WildCodeSchool\Formation_IA_DATA_nov2023\live_coding\streamlit\streamlit_env
+set VIRTUAL_ENV=C:\Programmation\WildCodeSChool\Formation_IA_DATA_nov2023\WildCodeSchool_formation_IA_nov2023\live_coding\streamlit\streamlit_env
 
 if not defined PROMPT set PROMPT=$P$G
 
