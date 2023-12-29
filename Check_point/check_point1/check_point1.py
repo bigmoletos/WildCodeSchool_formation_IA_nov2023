@@ -22,10 +22,10 @@ def triangle_plein():
       parasite = random.randint(0, 10)
 
       for i in range(1, hauteur_triangle+1):
-        if i == 1 or i == hauteur_triangle:
+        if i in (1,hauteur_triangle) :
             message += symbol
             print(message)
-        if insertion_parasite != True:
+        elif insertion_parasite != True:
             if i == random.randint(2, hauteur_triangle-1):
               # if i == random.randint(2,hauteur_triangle-1) :
                 # cp== random.randint(2,hauteur_triangle-1)
@@ -65,3 +65,5 @@ def traduire_texte_chiffre(texte):
 
 #  test
 triangle_plein()
+
+
