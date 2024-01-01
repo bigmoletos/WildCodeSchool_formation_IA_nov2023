@@ -18,6 +18,7 @@ pip freeze > requirements.txt
 
 # Installer les packages à partir du fichier requirements.txt
 pip install -r requirements.txt
+<<<<<<< HEAD
 
 # Créer un projet Django
 django-admin startproject my_projet_django
@@ -25,6 +26,10 @@ django-admin startproject my_projet_django
 # Mise à jour des migrations de BDD
 python manage.py migrate
 
+=======
+# Créer un projet Django
+django-admin startproject my_projet_django
+>>>>>>> 789570a8118ac08efe1d7acb69b56e0ce81d47df
 # lancer le fichier app.py
 python manage.py  runserver
 
