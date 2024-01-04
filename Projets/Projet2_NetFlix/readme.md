@@ -16,3 +16,6 @@ acteur imdb film recommendation genre
 -faire de l'ACP
 
 -trouver la pertinence de la prediction  il faut donc trouver une metrique pertinente
+
+-pour travailler sur du bigdata il faut prendre un échantillon des datasets
+df.samples(n=20000, random_state=1)
