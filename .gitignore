@@ -150,6 +150,7 @@ cython_debug/
 *.tsv
 *.gz
 *.targz
+*.pkl
 
 # VS Code
 .vscode/
