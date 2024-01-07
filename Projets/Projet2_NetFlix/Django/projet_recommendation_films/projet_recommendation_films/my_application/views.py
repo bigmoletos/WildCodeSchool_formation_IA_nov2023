@@ -9,8 +9,8 @@ import os
 # file_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
 #     os.path.abspath(__file__)))), '..', 'data_merged', 'df_merged.pkl')
 
-file_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
-    os.path.abspath(__file__)))), '..', '..', 'data_merged', 'df_merged.pkl')
+# file_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+#     os.path.abspath(__file__)))), '..', '..', 'data_merged', 'df_merged.pkl')
 
 
 with open(file_path, 'rb') as file:
