@@ -148,8 +148,9 @@ cython_debug/
 *.pptx
 *.csv
 *.tsv
-*.pkl
 *.gz
+*.targz
+*.pkl
 
 # VS Code
 .vscode/
