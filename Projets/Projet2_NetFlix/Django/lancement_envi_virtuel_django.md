@@ -20,12 +20,15 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # Créer un projet Django
-django-admin startproject my_projet_django
+django-admin startproject projet_recommendation_films
+
+# lancer le fichier app.py
+python manage.py  runserver
 
 # Mise à jour des migrations de BDD
 python manage.py migrate
 
-# lancer le fichier app.py
+# relancer le fichier app.py
 python manage.py  runserver
 
 
