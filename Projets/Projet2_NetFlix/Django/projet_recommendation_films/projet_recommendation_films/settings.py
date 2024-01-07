@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "my_application",
+    "projet_recommendation_films",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -53,15 +54,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "projet_recommendation_films.urls"
 
-# The `TEMPLATES` setting in Django is used to configure the template engine for rendering HTML templates.
+# The `TEMPLATES` setting in Django is used to configure the template engine
+# for rendering HTML templates.
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(
-                BASE_DIR,
-                "projets/Projet2_NetFlix/Django/projet_recommendation_films/projet_recommendation_films/my_application/templates",
-            )
+            os.path.join(BASE_DIR, "my_application/templates")
         ],
         "APP_DIRS": True,
         "OPTIONS": {
