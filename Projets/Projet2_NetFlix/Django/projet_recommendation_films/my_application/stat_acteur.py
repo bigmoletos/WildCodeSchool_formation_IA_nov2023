@@ -1,14 +1,21 @@
 from .load_data import load_data
 import pandas as pd
+import numpy as np
 
 # Charger le modèle une seule fois
-df1 = load_data()
+try:
+    df1 = load_data()
+except Exception as e:
+    print("Une erreur s'est produite lors du chargement des données.")
+    print(str(e))
+    df1 = pd.DataFrame()  # Créer un DataFrame vide en cas d'erreur
 
 # fonction donnant les statisques d'un acteur
 
 
 def stat_acteur(df1, acteur):
     df = df1.copy()
+    df_acteur = None  # Initialiser df_acteur à None
     try:
         df_acteur = df[(df['primaryName'].str.contains(
             acteur, case=False, na=False))]
@@ -16,15 +23,7 @@ def stat_acteur(df1, acteur):
         print(
             "Une erreur s'est produite lors de la recherche de l'acteur dans le dataframe.")
         print(str(e))
-        return
-
-    try:
-        print(f"\nListe de tous les acteurs dont le nom ressemble à celui que vous avez saisi :\n{
-              df_acteur['primaryName'].unique().tolist()} \n")
-    except Exception as e:
-        print("Une erreur s'est produite lors de la création de la liste des acteurs.")
-        print(str(e))
-        pass
+        return df_acteur
 
     try:
         nom_le_plus_frequent = df_acteur['primaryName'].mode()[0]
