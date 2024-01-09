@@ -11,7 +11,7 @@ virtualenv django_env
 .\django_env\Scripts\activate
 
 # Installer les packages
-pip install django views pandas numpy plotly seaborn scikit-learn scipy bs4
+pip install django views pandas numpy plotly seaborn scikit-learn scipy bs4 fuzzywuzzy
 
 # Enregistrer les packages installés dans un fichier requirements.txt
 pip freeze > requirements.txt
