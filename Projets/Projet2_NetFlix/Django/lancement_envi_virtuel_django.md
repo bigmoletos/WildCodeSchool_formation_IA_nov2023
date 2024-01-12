@@ -28,17 +28,43 @@ python manage.py  runserver
 # Mise à jour des migrations de BDD
 python manage.py migrate
 
+
 # relancer le fichier app.py
 python manage.py  runserver
-
 
 # http://127.0.0.1:5000 sur le port 5000. Donc, l’URL serait http://localhost:5000 ou http://127.0.0.1:5000.
 
 # pour arreter l'environnement virtuel
 deactivate
 
+# Pour relancer le projet
+## se mettre dans le dossier ***Projet2_NetFlix\Django>***
+cd Django
+.\django_env\Scripts\activate
+##  se mettre dans le dossier ***Projet2_NetFlix\Django\projet_recommendation_films>***
+<!-- cd .\projet_recommendation_films\ -->
+cd .\projet_recommendation_films\
+python manage.py  runserver
+
 # si besoin de désinstaller des prog
 pip uninstall django pandas numpy plotly seaborn scikit-learn
 
 #  les templates par défaut doivent se trouver dans le repertoire à la racine de app.py dans un dossier templates
-templates
+créer un dossier ***my_application***
+créer un dossier ***template*** comprenant tous les fichiers html
+Django\projet_recommendation_films\my_application\template\
+accueil.html
+### les fichiers importants se trouvent dans:
+Projets\Projet2_NetFlix\Django\projet_recommendation_films\
+manage.py
+Projets\Projet2_NetFlix\Django\projet_recommendation_films\my_application\
+models.py
+Django\projet_recommendation_films\my_application\
+views.py
+### Django\projet_recommendation_films\projet_recommendation_films\
+Django\projet_recommendation_films\projet_recommendation_films\
+urls.py
+settings.py
+### les fichiers python de l'application
+Django\projet_recommendation_films\my_application\
+stat_acteur.py

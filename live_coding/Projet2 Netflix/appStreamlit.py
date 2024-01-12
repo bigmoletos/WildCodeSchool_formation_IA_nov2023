@@ -1,13 +1,13 @@
-import streamlit as st 
+import streamlit as st
 import plotly as px
 import pandas as pd
 import joblib
 
 df = pd.read_csv("dfFeatures.csv")
 titresDeFilms = df.Series_Title.values
-knn = joblib.load('recoNetflox.joblib') 
+knn = joblib.load('recoNetflox.joblib')
 
-st.title('Netflox')
+st.title('Netflop')
 st.image("https://hips.hearstapps.com/hmg-prod/images/netflix-1597403529.gif")
 
 
