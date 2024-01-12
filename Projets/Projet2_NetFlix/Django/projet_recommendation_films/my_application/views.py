@@ -4,6 +4,7 @@ from .load_data import load_data
 from .stat_acteur import stat_acteur
 from pandas import DataFrame
 from django.urls import reverse
+import 
 # Charger le modèle une seule fois
 try:
     df = load_data()
