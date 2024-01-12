@@ -1,0 +1,41 @@
+{% load custom_filters %}
+{% extends "base.html" %}
+
+
+{% block content %}
+  <div class="container mt-4">
+    <h1>Recommandations de films</h1>
+    <form method="POST" class="mb-3">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="film">Entrez le nom d'un film :</label>
+        <input type="text" class="form-control" id="film" name="film" value="{{ film }}">
+      </div>
+      <button type="submit" class="btn btn-primary">Obtenir des recommandations</button>
+    </form>
+
+    {% if liste_des_films %}
+      <h2 class="mb-3">Films recommandés :</h2>
+      <div class="row">
+        {% for film in liste_des_films %}
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100" style="background-color: #cccccc; color: black;">
+              <img src="{{ film.image_de_la_pochette }}" class="card-img-top" alt="Pochette de {{ film.nom }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ film.nom }}</h5>
+                <p class="card-text">Genre: {{ film.genres }}</p>
+                <p class="card-text">Acteurs: {{ film|get_item:"acteurs et actrices"|join:", " }}</p>
+                <p class="card-text">Réalisateur: {{ film.director|join:", " }}</p>
+                <p class="card-text">Année de sortie: {{ film['année de sortie'] }}</p>
+                <p class="card-text">Note: {{ film['note moyenne'] }}</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Nombre de votants: {{ film['nombre de votants'] }}</small>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon site de recommandation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'my_application/css/style.css' %}" rel="stylesheet">
+    <style>
+        body {
+            background-color: #343a40;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+
+
+    <!-- Contenu de la page -->
+    <div id="content" class="container-fluid">
+        {% block content %}
+        <!-- Le contenu spécifique à chaque page sera inséré ici -->
+        {% endblock %}
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>
+<script>
+    function toggleTheme() {
+        console.log("Toggling theme");
+        var body = document.body;
+        body.classList.toggle("dark-theme");
+    }
+</script>
+
