@@ -10,7 +10,7 @@ knn = joblib.load('recoNetflox.joblib')
 st.title('Netflop')
 st.image("https://hips.hearstapps.com/hmg-prod/images/netflix-1597403529.gif")
 
-
+# affiche une boite de saise avec de l'auto completion sur tous les films!
 film = st.selectbox(
     'Quel film as-tu vu récemment ?',
     titresDeFilms)
