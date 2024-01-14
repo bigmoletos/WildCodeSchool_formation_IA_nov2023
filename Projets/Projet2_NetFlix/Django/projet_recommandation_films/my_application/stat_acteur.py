@@ -87,4 +87,4 @@ def stat_acteur(df1, acteur):
           top_3_films if top_3_films is not None else 'Non disponible'}")
     # print(f"Informations sur les films :{films_info}")
 
-    return df_acteur
+    return df_acteur, nom_le_plus_frequent, top_3_films,acteur

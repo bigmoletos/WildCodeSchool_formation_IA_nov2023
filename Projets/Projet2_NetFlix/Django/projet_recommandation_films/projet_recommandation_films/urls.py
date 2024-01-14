@@ -16,17 +16,23 @@ Including another URLconf
 """
 from django.urls import path
 from django.contrib import admin
-from my_application.views import accueil, kpi, recommandation, annexe, actor_view, contact, graphiques,etudes
+from my_application.views import accueil, kpi, annexe, actor_view, contact, graphiques,etudes,analyse,autocomplete_view, recommandation_view
+# from my_application.views import FilmAutocomplete.as_view
 
 urlpatterns = [
     path('', accueil, name='accueil'),
     path('kpi/', kpi, name='kpi'),
-    path('recommandation/', recommandation, name='recommandation'),
+    # path('kpi/<str:acteur>/', kpi, name='kpi'),
+    path('kpi/<str:acteur>/', kpi, name='kpi_acteur'),
+    path('recommandation/', recommandation_view, name='recommandation'),
     path('annexe/', annexe, name='annexe'),
     path('contact/', contact, name='contact'),
     path('graphe/', graphiques, name="graphe"),
     path('etude/', etudes, name="etude"),
     # path('accueil/', accueil, name="accueil"),
     path('actor_view/', actor_view, name='actor_view'),
+    path('analyse/', analyse, name='analyse'),
+    path('autocomplete', autocomplete_view, name='autocomplete-url'),
     path('admin/', admin.site.urls),
+    # path('api/film-autocomplete/', FilmAutocomplete.as_view),
 ]
