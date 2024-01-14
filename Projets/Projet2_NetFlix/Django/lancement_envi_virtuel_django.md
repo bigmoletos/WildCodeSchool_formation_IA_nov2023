@@ -11,7 +11,7 @@ virtualenv django_env
 .\django_env\Scripts\activate
 
 # Installer les packages
-pip install django views pandas numpy plotly seaborn scikit-learn scipy bs4 fuzzywuzzy
+pip install django views pandas numpy plotly seaborn scikit-learn scipy bs4 fuzzywuzzy django-select2 requests joblib djangorestframework
 
 # Enregistrer les packages installés dans un fichier requirements.txt
 pip freeze > requirements.txt
@@ -45,6 +45,10 @@ cd Django
 <!-- cd .\projet_recommandation_films\ -->
 cd .\projet_recommandation_films\
 python manage.py  runserver
+
+# importer réguliérement les données statiques du site css, js ,image etc....
+python manage.py collectstatic
+
 
 # si besoin de désinstaller des prog
 pip uninstall django pandas numpy plotly seaborn scikit-learn

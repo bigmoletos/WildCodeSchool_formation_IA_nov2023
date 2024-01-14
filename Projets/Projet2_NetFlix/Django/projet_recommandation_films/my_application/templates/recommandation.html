@@ -1,16 +1,18 @@
-{% load custom_filters %}
 {% extends "base.html" %}
-
+{% load custom_filters %}
+{% comment %} {% load django_select2 %} {% endcomment %}
 
 {% block content %}
   <div class="container mt-4">
     <h1>Recommandations de films</h1>
     <form method="POST" class="mb-3">
       {% csrf_token %}
-      <div class="form-group">
+
+       {% comment %} <div class="form-group">
         <label for="film">Entrez le nom d'un film :</label>
         <input type="text" class="form-control" id="film" name="film" value="{{ film }}">
-      </div>
+      </div>  {% endcomment %}
+      {{ form.film }}
       <button type="submit" class="btn btn-primary">Obtenir des recommandations</button>
     </form>
 
@@ -24,18 +26,56 @@
               <div class="card-body">
                 <h5 class="card-title">{{ film.nom }}</h5>
                 <p class="card-text">Genre: {{ film.genres }}</p>
-                <p class="card-text">Acteurs: {{ film|get_item:"acteurs et actrices"|join:", " }}</p>
+                <p class="card-text">Acteurs: {{ film|get_item:'acteurs et actrices'|join:", " }}</p>
                 <p class="card-text">Réalisateur: {{ film.director|join:", " }}</p>
-                <p class="card-text">Année de sortie: {{ film['année de sortie'] }}</p>
-                <p class="card-text">Note: {{ film['note moyenne'] }}</p>
+                <p class="card-text">Année de sortie: {{ film|get_item:'année de sortie' }}</p>
+                <p class="card-text">Note: {{ film|get_item:'note moyenne' }}</p>
               </div>
               <div class="card-footer">
-                <small class="text-muted">Nombre de votants: {{ film['nombre de votants'] }}</small>
+                <small class="text-muted">Nombre de votants: {{ film|get_item:'nombre de votants' }}</small>
               </div>
             </div>
           </div>
         {% endfor %}
       </div>
+    {% else %}
+      <p>nous n'avons pas trouvé de film proche de celui que vous avez saisi</p>
+
     {% endif %}
   </div>
+
+  {% comment %} <script>
+$(document).ready(function() {
+    $('.select2').select2();
+});
+</script> {% endcomment %}
+<script>
+
+$(document).ready(function() {
+    if ($('.select2').length) {
+        $('.select2').select2({
+            ajax: {
+                url: $('.select2').data('autocomplete-url'),
+                dataType: 'json',
+                delay: 250,
+                processResults: function (data) {
+                    return {
+                        results: $.map(data, function (item) {
+                            return {
+                                id: item.id,
+                                text: item.text
+                            };
+                        })
+                    };
+                },
+                cache: true
+            },
+            minimumInputLength: 1
+        });
+    } else {
+        console.log('Select2 elements not found.');
+    }
+});
+</script>
 {% endblock %}
+
