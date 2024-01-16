@@ -12,19 +12,12 @@
 
     <style>
         body {
-            background-color: #343a40;
-            color: #fff;
+            background-color: #020202;
+            color: #d5cbcb;
         }
     </style>
 </head>
 <body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <!-- Votre contenu HTML et les autres scripts ici -->
-</body>
-</html>
-
-
 
     {% include 'header.html' %}
 
@@ -43,8 +36,19 @@
     </div>
 
     {% include 'footer.html' %}
-</body>
-</html>
+{% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="select2.min.js"></script> {% endcomment %}
+
+
+
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="select2/compat/inputData.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+ <script src="{{ STATIC_URL }}/select2/dist/js/select2.full.js"></script>
+
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> {% endcomment %}
+
 <script>
     function toggleTheme() {
         console.log("Toggling theme");
@@ -53,3 +57,61 @@
     }
 
 </script>
+<script>
+    $(document).ready(function() {
+        if ($('.select2').length) {
+            $('.select2').select2({
+                ajax: {
+                    url: $('.select2').data('autocomplete-url'),
+                    dataType: 'json',
+                    delay: 5500,
+                    processResults: function (data) {
+                        return {
+                            results: $.map(data, function (item) {
+                                return {
+                                    id: item.id,
+                                    text: item.text
+                                };
+                            })
+                        };
+                    },
+                    cache: true
+                },
+                minimumInputLength: 1
+            });
+        } else {
+            console.log('Select2 elements not found.');
+        }
+    });
+</script>
+{% comment %}
+<script>
+    $(document).ready(function() {
+        if ($('.django-select2').length) {
+            $('.django-select2').select2({
+                ajax: {
+                    url: $('.django-select2').data('autocomplete-url'),
+                    dataType: 'json',
+                    delay: 5500,
+                    processResults: function (data) {
+                        return {
+                            results: $.map(data, function (item) {
+                                return {
+                                    id: item.id,
+                                    text: item.text
+                                };
+                            })
+                        };
+                    },
+                    cache: true
+                },
+                minimumInputLength: 1
+            });
+        } else {
+            console.log('Select2 elements not found.');
+        }
+    });
+</script> {% endcomment %}
+
+</body>
+</html>

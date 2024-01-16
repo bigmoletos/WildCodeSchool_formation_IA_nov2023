@@ -1,1 +1,76 @@
 {% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Informations sur les Films et Séries TV</h1>
+    <hr>
+
+    <h2 class="section-title">Traitement title.akas</h2>
+    <p><strong>title.akas.tsv.gz</strong> : Ce fichier contient des informations sur les différents titres d’un film ou d’une série TV dans différentes régions et langues.</p>
+    <ul>
+        <li><strong>titleId</strong> : Identifiant unique du titre.</li>
+        <li><strong>ordering</strong> : Un nombre pour identifier de manière unique les lignes pour un titleId donné.</li>
+        <li><strong>title</strong> : Le titre localisé.</li>
+        <li><strong>region</strong> : La région pour cette version du titre.</li>
+        <li><strong>language</strong> : La langue du titre.</li>
+        <li><strong>types</strong> : Ensemble énuméré d’attributs pour ce titre alternatif.</li>
+        <li><strong>attributes</strong> : Termes supplémentaires pour décrire ce titre alternatif, non énumérés.</li>
+        <li><strong>isOriginalTitle</strong> : 0 si ce n’est pas le titre original ; 1 si c’est le titre original.</li>
+    </ul>
+
+    <h2 class="section-title">Traitement title.principals</h2>
+    <p><strong>title.principals.tsv.gz</strong> : Ce fichier contient des informations sur les principaux participants d’un titre.</p>
+    <ul>
+        <li><strong>tconst</strong> : Identifiant unique du titre.</li>
+        <li><strong>ordering</strong> : Un nombre pour identifier de manière unique les lignes pour un titleId donné.</li>
+        <li><strong>nconst</strong> : Identifiant unique de la personne.</li>
+        <li><strong>category</strong> : La catégorie de travail dans laquelle cette personne était.</li>
+        <li><strong>job</strong> : Le titre spécifique du travail si applicable, sinon ‘\N’.</li>
+        <li><strong>characters</strong> : Le nom du personnage joué si applicable, sinon ‘\N’.</li>
+    </ul>
+    <p>Les catégories uniques incluent des rôles tels que acteur, réalisateur, compositeur, etc.</p>
+
+    <h2 class="section-title">Traitement title.basics</h2>
+    <p><strong>traitement title.basics</strong> : Ce fichier contient des informations de base sur les titres.</p>
+
+    <ul>
+        <li><strong>tconst</strong> : Identifiant unique du titre.</li>
+        <li><strong>titleType</strong> : Le type/format du titre (par exemple, film, court métrage, série TV, épisode TV, vidéo, etc).</li>
+        <li><strong>primaryTitle</strong> : Le titre le plus populaire / le titre utilisé par les réalisateurs sur les supports promotionnels lors de la sortie.</li>
+        <li><strong>originalTitle</strong> : Titre original, dans la langue originale.</li>
+        <li><strong>isAdult</strong> : 0 pour un titre non adulte ; 1 pour un titre adulte.</li>
+        <li><strong>startYear</strong> : Représente l’année de sortie d’un titre. Dans le cas d’une série TV, il s’agit de l’année de début de la série.</li>
+        <li><strong>endYear</strong> : Année de fin de la série TV. ‘\N’ pour tous les autres types de titres.</li>
+        <li><strong>genres</strong> : Comprend jusqu’à trois genres associés au titre.</li>
+    </ul>
+
+    <h2 class="section-title">Traitement title.crew</h2>
+    <p><strong>title.crew.tsv.gz</strong> : Ce fichier contient des informations sur l’équipe de tournage d’un titre.</p>
+    <ul>
+        <li><strong>tconst</strong> : Identifiant unique du titre.</li>
+        <li><strong>directors</strong> : Réalisateur(s) du titre donné.</li>
+        <li><strong>writers</strong> : Scénariste(s) du titre donné.</li>
+    </ul>
+
+    <h2 class="section-title">Traitement ratings</h2>
+    <p><strong>title.ratings.tsv.gz</strong> : Ce fichier contient des informations sur les notes d’un titre.</p>
+    <ul>
+        <li><strong>tconst</strong> : Identifiant unique du titre.</li>
+        <li><strong>averageRating</strong> : Moyenne pondérée de toutes les notes des utilisateurs.</li>
+        <li><strong>numVotes</strong> : Nombre de votes que le titre a reçus.</li>
+    </ul>
+
+    <h2 class="section-title">Traitement de basics</h2>
+    <p><strong>name.basics.tsv.gz</strong> : Ce fichier contient des informations de base sur une personne.</p>
+    <ul>
+        <li><strong>nconst</strong> : Identifiant unique de la personne.</li>
+        <li><strong>primaryName</strong> : Nom par lequel la personne est le plus souvent créditée.</li>
+        <li><strong>birthYear</strong> : En format YYYY.</li>
+        <li><strong>deathYear</strong> : En format YYYY si applicable, sinon ‘\N’.</li>
+        <li><strong>primaryProfession</strong>: Les 3 principales professions de la personne.</li>
+    <li><strong>knownForTitles</strong> : Titres pour lesquels la personne est connue.</li>
+</ul>
+</div>
+{% endblock %}
