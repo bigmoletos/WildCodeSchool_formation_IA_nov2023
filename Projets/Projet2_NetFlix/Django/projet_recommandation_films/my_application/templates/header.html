@@ -1,8 +1,8 @@
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(to right, #adabab, #adabab);">
            <a class="navbar-brand" href="/static/images/logo_NetFlop.png">
-        <img src="/static/images/logo_NetFlop.png" alt="Netflop Logo" style="height: 30px;">
+        <img src="/static/images/logo_NetFlop.png" alt="Netflop Logo" style="height: 60px;">
          <!-- Ajoutez le chemin correct de l'image -->
         Mon site de recommandation de films
     </a>
@@ -20,7 +20,7 @@
                 {% if acteur %}
                     <a class="nav-link" href="{% url 'kpi_acteur' acteur %}">Kpi</a>
                 {% else %}
-                    <a class="nav-link" href="{% url 'kpi'  %}">Kpi</a>  <!-- ou une autre URL par défaut -->
+                    <a class="nav-link" href="{% url 'annexe'  %}">Kpi</a>  <!-- ou une autre URL par défaut -->
                 {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'graphe' %}">Graphiques</a>
@@ -31,20 +31,20 @@
                 {% comment %} <li class="nav-item">
                     <a class="nav-link" href="{% url 'a_propos' %}">À propos</a>
                 </li> {% endcomment %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                </li>
-                <li class="nav-item">
+                {% comment %} <li class="nav-item">
                     <a class="nav-link" href="{% url 'analyse' %}">Analyse</a>
+                </li> {% endcomment %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'kpi' %}">Acteurs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'annexe' %}">Annexes</a>
+                    <a class="nav-link" href="{% url 'contact' %}">CKiL'Boss</a>
                 </li>
                 {% comment %} <li class="nav-item"> {% endcomment %}
                 {% comment %} </li> {% endcomment %}
 
             </ul>
-                <button onclick="toggleTheme()">Mode jour/nuit</button>
+                <button onclick="toggleTheme()"> <img src="/static/images/jour_nuit.png"  width="30" height="30" alt="Mode jour/nuit"></button>
         </div>
     </nav>
 

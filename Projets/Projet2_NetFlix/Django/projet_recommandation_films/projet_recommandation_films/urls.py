@@ -14,7 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import path, include
 from django.contrib import admin
 from my_application.views import accueil, kpi, annexe, actor_view, contact, graphiques,etudes,analyse,autocomplete_view, recommandation_view
 # from my_application.views import FilmAutocomplete.as_view
@@ -33,6 +33,7 @@ urlpatterns = [
     path('actor_view/', actor_view, name='actor_view'),
     path('analyse/', analyse, name='analyse'),
     path('autocomplete', autocomplete_view, name='autocomplete-url'),
+    path("select2/", include("django_select2.urls")),
     path('admin/', admin.site.urls),
     # path('api/film-autocomplete/', FilmAutocomplete.as_view),
 ]
