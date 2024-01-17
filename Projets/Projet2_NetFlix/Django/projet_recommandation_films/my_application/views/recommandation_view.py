@@ -19,6 +19,7 @@ from my_application.load_X_reduced import load_X_reduced
 from my_application.scrapping_pochette import get_movie_poster
 from my_application.fonction_recommandation import recommandation_film
 from my_application.load_modele_machine_learning import load_modele_machine_learning
+from django.contrib.auth.decorators import login_required
 
 # from django_select2.forms import Select2TextInputWidget
 
@@ -112,6 +113,7 @@ def autocomplete_view(request):
     results = [{'id': title, 'text': title} for title in matching_titles]
     return JsonResponse(results, safe=False)
 
+@login_required
 def recommandation_view(request):
     # Initialisez le formulaire avec les films
     form = FilmForm()

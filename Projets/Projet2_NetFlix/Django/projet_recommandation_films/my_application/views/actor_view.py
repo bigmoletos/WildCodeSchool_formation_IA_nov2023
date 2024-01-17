@@ -19,7 +19,7 @@ from my_application.stat_acteur import stat_acteur
 from my_application.load_X_reduced import load_X_reduced
 from my_application.scrapping_pochette import get_movie_poster
 from my_application.load_modele_machine_learning import load_modele_machine_learning
-
+from django.contrib.auth.decorators import login_required
 # from django_select2.forms import Select2TextInputWidget
 
 # Incluez d'autres importations nécessaires
@@ -53,7 +53,7 @@ except Exception as e:
 # X_reduced = DataManager.get_X_reduced()
 
 
-
+@login_required
 def actor_view(request):
     acteur = request.GET.get("acteur")
     next_page = request.GET.get("next", 'accueil')  # Utilisez 'default_view' comme valeur par défaut
@@ -112,6 +112,8 @@ def kpi(request,acteur=None):
     df_top_3_films=None
     df_acteur_list=None
     df_casting=None
+    # Initialisation d'un dictionnaire pour stocker les listes des acteurs pour chaque tconst
+    acteurs_par_film = {}
     try:
         # Récupérer df_acteur de la session
         df_acteur_dict = request.session.get("df_acteur")
@@ -135,8 +137,6 @@ def kpi(request,acteur=None):
         # print(f"\n df_top_3_films :\n{df_top_3_films} \n")
         print(f"\ndf_acteur_list :\n{df_acteur_list} \n")
 
-        # Initialisation d'un dictionnaire pour stocker les listes des acteurs pour chaque tconst
-        acteurs_par_film = {}
         if df_acteur is not None:
             for tconst in df_acteur['tconst'].unique():
                 # Filtrer le DataFrame initial pour obtenir les acteurs pour le tconst actuel
