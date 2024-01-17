@@ -19,6 +19,7 @@ from my_application.stat_acteur import stat_acteur
 from my_application.load_X_reduced import load_X_reduced
 from my_application.scrapping_pochette import get_movie_poster
 from my_application.load_modele_machine_learning import load_modele_machine_learning
+from django.contrib.auth.decorators import login_required
 
 #  Incluez d'autres importations nécessaires
 # Projets\Projet2_NetFlix\Django\projet_recommandation_films\my_application\load_modele_machine_learning.py
@@ -50,7 +51,7 @@ except Exception as e:
 # model = DataManager.get_model()
 # X_reduced = DataManager.get_X_reduced()
 
-
+@login_required
 def graphiques(request):
     # Préparez vos données depuis le DataFrame
     # Supposons que vous ayez une colonne "Note Moyenne" dans votre DataFrame df
@@ -123,5 +124,5 @@ def graphiques(request):
     return render(request, "graphe.html", context)
 
 
-def accueil(request):
-    return render(request, "accueil.html")
+# def accueil(request):
+#     return render(request, "accueil.html")

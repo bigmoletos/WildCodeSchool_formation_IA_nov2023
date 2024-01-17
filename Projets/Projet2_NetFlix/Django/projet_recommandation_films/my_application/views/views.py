@@ -19,6 +19,7 @@ from my_application.stat_acteur import stat_acteur
 from my_application.load_X_reduced import load_X_reduced
 from my_application.scrapping_pochette import get_movie_poster
 from my_application.load_modele_machine_learning import load_modele_machine_learning
+from django.contrib.auth.decorators import login_required
 
 # from django_select2.forms import Select2TextInputWidget
 
@@ -52,6 +53,10 @@ except Exception as e:
 # model = DataManager.get_model()
 # X_reduced = DataManager.get_X_reduced()
 
+@login_required
+def accueil(request):
+    return render(request, "accueil.html")
+@login_required
 def annexe(request):
     acteur = (
         request.POST.get(
@@ -85,10 +90,10 @@ def annexe(request):
 def contact(request):
     return render(request, "contact.html")
 
-
+@login_required
 def etudes(request):
     return render(request, "etude.html")
 
-
+@login_required
 def analyse(request):
     return render(request, "analyse.html")

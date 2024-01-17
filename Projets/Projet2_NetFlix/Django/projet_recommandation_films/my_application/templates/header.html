@@ -45,6 +45,16 @@
 
             </ul>
                 <button onclick="toggleTheme()"> <img src="/static/images/jour_nuit.png"  width="30" height="30" alt="Mode jour/nuit"></button>
+
+                <a class="nav-link" href="{% url 'deconnexion' %}">
+                        <button >Déconnexion</button>
+                </a>
+
+
+                      {% comment %} <form action="{% url 'deconnexion' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" name="deconnexion">Déconnexion</button>
+                    </form> {% endcomment %}
         </div>
     </nav>
 

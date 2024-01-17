@@ -2,6 +2,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
+
 def connexion(request):
     #return HttpResponse("Hello !")
     message = "hello sur la page de connexion"
