@@ -5,7 +5,8 @@ from django.shortcuts import render, redirect
 
 def connexion(request):
     #return HttpResponse("Hello !")
-    message = "hello sur la page de connexion"
+    message = "Veuillez saisir vos identifiants"
+    is_error=False
     if request.method == "POST": # Si un formulaire a été validé
         pseudo = request.POST["pseudo"]
         motdepasse = request.POST["motdepasse"]
@@ -16,13 +17,16 @@ def connexion(request):
             login(request, verification)
             return redirect("accueil")
         else:
-            message = "Identifiant incorrect : T'es qui toi ?! 🤨🧐"
+            message = "Identifiant incorrect "
+            is_error=True
             return render(request, "connexion.html",
-                      context={"message" : message})
+                      context={"message" : message,
+                                "is_error":is_error})
     else: # Pas de formulaire validé, on vient d'arriver sur la page
-
+        print(f"\n is_error:\n{is_error} \n")
         return render(request, "connexion.html",
-                      context={"message" : message})
+                      context={"message" : message,
+                               "is_error":is_error})
 
 def deconnexion(request):
     logout(request)
