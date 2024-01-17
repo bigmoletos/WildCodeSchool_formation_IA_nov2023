@@ -154,6 +154,7 @@ cython_debug/
 *.gz
 *.targz
 *.pkl
+*.mp4
 
 # VS Code
 .vscode/

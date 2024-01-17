@@ -117,7 +117,7 @@ body {
     font-size: 1.2rem;
     border: 0;
     border-radius: .8rem;
-    box-shadow:inset .2rem .2rem 1rem var(--primary-light), 
+    box-shadow:inset .2rem .2rem 1rem var(--primary-light),
               inset -.2rem -.2rem 1rem var(--primary-dark),
               var(--shadow);
     color: var(--greyLight-1);
@@ -134,7 +134,7 @@ body {
 }
 
 .btn:active {
-    box-shadow:inset .2rem .2rem 1rem var(--primary-dark), 
+    box-shadow:inset .2rem .2rem 1rem var(--primary-dark),
              inset -.2rem -.2rem 1rem var(--primary-light);
     color: var(--onSurface);
 }
@@ -163,6 +163,7 @@ labels.forEach(label => {
         <h1>Connexion</h1>
 
         <h3>{{ message }}</h3>
+        {% comment %} <form method="post" action="{% url 'connexion' %}"> {% endcomment %}
         <form method="post">
             {% csrf_token %}
             <div class="form-control">
