@@ -17,11 +17,17 @@ Including another URLconf
 from django.urls import path, include
 from django.contrib import admin
 from my_application.views import accueil, kpi, annexe, actor_view, contact, graphiques,etudes,analyse,autocomplete_view, recommandation_view
+from application_authentification.views import connexion, deconnexion
 # from my_application.views import FilmAutocomplete.as_view
 
 urlpatterns = [
-    path('', accueil, name='accueil'),
+    # path('', accueil, name='accueil'),
+    path('accueil/', accueil, name="accueil"),
+    path('connexion', connexion, name="connexion"),
+    path('deconnexion', deconnexion, name='deconnexion'),
+    path("", connexion, name=""),
     path('kpi/', kpi, name='kpi'),
+    path('admin/', admin.site.urls),
     # path('kpi/<str:acteur>/', kpi, name='kpi'),
     path('kpi/<str:acteur>/', kpi, name='kpi_acteur'),
     path('recommandation/', recommandation_view, name='recommandation'),
@@ -29,11 +35,13 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('graphe/', graphiques, name="graphe"),
     path('etude/', etudes, name="etude"),
-    # path('accueil/', accueil, name="accueil"),
     path('actor_view/', actor_view, name='actor_view'),
     path('analyse/', analyse, name='analyse'),
     path('autocomplete', autocomplete_view, name='autocomplete-url'),
     path("select2/", include("django_select2.urls")),
-    path('admin/', admin.site.urls),
     # path('api/film-autocomplete/', FilmAutocomplete.as_view),
 ]
+    # path("admin/", admin.site.urls),
+    # path("", connexion, name=""),
+    # path("deconnexion", deconnexion, name="deconnexion"),
+    # path("accueil", accueil, name="accueil"),

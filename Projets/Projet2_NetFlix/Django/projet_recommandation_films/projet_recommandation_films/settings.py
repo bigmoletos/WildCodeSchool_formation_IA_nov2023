@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "my_application",
+    "application_authentification",
     "projet_recommandation_films",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -62,7 +63,8 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "my_application/templates")
+            os.path.join(BASE_DIR, "my_application/templates"),
+            os.path.join(BASE_DIR, "application_authentification/templates"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -107,7 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
+# fait appel au model.py classe utilisateur
+AUTH_USER_MODEL = "application_authentification.Utilisateur"
+LOGIN_URL = ""
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

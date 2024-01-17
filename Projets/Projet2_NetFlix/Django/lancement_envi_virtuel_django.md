@@ -16,7 +16,7 @@ pip install django views pandas numpy plotly seaborn scikit-learn scipy bs4 fuzz
 # Enregistrer les packages installés dans un fichier requirements.txt
 pip freeze > requirements.txt
 
-# Installer les packages à partir du fichier requirements.txt
+# Installer les packages à partir du fichier requirements.txt en adaptant les verssion à notre environnement
 pip install -r requirements.txt
 
 # Créer un projet Django
@@ -72,3 +72,23 @@ settings.py
 ### les fichiers python de l'application
 Django\projet_recommandation_films\my_application\
 stat_acteur.py
+
+# Créez une application en utilisant manage.py. Assurez-vous d'être dans le même répertoire que manage.py et exécutez la commande suivante
+### on ne doit pas avoir plusieurs manage.py dans le projet
+python manage.py startapp nom_de_votre_application
+
+
+# Gestion des problemes on peut forcer lma réinstallation de django pour qu'il prenne en compte notre architecture
+pip install --force-reinstall django
+
+# pour annuler un e meigration
+python manage.py migrate anom_application zero
+# si aprés des pb de migration il faut recreer les dossiers migration d'un application
+python manage.py makemigrations nom_application
+python manage.py migrate
+
+# pour créer un user admin
+python manage.py createsuperuser
+
+# Changer le mot de passe d'un superutilisateur existant
+python manage.py changepassword <username>

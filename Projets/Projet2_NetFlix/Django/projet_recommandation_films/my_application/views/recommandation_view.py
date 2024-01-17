@@ -46,6 +46,11 @@ except Exception as e:
 
 # print(f"\ncolonne :\n{df.columns.tolist()} \n")
 
+# Utilisation de la classe datamanager
+# Dans vos vues ou n'importe où dans votre application :
+# df = DataManager.get_data()
+# model = DataManager.get_model()
+# X_reduced = DataManager.get_X_reduced()
 
 
 #  creation du formulaire pour l'autocompletion
