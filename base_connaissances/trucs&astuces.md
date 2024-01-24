@@ -1,3 +1,4 @@
+## voir https://github.com/MachineLearnia/Python-Machine-Learning/blob/master/27%20-%20Exploratory%20Data%20Analysis.ipynb
 ### pour avoir un affichage plus clair le :-<50
 for col in df.select_dtypes(include=['float64','int64']):
     print(f"Moyenne col: {col:-<50}  {df[col].mean()} ")
@@ -18,9 +19,13 @@ sns.histplot(df[['Age','Sex','Survived']].dropna().corr())
 sns.displot(df[['Age','Sex','Survived']], label='Survived')
 sns.clustermap(df[['Age','Sex','Survived']].dropna().corr())
 sns.countplot(df[['Age','Sex','Survived']].dropna().corr())
-
+sns.lmplot(x='Age', y=col, hue='Survived', data=df)
 plt.show()
 
 pd.crosstab(index=[df['Age'], df['Sex'], df['Survived']], columns=df[col])
 
-###
+####  Correlation
+df.select_dtypes(include=['float64','int64']).corr()["Survived"].sort_values(ascending=False)
+
+####  Distribution des survivants en fonction du sexe
+pd.crosstab(df["Survived"], df["Sex"])
