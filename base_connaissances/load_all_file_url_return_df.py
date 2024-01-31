@@ -5,12 +5,16 @@ import pandas as pd
 def telecharger_et_charger_fichier(url, dossier_destination=None):
     """
     Télécharge un fichier depuis une URL donnée, le sauvegarde dans un dossier spécifié,
+    Si le dossier n'existe pas il est crée
+    Par defaut enregistre le fichier dans un repertoire ../datas qui est à la racine du projet
     et charge le fichier dans un DataFrame en fonction de son format.
 
     :param url: URL du fichier à télécharger.
     :param dossier_destination: Dossier de destination optionnel pour le fichier.
     :return: Tuple contenant le DataFrame original, sa copie, et le nom du fichier.
     """
+    # Initialiser df_original et df à None
+    df_original, df = None, None
     try:
         # Déterminer le nom du fichier à partir de l'URL
         nom_fichier = url.split('/')[-1]
