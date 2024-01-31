@@ -39,8 +39,21 @@ def telecharger_et_charger_fichier(url, dossier_destination=None):
         with open(chemin_complet, 'wb') as file:
             file.write(response.content)
 
-        # Code pour charger le fichier dans un DataFrame...
-        # ...
+        # Déterminer l'extension du fichier et charger dans un DataFrame
+        extension = nom_fichier.split('.')[-1].lower()
+        if extension in ['csv', 'txt']:
+            df_original = pd.read_csv(chemin_complet, encoding='utf-8', header=0, index_col=0)
+        elif extension == 'json':
+            df_original = pd.read_json(chemin_complet, encoding='utf-8', orient='records')
+        elif extension == 'xlsx':
+            df_original = pd.read_excel(chemin_complet, index_col=0)
+        else:
+            print(f"Format de fichier non pris en charge : {extension}")
+
+        # Faire une copie du DataFrame si celui-ci a été chargé
+        if df_original is not None:
+            df = df_original.copy()
+
 
         return df_original, df, chemin_complet
 
