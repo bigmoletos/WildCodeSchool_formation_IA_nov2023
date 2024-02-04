@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+body, pre {
+    font-size: 12px;
+    color: black
+    background-color: white: white;
+}
+</style>
+    <div class="container">
+        <h1>Résumé de nos datasets IMDb</h1>
+
+        <h2>DataFrame : name_basics</h2>
+<ul>
+  <li><strong>Shape</strong> : (13144850, 6)</li>
+  <li><strong>Liste des colonnes</strong> : ['nconst', 'primaryName', 'birthYear', 'deathYear', 'primaryProfession', 'knownForTitles']</li>
+  <li><strong>Liste des colonnes numériques</strong> : []</li>
+  <li><strong>Liste des colonnes non numériques</strong> : ['nconst', 'primaryName', 'birthYear', 'deathYear', 'primaryProfession', 'knownForTitles']</li>
+  <li><strong>Colonnes avec des NA</strong> :
+<pre>
+nconst                     0
+primaryName                7
+birthYear                  0
+deathYear                  0
+primaryProfession    2630039
+knownForTitles             0
+dtype: int64
+</pre>
+  </li>
+  <li><strong>Noms des colonnes avec au moins une valeur NA</strong> : ['primaryName', 'primaryProfession']</li>
+  <li><strong>Nombre de lignes avec au moins une valeur NA</strong> : 2630045</li>
+  <li><strong>head</strong> :
+<pre>
+nconst | primaryName | birthYear | deathYear | primaryProfession | knownForTitles
+nm0000001 | Fred Astaire | 1899 | 1987 | soundtrack,actor,miscellaneous | tt0072308,tt0053137,tt0050419,tt0031983
+nm0000002 | Lauren Bacall | 1924 | 2014 | actress,soundtrack | tt0037382,tt0117057,tt0038355,tt0075213
+</pre>
+  </li>
+</ul>
+
+<h2>DataFrame : title_akas</h2>
+<ul>
+  <li><strong>Shape</strong> : (38349425, 8)</li>
+  <li><strong>Liste des colonnes</strong> : ['titleId', 'ordering', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle']</li>
+  <li><strong>Liste des colonnes numériques</strong> : ['ordering']</li>
+  <li><strong>Liste des colonnes non numériques</strong> : ['titleId', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle']</li>
+  <li><strong>Colonnes avec des NA</strong> :
+<pre>
+titleId              0
+ordering             0
+title               18
+region             117
+language             0
+types                0
+attributes           0
+isOriginalTitle      0
+dtype: int64
+</pre>
+  </li>
+  <li><strong>Noms des colonnes avec au moins une valeur NA</strong> : ['title', 'region']</li>
+  <li><strong>Nombre de lignes avec au moins une valeur NA</strong> : 135</li>
+  <li><strong>head</strong> :
+<pre>
+titleId | ordering | title | region | language | types | attributes | isOriginalTitle
+tt0000001 | 1 | Карменсіта | UA | \N | imdbDisplay | \N | 0
+tt0000001 | 2 | Carmencita | DE | \N | \N | literal title | 0
+</pre>
+  </li>
+</ul>
+
+<h2>DataFrame : title_basics</h2>
+<ul>
+  <li><strong>Shape</strong> : (10450471, 9)</li>
+  <li><strong>Liste des colonnes</strong> : ['tconst', 'titleType', 'primaryTitle', 'originalTitle', 'isAdult',
+  'startYear', 'endYear', 'runtimeMinutes', 'genres']</li>
+  <li><strong>Liste des colonnes numériques</strong> : []</li>
+  <li><strong>Liste des colonnes non numériques</strong> : ['tconst', 'titleType', 'primaryTitle', 'originalTitle',
+  'isAdult', 'startYear', 'endYear', 'runtimeMinutes', 'genres']</li>
+  <li><strong>Colonnes avec des NA</strong> :
+<pre>
+tconst             0
+titleType          0
+primaryTitle      17
+originalTitle     17
+isAdult            0
+startYear          0
+endYear            0
+runtimeMinutes     0
+genres            18
+dtype: int64
+</pre>
+  </li>
+  <li><strong>Noms des colonnes avec au moins une valeur NA</strong> : ['primaryTitle', 'originalTitle', 'genres']</li>
+  <li><strong>Nombre de lignes avec au moins une valeur NA</strong> : 35</li>
+  <li><strong>head</strong> :
+<pre>
+tconst | titleType | primaryTitle | originalTitle | isAdult | startYear | endYear | runtimeMinutes | genres
+tt0000001 | short | Carmencita | Carmencita | 0 | 1894 | \N | 1 | Documentary,Short
+tt0000002 | short | Le clown et ses chiens | Le clown et ses chiens | 0 | 1892 | \N | 5 | Animation,Short
+</pre>
+  </li>
+</ul>
+
+<h2>DataFrame : title_crew</h2>
+<ul>
+  <li><strong>Shape</strong> : (10450471, 3)</li>
+  <li><strong>Liste des colonnes</strong> : ['tconst', 'directors', 'writers']</li>
+  <li><strong>Liste des colonnes numériques</strong> : []</li>
+  <li><strong>Liste des colonnes non numériques</strong> : ['tconst', 'directors', 'writers']</li>
+  <li><strong>Colonnes avec des NA</strong> :
+<pre>
+tconst       0
+directors    0
+writers      0
+dtype: int64
+</pre>
+  </li>
+  <li><strong>Noms des colonnes avec au moins une valeur NA</strong> : []</li>
+  <li><strong>Nombre de lignes avec au moins une valeur NA</strong> : 0</li>
+  <li><strong>head</strong> :
+<pre>
+tconst | directors | writers
+tt0000001 | nm0005690 | \N
+tt0000002 | nm0721526 | \N
+</pre>
+  </li>
+</ul>
+<h2>DataFrame : title_episode</h2>
+<ul>
+    <li><b>Shape</b> : (7984745, 4)</li>
+    <li><b>Liste des colonnes</b> : ['tconst', 'parentTconst', 'seasonNumber', 'episodeNumber']</li>
+    <li><b>Liste des colonnes numériques</b> : []</li>
+    <li><b>Liste des colonnes non numériques</b> : ['tconst', 'parentTconst', 'seasonNumber', 'episodeNumber']</li>
+    <li><b>Colonnes avec des NA</b> :
+<pre>
+tconst           0
+parentTconst     0
+seasonNumber     0
+episodeNumber    0
+dtype: int64
+</pre>
+    </li>
+    <li><b>Noms des colonnes avec au moins une valeur NA</b> : []</li>
+    <li><b>Nombre de lignes avec au moins une valeur NA</b> : 0</li>
+    <li><b>head</b> :
+<pre>
+tconst | parentTconst | seasonNumber | episodeNumber
+tt0041951 | tt0041038 | 1 | 9
+tt0042816 | tt0989125 | 1 | 17
+</pre>
+    </li>
+</ul>
+
+<h2>DataFrame : title_principals</h2>
+<ul>
+    <li><b>Shape</b> : (59896759, 6)</li>
+    <li><b>Liste des colonnes</b> : ['tconst', 'ordering', 'nconst', 'category', 'job', 'characters']</li>
+    <li><b>Liste des colonnes numériques</b> : ['ordering']</li>
+    <li><b>Liste des colonnes non numériques</b> : ['tconst', 'nconst', 'category', 'job', 'characters']</li>
+    <li><b>Colonnes avec des NA</b> :
+<pre>
+tconst        0
+ordering      0
+nconst        0
+category      0
+job           0
+characters    0
+dtype: int64
+</pre>
+    </li>
+    <li><b>Noms des colonnes avec au moins une valeur NA</b> : []</li>
+    <li><b>Nombre de lignes avec au moins une valeur NA</b> : 0</li>
+    <li><b>head</b> :
+<pre>
+tconst | ordering | nconst | category | job | characters
+tt0000001 | 1 | nm1588970 | self | \N | ["Self"]
+tt0000001 | 2 | nm0005690 | director | \N | \N
+</pre>
+    </li>
+</ul>
+
+<h2>DataFrame : title_ratings</h2>
+<ul>
+    <li><b>Shape</b> : (1386077, 3)</li>
+    <li><b>Liste des colonnes</b> : ['tconst', 'averageRating', 'numVotes']</li>
+    <li><b>Liste des colonnes numériques</b> : ['averageRating', 'numVotes']</li>
+    <li><b>Liste des colonnes non numériques</b> : ['tconst']</li>
+    <li><b>Colonnes avec des NA</b> :
+<pre>
+tconst           0
+averageRating    0
+numVotes         0
+dtype: int64
+</pre>
+    </li>
+    <li><b>Noms des colonnes avec au moins une valeur NA</b> : []</li>
+    <li><b>Nombre de lignes avec au moins une valeur NA</b> : 0</li>
+    <li><b>head</b> :
+<pre>
+tconst | averageRating | numVotes
+tt0000001 | 5.7 | 2014
+tt0000002 | 5.7 | 272
+</pre>
+    </li>
+</ul>
+
+
+
+{% endblock content %}

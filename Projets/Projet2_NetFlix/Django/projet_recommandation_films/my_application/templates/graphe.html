@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="margin-bottom: 20px;">
+    <!-- Afficher le premier graphique -->
+    <img src="data:image/png;base64,{{ barplot_image }}" alt="Barplot">
+</div>
+
+<div style="margin-bottom: 20px;">
+    <!-- Afficher le second graphique -->
+    <img src="data:image/png;base64,{{ scatterplot_image }}" alt="Scatterplot">
+</div>
+
+<div style="margin-bottom: 20px;">
+    <!-- Afficher le troisième graphique -->
+    <img src="data:image/png;base64,{{ boxplot_image }}" alt="Boxplot">
+</div>
+  {% comment %} <div class="container mt-4">
+    <h1>Graphiques</h1>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <h2>Barplot de Note Moyenne par Film</h2>
+          <img src="data:image/png;base64,{{ barplot_image }}" alt="Barplot" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <h2>Scatterplot de Note Moyenne par Nombre de Votes</h2>
+          <img src="data:image/png;base64,{{ scatterplot_image }}" alt="Scatterplot" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <h2>Boxplot de Note Moyenne par Région</h2>
+          <img src="data:image/png;base64,{{ boxplot_image }}" alt="Boxplot" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div> {% endcomment %}
+{% endblock %}

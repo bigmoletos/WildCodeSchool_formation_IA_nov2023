@@ -1,0 +1,299 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+
+
+"Print to console": {
+	"prefix": "log",
+	"body": [
+		"console.log('$1');",
+		"$2"
+	],
+	"description": "Log output to console"
+}
+"Print variable_FD": {
+	"prefix": "ptv_FD",
+    "body": [
+		"print(${1:variable}, ${1:variable})"
+    ],
+    "description": "Print 2 variables with its name"
+}
+"Print f variable_FD": {
+	"prefix": "ptt_FD",
+    "body": [
+		"print(f\"\\n :\\n{} \\n\")"
+    ],
+    "description": "Print a variable with its name"
+}
+"Import_all_FD": {
+    "prefix": "import_all_FD",
+    "body": [
+        "import os",
+        "import io",
+        "import gzip",
+        "import random ",
+        "import secrets",
+        "import datetime",
+        "import requests",
+        "import numpy as np",
+        "import pandas as pd",
+        "import seaborn as sns",
+        "from sklearn import svm",
+        "import plotly.io as pio",
+        "from sklearn import tree",
+        "import plotly.express as px",
+        "from bs4 import BeautifulSoup",
+        "import matplotlib.pyplot as plt",
+        "import plotly.graph_objects as go",
+        "from sklearn.cluster import KMeans",
+        "from scipy.cluster import hierarchy",
+        "from sklearn.metrics import accuracy_score",
+        "from sklearn.metrics import silhouette_score",
+        "from sklearn.linear_model import SGDRegressor",
+        "from sklearn.tree import DecisionTreeRegressor",
+        "from sklearn.tree import DecisionTreeClassifier",
+        "from sklearn.model_selection import GridSearchCV",
+        "from sklearn.preprocessing import StandardScaler",
+        "from sklearn.linear_model import LinearRegression",
+        "from sklearn.neighbors import KNeighborsRegressor",
+        "from sklearn.metrics import classification_report",
+        "from sklearn.neighbors import KNeighborsClassifier",
+        "from sklearn.linear_model import LogisticRegression",
+        "from sklearn.cluster import AgglomerativeClustering",
+        "from sklearn.ensemble import RandomForestClassifier",
+        "from sklearn.linear_model import LogisticRegression",
+        "from sklearn.model_selection import train_test_split",
+        "from sklearn.metrics import accuracy_score, r2_score",
+        "from scipy.spatial.distance import pdist, squareform",
+        "from scipy.cluster.hierarchy import dendrogram, linkage, fcluster",
+        "from flask import Flask, request, render_template, session, url_for, redirect",
+  ],
+    "description": "Importe la plupart des modules pour le machine learning"
+}
+"openread_FD": {
+    "prefix": "openread_FD",
+    "body": [
+        "# Ce raccourci ouvre un fichier en mode lecture, lit toutes les lignes dans une liste,",
+        "# et imprime la liste. Un bloc try/except est utilisé pour attraper et gérer",
+        "# toute exception qui pourrait se produire lors de l'ouverture, de la lecture,",
+        "# ou de l'impression du fichier.",
+        "try:",
+        "    with open(\"${1:file.txt}\", \"r\") as f:",
+        "        ${2:liste} = f.read().splitlines()",
+        "        print(${2:liste})",
+        "except FileNotFoundError as e:",
+        "    print(f\"Le fichier n'a pas été trouvé : {e}\")",
+        "except PermissionError as e:",
+        "    print(f\"Permission refusée : {e}\")",
+        "except Exception as e:",
+        "    print(f\"Une erreur inattendue s'est produite : {e}\")"
+    ],
+    "description": "crée les scripts pour ouvrir un fichier en mode lecture, lit toutes les lignes et les stocke dans une liste,"
+}
+"comprehension_liste_FD": {
+    "prefix": "comprehensionliste_FD",
+    "body": [
+        "# Ce raccourci crée une liste en compréhension à partir des lignes d'un fichier.",
+        "# Il utilise un bloc try/except pour gérer les exceptions qui peuvent se produire lors de l'ouverture du fichier.",
+        "# Le 'if os.path.isfile(file)' vérifie si le fichier existe avant de l'ouvrir.",
+        "import os",
+        "try:",
+        "    file=\"votre_fichier.txt\"   "
+        "    if os.path.isfile(file):",
+        "        liste = [line.strip() for line in open(file, \"r\")]",
+        "        print(liste)",
+        "    else:",
+        "        print(f\"Le fichier n'existe pas.  {file}\")",
+        "except FileNotFoundError:",
+        "    print(f\"Le fichier n'a pas été trouvé. {file}\")",
+        "except PermissionError:",
+        "    print(f\"Permission refusée pour lire le fichier. {file}\")",
+        "except Exception as e:",
+        "    print(f\"Une erreur inattendue s'est produite : {e}\")"
+    ],
+    "description": "Create a list comprehension from a file with integrated if statement"
+}
+
+"train_test_split_FD": {
+    "prefix":["train_split_FD","ttsplit_FD"],
+    "body":[
+        "your_dataframe, your_colonne = df , 'your_colonne'"
+        "X = your_dataframe",
+        "X.drop(your_colonne, axis=1, inplace=True)"
+        "y = your_dataframe[your_colonne]"
+        "# Creation train et test set",
+        "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)",
+        "# Choix du modéle",
+        "model = LogisticRegression()",
+        "# model = LinearRegression()",
+        "# model = KNeighborsRegressor()",
+        "# model = DecisionTreeClassifier()",
+        "# model = DecisionTreeRegressor()",
+        "# model = RandomForestClassifier()",
+        "# model = svm.SVR(kernel=\"linear\")",
+        "# model = SGDRegressor()",
+        "# model = DBSCAN()",
+        "# Entrainnement modéle",
+        "model.fit(X_train, y_train)",
+        "#  Scores du train set et du test set",
+        "prediction_train = model.predict(X_train)",
+        "prediction_test = model.predict(X_test)",
+        "score_train_set = accuracy_score(y_train, prediction_train)",
+        "score_test_set = accuracy_score(y_test, prediction_test)",
+        "print(f\"\\nscore_train_set :{score_train_set:.3f}  \\nscore_test_set:  {score_test_set:.3f} \\n\")"
+    ],
+    "description": "crée un train test split complet avec choix du modéle"
+
+}
+"charge_traite_transform_normalize_df_FD": {
+    "prefix":["chargement_df_FD","dropna_FD","traitement_df_FD","transforme_df_FD","normalise_df_FD","iris_FD",""],
+    "body":[
+        "# load dataframe",
+        "# preparation du dataframe",
+        "df = sns.load_dataset('iris')",
+        "# Si besoin choix d'une colonne",
+        "your_dataframe, your_colonne = df , 'your_colonne'"
+        "X = your_dataframe",
+        "#selection des valeurs numeriques",
+        "select_dtypes(include=[np.number]).columns.tolist()",
+        "# Supression colonne"
+        "X.drop(your_colonne, axis=1, inplace=True)"
+        "y = your_dataframe[your_colonne]"
+        "# Supprimer la colonne 'species'",
+        "df = df.drop(columns=your_colonne, inplace=True)",
+        "# Autre solution normaliser et transformer le dataset",
+        "# Normaliser les données",
+        "scaler = StandardScaler()",
+        "df = scaler.fit_transform(df)",
+    ],
+    "description": "charge traite transforme et normalise un dataframe"
+
+}
+"matrice de confusion_FD": {
+    "prefix":"mconfusion_FD",
+    "body":[
+        "# Matrice de Confusion Matrix sur le test set",
+		"col_prevision1 ='DEAD'",
+		"col_prevision2 ='Survived'",
+        "y_predicted=model.predict(X_test)",
+        "matrice_confusion = confusion_matrix(y_test,y_predicted,labels=[col_prevision1 ,  col_prevision2 ] )",
+        "print(f\"\\nla matrice de confusion nous indique que: \\n -les {col_prevision1} correctements predits sont: {matrice_confusion[0, 0]}, les {col_prevision2}  incorrectements predits sont: {matrice_confusion[0, 1]} \\n -les {col_prevision1} incorrectements predits sont: {matrice_confusion[1, 0]}, les {col_prevision2}  correctements predits sont:  {matrice_confusion[1, 1]}\\n\")",
+        "# Calcul de la matrice de confusion",
+        "matrice_confusion = confusion_matrix(y_test, y_pred, labels=[col_prevision1 ,  col_prevision2 ])",
+        "# Création d'un DataFrame pour l'affichage",
+        "df_matrice_de_confusion = pd.DataFrame(matrice_confusion, index=[col_prevision1, col_prevision2], columns=[col_prevision1 ,  col_prevision2 ])",
+        "# Création de la heatmap",
+        "plt.figure(figsize=(10,7))",
+        "# annot=True signifie que les valeurs de la matrice de confusion seront affichées sur la heatmap"
+        "# fmt='d' signifie que ces valeurs seront affichées comme des entiers"
+        "sns.heatmap(df_matrice_de_confusion, annot=True, fmt='d')",
+        "plt.title('Matrice de confusion')",
+        "plt.xlabel('Prévisions')",
+        "plt.ylabel('Réalité')",
+        "plt.show()",
+
+    ],
+    "description": "crée la matrice de confusion avec la prediction sur le test set"
+
+}
+
+"info_dataframe_FD": {
+    "prefix": ["info_df_FD","df_info_FD","dataframe_info_FD"],
+    "body":[
+        "# Résumé des informations du dataframe",
+        "your_dataframe=df",
+        "print(f\"\\nshape: {your_dataframe.shape} \\nlist columns :\\n{your_dataframe.columns.tolist()} \")",
+        "print(f\"liste des colonnes numeriques: \\n{your_dataframe.select_dtypes(include=[np.number]).columns.tolist()}\\n\")",
+        "print(f\"liste des colonnes non numeriques: \\n{your_dataframe.select_dtypes(exclude=[np.number]).columns.tolist()} \")",
+        "print(f\"Noms des colonnes avec au moins une valeur NA : {your_dataframe.columns[your_dataframe.isna().any()].tolist()}\")",
+        "print(f\"Nombre de lignes avec au moins une valeur NA : {your_dataframe.isna().any(axis=1).sum()}\")",
+        "print(f\"Colonne avec des na :{your_dataframe.isna().sum()} \\n\")",
+        "print(f\"\\ndf head :\\n{your_dataframe.head(2)} \\n\")",
+        "print(f\"\\ndf describe :\\n{your_dataframe.describe()} \\n\")"
+    ],
+    "description":"dataframe list colonnes, head, describe..."
+}
+
+"drop_na_FD": {
+    "prefix": "drop_na_FD",
+    "body":[
+        "your_dataframe=df",
+        "# supprime les valeurs manquantes sur les lignes  ",
+        "df.dropna(axis=0, inplace=True)",
+        "# supprime les valeurs manquantes sur les colonnes  ",
+        "# df.dropna(axis=1, inplace=True)",
+
+    ],
+    "description":"supprimme les valeurs manquantes sur les lignes ou sur les colonnes"
+}
+
+"replace df_FD": {
+    "prefix": ["replace_df_FD","mapping_dataframe_FD"],
+    "body":[
+            "df=data.copy()",
+            "your_dataframe=df",
+            "your_col_to_transform='species'",
+            "# Créer un dictionnaire pour mapper les valeurs",
+            "dico_mapping = {'setosa': 0,",
+                           " 'versicolor': 1,",
+                           " 'virginica': 2}",
+            "# Remplace les valeurs",
+            "df[your_col_to_transform] = df[your_col_to_transform].map(dico_mapping)",
+            "# Rajoute la colonne transformée au dataframe",
+            "df = df[['sepal_length','sepal_width','petal_length','petal_width', your_col_to_transform]]",
+    ],
+    "description":"remplace les valeurs d'une colonnes par une autre"
+}
+
+"calcul importance_tree_FD": {
+    "prefix": "importance_tree_FD",
+    "body":[
+        "# Obtenir les importances des caractéristiques",
+        "importances = model.feature_importances_",
+        "# Créer un DataFrame avec les noms des caractéristiques et leurs importances",
+        "df_importances = pd.DataFrame({'Feature': X.columns,'Importance': importances})"
+        "# Calculer le pourcentage d'importance",
+        "df_importances['Importance (%)'] = df_importances['Importance'] * 100",
+        "print(df_importances)"
+        ],
+    "description":"Obtenir les importances des caractéristiques d'un arbre de decision"
+
+}
+"fichier_synthése_dataframes": {
+    "prefix": ["resumé_dataframe","fichier_synthése_dataframes","synth_dataframe"],
+    "body":[
+        "# création d'un fichier de synthése des dataframes au format markdown",
+        "import datetime",
+        "# date et heure actuelles",
+        "now = datetime.datetime.now()",
+
+        "# Formatage date et heure au format 2024-01-01-9h30",
+        "date_time = now.strftime(\"%Y-%m-%d-%Hh%M\")",
+
+        "# Ajouter la date et l'heure au nom du fichier",
+        "filename = f\"synthése_dataframes_{date_time}.md\"",
+
+        "with open(filename, \"w\", encoding=\"utf-8\") as f:",
+            "    for df in dfs:",
+            "        your_dataframe = dfs[df]",
+            "        f.write(f\"\\n## DataFrame : {df}\\n\")",
+            "        f.write(f\"- **Shape** : `{your_dataframe.shape}`\\n\")",
+            "        f.write(f\"- **Liste des colonnes** : `{your_dataframe.columns.tolist()}`\\n\")",
+            "        f.write(f\"- **Liste des colonnes numériques** : `{your_dataframe.select_dtypes(include=[np.number]).columns.tolist()}`\\n\")",
+            "        f.write(f\"- **Liste des colonnes non numériques** : `{your_dataframe.select_dtypes(exclude=[np.number]).columns.tolist()}`\\n\")",
+            "        f.write(f\"- **Colonnes avec des NA** :\\n```\\n{your_dataframe.isna().sum()}\\n```\\n\")",
+            "        f.write(f\"- **Noms des colonnes avec au moins une valeur NA** : `{your_dataframe.columns[your_dataframe.isna().any()].tolist()}`\\n\")",
+            "        f.write(f\"- **Nombre de lignes avec au moins une valeur NA** : `{your_dataframe.isna().any(axis=1).sum()}`\\n\")",
+            "        headers = ' | '.join(your_dataframe.columns.tolist())",
+            "        # Obtenir les lignes",
+            "        rows = [' | '.join(row) for row in your_dataframe.head(2).astype(str).values]",
+            "        # Écrire les en-têtes et les lignes dans le fichier",
+            "        f.write(f\"- **head** :\\n```\\n{headers}\\n{'\\n'.join(rows)}\\n```\\n\")",
+        ],
+    "description":"création d'un fichier de synthése au format md d\"une liste de dataframes"
+
+}
+}
