@@ -104,7 +104,7 @@ celerybeat.pid
 # Environments
 # .env
 # .venv
-# env/
+env/
 # venv/
 # ENV/
 env.bak/
@@ -148,6 +148,9 @@ cython_debug/
 *.jpg
 *.pptx
 *.csv
+*.tsv
+*.pkl
+*.gz
 
 # VS Code
 .vscode/
