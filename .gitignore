@@ -105,15 +105,15 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
-.venv
+# .env
+# .venv
 env/
-venv/
-ENV/
+# venv/
+# ENV/
 env.bak/
 venv.bak/
-*_env/
-*_env
+# *_env/
+# *_env
 
 # Spyder project settings
 .spyderproject
@@ -155,11 +155,13 @@ cython_debug/
 *.targz
 *.pkl
 *.mp4
+*.tsv
+*.pkl
+*.gz
 
 # VS Code
 .vscode/
 /datas/fd_Basic_*
-
 /datas/commandes_git.txt
 Projets\Méteo
 
