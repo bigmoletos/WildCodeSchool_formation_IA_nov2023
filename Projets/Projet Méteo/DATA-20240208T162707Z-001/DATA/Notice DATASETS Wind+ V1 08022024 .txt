@@ -1,0 +1,122 @@
+NOTICE D'ACCES AUX DONNEES WIND+
+-------------------------------------
+VERSION 1.1 THOMAS BEKKERS - 08022024
+-------------------------------------
+
+Wind+ est un projet de défi ouvert (Open Innovation) animé par un ensemble de partenaires tous engagé de manière bénévole et sans engagement financier.
+LIFLAB -> Co-organisateur.
+AIOLIV -> Co-organisateur.
+AIx Marseille Université -> MIAGE Informatiques
+Mobilis SA -> Fournisseur de données (Phare Planier - Rade de Marseille).
+WindsUP -> Fournisseur de données (station de Pointe Rouge - Rade de Marseille).
+METEO FRANCE -> Fournisseur de données 
+
+D'autres partenaires et mentors sont associés au projet (CISAM, Equipe de France Voile (météorologue, reponsable plan d'eau JO2024...), data-scientistes...).
+
+-------------------------------------
+LICENCES ET CONDITIONS D'UTILISATION
+
+Les données partagées dans ce répertoire et dans le cadre de ce projet ne sont pas toutes en accès libre et conditionnées par des licences et conditions d'utilisation spécifiques.
+En accédant à ce drive et au défi WIND+ vous accepter l'ensemble des conditions d'utilisation des données rendues accessibles. Les licences et usages sont précisées ci-après.
+
+
+----------------------------------------------------------
+DATA /// METEO FRANCE
+----------------------------------------------------------
+
+2 sources de données différentes sont partagées dans le sous répertoire METEO FRANCE :
+
+- DONNEES HORAIRES OPEN DATA
+- Des données de relevé des conditions météorologique des stations de météo France au pas de temps horaire. Accessibles en Open Data. Licen Ouverte LO 2.0 :
+Le répertoire contient des données de 2010 à 2023 au pas de temps horaires pour toutes les stations de Météo France dans le département 13. On y trouve la force et direction du vent, température, hygrométrie, pluviométrie... Elles sont également disponibles en ligne.
+https://meteo.data.gouv.fr/datasets/6569b4473bedf2e7abad3b72
+Liste des stations :
+https://donneespubliques.meteofrance.fr/?fond=contenu&id_contenu=37
+
+- DONNEES 6MNs METEONET (2016-2018) OPEN DATA
+
+- Jeu de données agrégé et préparé par Météo France à des fins de recherche et d'éxpérimentation, notamment en matière d'IA. 
+Le jeu de données contient les données de relevé des stations météorologiques du grand quart Sud-est de la France au pas de temps 6mns. 
+Ce sont des données historiques de 2016 à 2018. Les jeux de données intéressants sont ceux intitulés "ground observations" :
+https://meteofrance.github.io/meteonet/english/data/ground-observations/
+Elles comprennent précipitations, température, pression, pluviométrie, force et direction du vent (degré et mètre par seconde). 
+Pas de temps 6 mns. Identifiants des stations météo france du département 13 sont fournis en fin de fichier.
+
+Projet METEONET et données :
+https://meteofrance.github.io/meteonet/english/getting-started/
+https://meteonet.umr-cnrm.fr/dataset/data/SE/
+https://meteofrance.github.io/meteonet/english/data/ground-observations/
+
+
+Liste et identifiants des stations Météo France du 13 :
+https://donneespubliques.meteofrance.fr/?fond=contenu&id_contenu=37
+	
+	
+13001009	AIX EN PROVENCE
+13004003	ARLES
+13005003	AUBAGNE
+13022003	CASSIS
+13028001	BEC DE L AIGLE
+13030001	CUGES-LES-PINS
+13031002	LA DESTROUSSE_SAPC
+13036003	EYRAGUES
+13047001	ISTRES
+13054001	MARIGNANE
+13055001	MARSEILLE-OBS
+13055029	MARSEILLE
+13056002	CAP COURONNE
+13062002	MIMET
+13074003	PEYROLLES EN PROVENCE
+13091002	ST CANNAT
+13092001	ST CHAMAS
+13103001	SALON DE PROVENCE
+13108004	TARASCON
+13110003	TRETS
+13111002	VAUVENARGUES
+
+
+----------------------------------------------------------
+DATA /// MOBILIS SA / https://mobilis-sa.com/
+----------------------------------------------------------
+
+Mobilis est la référence mondiale des solutions de balisage et d'amarrage en mer et rivières.
+
+Mobilis à la courtoisie de nous mettre à disposition les données de relevé historique de sa balise connectée située sur le Phare du Planier dans la rade de Marseille.
+On y retrouve des données de température, humidité, pression, force et direction du vent.
+
+Les données mises à disposition sont circonscrites à une utilisation non commerciale, dans le cadre restreint du projet de défi ouvert WIND+.
+
+Pour l'instant historique de 2024. Pas de temps 10 minutes.
+
+Timestamp (UTC+0),"humidity_digital_Avg","pressure_digital_Avg","temperature_digital_Avg","wind_direction_digital","wind_speed_digital"
+
+Données live de Planier : http://portal.mobilis-sa.com:3000/
+Bouée d'acquisition Mobilis : https://mobilis-sa.com/produits/bouees-dacquisition-de-donnees/
+
+----------------------------------------------------------
+DATA /// WINDS-UP / https://mobilis-sa.com/
+----------------------------------------------------------
+
+Winds-Up propose des relevés de vent et conditions temps réel à travers un réseau balises installées sur les meilleurs spots de France et d'Europe.
+
+Winds-Up à la courtoisie de nous mettre à disposition les données de relevé historique de sa balise connectée située à Pointe Rouge (balise 44) dans la rade de Marseille.
+Le pas de temps est variable, de l'ordre de 5 mns à une heure.
+
+méta données :
+Station Id	Date Timestamp [UTC]	Date Txt [UTC]	 Average Wind Speed [nds]	Min Wind Speed [nds]	Max Wind Speed [nds]	Wind Direction [degree]	Wind Direction [txt]
+
+On y retrouve des données force mini, maxi et moyenne ainsi que la direction du vent pour une période donnée.
+
+Les données mises à disposition sont circonscrites à une utilisation non commerciale, dans le cadre restreint du projet de défi ouvert WIND+.
+
+Pour l'instant historique de 2024. Pas de temps 10 minutes.
+Données historiques de 2008 à 2024.
+
+Timestamp (UTC+0),"humidity_digital_Avg","pressure_digital_Avg","temperature_digital_Avg","wind_direction_digital","wind_speed_digital"
+
+Page web de Winds-UP :https://www.winds-up.com
+
+Page web de la station avec conditions en temps réel
+https://www.winds-up.com/spot-marseille-pointe-rouge-digue-windsurf-kitesurf-44-observations-releves-vent.html
+
+----------------------------------------------------------
