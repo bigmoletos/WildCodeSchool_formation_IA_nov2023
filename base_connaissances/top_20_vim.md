@@ -60,3 +60,4 @@ w
 20. `:split <fichier>`
     - Ouvre un autre fichier dans une nouvelle fenêtre.
     - Exemple : `:split foo.txt`
+
