@@ -3,7 +3,7 @@
 estimator: l’estimateur à utiliser pour ajuster les données.
 param_grid: un dictionnaire de paramètres à ajuster.
 scoring: la métrique à utiliser pour évaluer les performances du modèle.
-cv: le nombre de plis à utiliser pour la validation croisée.
+cv: le nombre de split à utiliser pour la validation croisée.
 
 2. **set_params**: Cette méthode permet de définir les paramètres d’un estimateur. Les paramètres les plus couramment utilisés sont:
 

@@ -1,0 +1,393 @@
+import base64
+from django.shortcuts import render
+import pandas as pd
+from django import forms
+from django_select2.forms import Select2Widget
+import io
+import matplotlib.pyplot as plt
+from django.shortcuts import redirect, render
+from django.urls import reverse
+from pandas import DataFrame
+from .fonction_recommandation import recommandation_film
+from .load_X_reduced import load_X_reduced
+from .load_data import load_data
+from .load_modele_machine_learning import load_modele_machine_learning
+from .scrapping_pochette import get_movie_poster
+from .stat_acteur import stat_acteur
+import json
+from django.http import JsonResponse
+from django import forms
+# from django_select2.forms import Select2TextInputWidget
+
+# Incluez d'autres importations nécessaires
+# Projets\Projet2_NetFlix\Django\projet_recommandation_films\my_application\load_modele_machine_learning.py
+# Charger le modèle une seule fois
+try:
+    df = load_data()
+except Exception as e:
+    print("Une erreur s'est produite lors du chargement des données.")
+    print(str(e))
+
+# Charger le modèle machine learning
+try:
+    load_modele_machine_learning()
+except Exception as e:
+    print("Une erreur s'est produite lors du chargement du modele de machine learning.")
+    print(str(e))
+# Charger X_reduced
+try:
+    X_reduced = load_X_reduced()
+except Exception as e:
+    print("Une erreur s'est produite lors du chargement du modele de machine learning.")
+    print(str(e))
+
+# print(f"\ncolonne :\n{df.columns.tolist()} \n")
+
+#  creation du formulaire pour l'autocompletion
+class FilmForm(forms.Form):
+    film = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'style': 'width: 300px;',
+                'class': 'select2',  # Utilisez cette classe pour initialiser Select2 en JS
+                'data-autocomplete-url': '/autocomplete/'  # L'URL pour les requêtes AJAX
+            }
+        ),
+        required=False,
+    )
+# url pour l'autocompletion
+def autocomplete_view(request):
+    query = request.GET.get('term', '')
+    matching_titles = df['title'][df['title'].str.contains(query, case=False, na=False)].tolist()
+    results = [{'id': title, 'text': title} for title in matching_titles]
+    return JsonResponse(results, safe=False)
+
+# class FilmForm(forms.Form):
+#     film = forms.CharField(
+#         widget=Select2TextInputWidget(
+#             attrs={
+#                 'style': 'width: 300px;',
+#                 'data-autocomplete-url': '/path/to/autocomplete-view/',
+#             }
+#         ),
+#         required=False,
+#     )
+
+def recommandation(request):
+    # Initialisez le formulaire avec les films
+    form = FilmForm()
+    liste_films = []
+    infos_film_choisi = None
+    nom_film = None
+    # Set choices for the film field
+    film_titles = [(title, title) for title in df['title'].unique()]
+    # auto completion
+    # query = request.GET.get('term', '')
+    # matching_titles = df['title'][df['title'].str.contains(query, case=False, na=False)].tolist()
+    # titles = [{'id': title, 'text': title} for title in matching_titles]
+
+    # form.fields['film'].choices = [('', 'Choisissez un film')] + film_titles
+
+    if request.method == 'POST':
+        form = FilmForm(request.POST)
+        if form.is_valid():
+            nom_film = form.cleaned_data['film']
+            try:
+                nom_film = form.cleaned_data['film']
+                # Utilisez la fonction recommandation_film pour obtenir les films recommandés
+                df_film_choisi, df_films_proches = recommandation_film(df, X_reduced, nom_film)
+                liste_films = df_films_proches.to_dict("records")
+                infos_film_choisi = df_film_choisi.to_dict("records")
+
+                # Ajoutez votre logique pour les URLs des images ici
+                for film in liste_films:
+                    tconst = film.get("tconst")
+                    film["image_de_la_pochette"] = get_movie_poster(
+                        tconst, default_image_url="/static/images/Djangounchained.webp"
+                    )
+                # Stocker le film dans la session
+                request.session["film"] = nom_film
+                request.session.modified = True
+
+            except Exception as e:
+                print("Une erreur s'est produite lors de l'appel à recommandation_film.")
+                print(str(e))
+                liste_films = None  # Réinitialisez liste_films à None si une exception est levée
+
+    elif request.method == 'GET':
+        # Ceci est pour gérer le rechargement de la page ou l'accès direct par GET
+        nom_film = request.GET.get("nom_film")
+
+    # Renvoyez le formulaire et les données au template
+    return render(
+        request,
+        "recommandation.html",
+        {
+            "liste_des_films": liste_films,
+            "film": nom_film,
+            "infos_film": infos_film_choisi,
+            "form": form,
+
+        }
+    )
+# def recommandation(request):
+#     nom_film = request.POST.get(
+#         "film") if request.method == "POST" else request.GET.get("nom_film")
+#     film_titles = [(title, title) for title in df['title'].unique()]  # Liste des films sous forme de tuples
+
+#     liste_films = []
+#     infos_film_choisi = None
+#     # Obtenez la liste des titres de films depuis votre DataFrame
+#     film_titles = df['title'].unique().tolist()
+#     print(f"\n film_titles:\n{film_titles} \n")
+#     # Créer une instance du formulaire et mettre à jour les choix
+#     form = FilmForm()
+#     # form.fields['film'].choices = [(titre, titre) for titre in film_titles]
+#     # Lorsque vous créez une instance de votre formulaire, vous pouvez passer la liste des films comme ceci :
+#     # form.fields['film'].choices += film_titles  # Ajoutez les titres des films aux choix du formulaire
+#     # Affectation directe des choix de films
+#     # form.fields['film'].choices = [('', 'Choisissez un film')] + film_titles
+#      # Mettre à jour les choix du formulaire avec les titres des films
+#     form.fields['film'].choices = form.fields['film'].choices + film_titles
+
+#     # nom_film = request.POST.get("film") if request.method == "POST" else None
+#     # form.fields['film'].widget.attrs['data-autocomplete-light-function'] = 'autocompleteLightFunction'
+#     # form.fields['film'].widget.attrs['data-autocomplete-light-url'] = 'url_pour_autocompletion'  # remplacer par l'URL de votre vue d'autocomplétion
+
+#     if nom_film:
+#         try:
+#             # Utilisez la fonction recommandation_film pour obtenir les films recommandés
+#             # Remplacer 'recommandation_film' par votre fonction réelle
+#             df_film_choisi, df_films_proches = recommandation_film(
+#                 df, X_reduced, nom_film)
+#             # Convertir le DataFrame en liste de dictionnaires
+#             liste_films = df_films_proches.to_dict("records")
+#             # Convertir le DataFrame en liste de dictionnaires pour le film choisi
+#             infos_film_choisi = df_film_choisi.to_dict("records")
+
+#             # liste_films_df_autocompletion=df['titles'].unique().tolist()
+#             # Ajoutez votre logique pour les URLs des images ici
+#             for film in liste_films:
+#                 # Assurez-vous que 'get_movie_poster' est votre fonction réelle pour obtenir les pochettes de films
+#                 tconst = film.get("tconst")
+#                 film["image_de_la_pochette"] = get_movie_poster(
+#                     tconst, default_image_url="/static/images/Djangounchained.webp")
+#                 print(f"\nliste_films :\n{liste_films} \n")
+#                 print(f"\ninfos_film_choisi :\n{infos_film_choisi} \n")
+#                 print(f"\nliste_films :\n{liste_films} \n")
+#             # Stocker le film dans la session
+#             request.session["film"] = nom_film
+#             request.session.modified = True
+
+#         except Exception as e:
+#             print("Une erreur s'est produite lors de l'appel à recommandation_film.")
+#             print(str(e))
+#             liste_films = None  # Si une exception est levée, réinitialisez liste_films à None
+
+#     return render(
+#         request,
+#         "recommandation.html",
+#         {
+#             "liste_des_films": liste_films,
+#             # "liste_films_df_autocompletion":liste_films_df_autocompletion,
+#             "film": nom_film,
+#             "infos_film": infos_film_choisi,
+#             "film_titles": film_titles,
+#             "form": form
+#         }
+#     )
+
+# def recommandation(request):
+#     nom_film = request.POST.get("film") if request.method == "POST" else request.GET.get("nom_film")
+#     liste_films = []
+#     infos_film_choisi = None
+#     film_titles = df["title"].tolist()  # Obtenez la liste des titres de films depuis votre DataFrame
+#     if nom_film:
+#         try:
+#             # Utilisez la fonction recommandation_film pour obtenir les films recommandés
+#             df_film_choisi, df_films_proches = recommandation_film(df, X_reduced, nom_film)
+#             liste_films = df_films_proches.to_dict("records")  # Convertir le DataFrame en liste de dictionnaires
+#             infos_film_choisi = df_film_choisi.values.tolist()
+#             print(f"\nliste_films :\n{liste_films} \n")
+#             print(f"\ninfos_film_choisi :\n{infos_film_choisi} \n")
+#             print(f"\nliste_films :\n{liste_films} \n")
+#             # Mise à jour des choix du formulaire avec la liste des films
+#             form = FilmForm()
+#             form.fields['film'].choices = [(film, film) for film in liste_films]
+
+#             # Obtenir les URLs des images pour chaque film recommandé
+#             for film in liste_films:
+#                 tconst = film.get("tconst")
+#                 film["image_de_la_pochette"] = (
+#                     get_movie_poster(tconst, default_image_url="/static/images/Djangounchained.webp")
+#                     if tconst
+#                     else "/static/images/Djangounchained.webp"
+#                 )
+#             # Stocker le film dans la session
+#             request.session["film"] = nom_film
+#             request.session.modified = True
+#         except Exception as e:
+#             print("Une erreur s'est produite lors de l'appel à recommandation_film.")
+#             print(str(e))
+#             liste_films = None  # Si une exception est levée, réinitialisez liste_films à None pour afficher le message d'erreur
+#     return render(
+#         request,
+#         "recommandation.html",
+#         {
+#             "liste_des_films": liste_films,
+#             "film": nom_film,
+#             "infos_film": infos_film_choisi,
+#             "film_titles": film_titles,
+#             'form': form,
+#         },  # Transmettez la liste des titres de films dans le contexte
+#     )
+
+
+class FilmForm(forms.Form):
+    film = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 300px;'}))
+
+
+def actor_view(request):
+    acteur = request.POST.get(
+        "acteur") if request.method == "POST" else request.GET.get("acteur")
+    df_acteur = None
+    if acteur:
+        try:
+            df_acteur = stat_acteur(df, acteur)
+            # Stocker df_acteur dans la session
+            request.session["df_acteur"] = df_acteur.to_dict()
+            request.session.modified = True  # Indiquer que la session a été modifiée
+        except Exception as e:
+            print("Une erreur s'est produite lors de l'appel à stat_acteur.")
+            print(str(e))
+    next_page = request.POST.get(
+        "next") if request.method == "POST" else request.GET.get("next")
+    if next_page:
+        # Construire l'URL de redirection avec le nom de l'acteur en paramètre
+        next_page = reverse(next_page, kwargs={"acteur": acteur})
+        return redirect(next_page)
+
+    return redirect("default_view")
+
+
+def annexe(request):
+    acteur = (
+        request.POST.get(
+            "acteur") if request.method == "POST" else request.GET.get("nom_acteur")
+    )
+    df_acteur = None
+    premier_film = None
+    if acteur:
+        try:
+            df_acteur = stat_acteur(df, acteur)
+            premier_film = df["title"][0]
+            # Stocker df_acteur dans la session
+            request.session["df_acteur"] = df_acteur.to_dict()
+            request.session.modified = True  # Indiquer que la session a été modifiée
+        except Exception as e:
+            print("Une erreur s'est produite lors de l'appel à stat_acteur.")
+            print(str(e))
+    return render(request, "annexe.html", {"premier_film": premier_film, "df_acteur": df_acteur})
+
+
+def kpi(request):
+    acteur = (
+        request.POST.get(
+            "acteur") if request.method == "POST" else request.GET.get("nom_acteur")
+    )
+    df_acteur = None
+    if acteur:
+        try:
+            df_acteur = stat_acteur(df, acteur)
+            # Stocker df_acteur dans la session
+            request.session["df_acteur"] = df_acteur.to_dict()
+            request.session.modified = True  # Indiquer que la session a été modifiée
+        except Exception as e:
+            print("Une erreur s'est produite lors de l'appel à stat_acteur.")
+            print(str(e))
+    films = None
+    try:
+        # Récupérer df_acteur de la session
+        df_acteur_dict = request.session.get("df_acteur")
+        if df_acteur_dict is not None:
+            df_acteur = DataFrame(df_acteur_dict)
+            df_acteur_html = df_acteur.to_html()
+        films = df["title"]
+    except Exception as e:
+        print(
+            "Une erreur s'est produite lors de la récupération des données de la session.")
+        print(str(e))
+    return render(request, "kpi.html", {"films": films, "df_acteur": df_acteur_html})
+
+
+def graphiques(request):
+    # Préparez vos données depuis le DataFrame
+    # Supposons que vous ayez une colonne "Note Moyenne" dans votre DataFrame df
+    data = df["averageRating"]
+
+    # Utilisez Matplotlib pour créer un graphique
+    plt.figure(figsize=(8, 6))
+    plt.bar(data.index, data.values)
+    plt.xlabel("Films")
+    plt.ylabel("Note Moyenne")
+    plt.title("Note Moyenne par Film")
+
+    # Enregistrez le graphique sous forme d'image
+    buffer = io.BytesIO()
+    plt.savefig(buffer, format="png")
+    buffer.seek(0)
+    barplot_image_base64 = base64.b64encode(buffer.read()).decode()
+    buffer.close()
+
+    # Créez un scatterplot et enregistrez-le sous forme d'image
+    plt.figure(figsize=(8, 6))
+    plt.scatter(data.index, data.values, c="r",
+                marker="o", label="Note Moyenne")
+    plt.xlabel("Films")
+    plt.ylabel("Note Moyenne")
+    plt.title("Scatterplot de Note Moyenne par Film")
+    plt.legend()
+
+    buffer = io.BytesIO()
+    plt.savefig(buffer, format="png")
+    buffer.seek(0)
+    scatterplot_image_base64 = base64.b64encode(buffer.read()).decode()
+    buffer.close()
+
+    # Créez un boxplot et enregistrez-le sous forme d'image
+    plt.figure(figsize=(8, 6))
+    plt.boxplot(data.values, vert=False)
+    plt.xlabel("Note Moyenne")
+    plt.title("Boxplot de Note Moyenne par Film")
+
+    buffer = io.BytesIO()
+    plt.savefig(buffer, format="png")
+    buffer.seek(0)
+    boxplot_image_base64 = base64.b64encode(buffer.read()).decode()
+    buffer.close()
+
+    # Renvoyez les emplacements des images comme contexte
+    context = {
+        "barplot_image": barplot_image_base64,
+        "scatterplot_image": scatterplot_image_base64,
+        "boxplot_image": boxplot_image_base64,
+    }
+
+    return render(request, "graphe.html", context)
+
+
+def accueil(request):
+    return render(request, "accueil.html")
+
+
+def contact(request):
+    return render(request, "contact.html")
+
+
+def etudes(request):
+    return render(request, "etude.html")
+
+
+def analyse(request):
+    return render(request, "analyse.html")

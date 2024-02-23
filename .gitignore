@@ -65,6 +65,9 @@ db.sqlite3-journal
 instance/
 .webassets-cache
 
+# Streamlit:
+*.js
+
 # Scrapy stuff:
 .scrapy
 
@@ -157,3 +160,21 @@ cython_debug/
 /datas/commandes_git.txt
 /Presentations/config.py
 Projets\Méteo
+
+*/kaggle.json
+*/Correction_quêtes_Régression_linéaire_multiple_1.3_ML_Train.ipynb
+quêtes/semaine11/Correction_quêtes_Régression_linéaire_multiple_1.3_ML_Train.ipynb
+
+kaggle/API/kaggle.json
+quêtes/data/cifar-10-python.tar/cifar-10-python.tar
+quêtes/data/cifar-10-python.tar/cifar-10-batches-py/batches.meta
+quêtes/data/cifar-10-python.tar/cifar-10-batches-py/data_batch_1
+quêtes/data/cifar-10-python.tar/cifar-10-batches-py/data_batch_2
+quêtes/data/cifar-10-python.tar/cifar-10-batches-py/data_batch_3
+quêtes/data/cifar-10-python.tar/cifar-10-batches-py/data_batch_4
+quêtes/data/cifar-10-python.tar/cifar-10-batches-py/data_batch_5
+quêtes/data/cifar-10-python.tar/cifar-10-batches-py/test_batch
+
+Projets\Projet Méteo\100JoursDeML-main\*
+
+Projets/Projet Méteo/100JoursDeML-main/*
