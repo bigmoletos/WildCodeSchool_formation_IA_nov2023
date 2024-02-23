@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <title>Kpi</title>
+</head>
+<body class="bg-dark text-white">
+  <div class="container">
+    <h1>Page Kpi</h1>
+    {% if premier_film %}
+    <h1>Premier film :</h1>
+    <p>{{ premier_film }}</p>
+    {% else %}
+    <p>Aucun film à afficher.</p>
+    {% endif %}
+    {% if df_acteur %}
+    <h1>Informations sur l'acteur :</h1>
+    <div>
+    {{ df_acteur | safe }}
+    </div>
+    {% else %}
+    <p>Aucune information sur l'acteur à afficher.</p>
+    {% endif %}
+    <!-- Votre contenu ici -->
+  </div>
+</body>
+</html>

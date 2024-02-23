@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load custom_filters %}
+
+  {% comment %} <form action="{% url 'actor_view' %}" method="get"> {% endcomment %}
+    {% comment %} <input type="hidden" name="next" value="kpi"> {% endcomment %}
+    {% comment %} <label for="acteur">Nom de l'acteur :</label><br> {% endcomment %}
+    {% comment %} <input type="text" id="acteur" name="acteur"><br> {% endcomment %}
+    {% comment %} <input type="submit" value="Soumettre"> {% endcomment %}
+  </form>
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Informations sur un acteur de votre choix</h1>
+    <form action="{% url 'actor_view' %}" method="get" class="mb-4">
+        <input type="hidden" name="next" value="kpi">
+        <div class="form-group">
+            <label for="acteur">Nom de l'acteur :</label>
+            <input type="text" id="acteur" name="acteur" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Soumettre</button>
+    </form>
+
+    {% if acteur_stat %}
+        <div class="alert alert-info" role="alert">
+            Vous avez sélectionné l'acteur : <strong>{{ acteur_stat }}</strong>
+        </div>
+    {% endif %}
+
+    {% if premier_film %}
+        <div class="card mb-3">
+            <div class="card-header">Premier film</div>
+            <div class="card-body">
+                <p class="card-text">{{ premier_film }}</p>
+            </div>
+        </div>
+    {% else %}
+        {% comment %} <p class="alert alert-warning" role="alert">Aucun film à afficher.</p> {% endcomment %}
+    {% endif %}
+
+  {% if nom_le_plus_frequent %}
+    <p>Vous avez saisi  : <strong>{{ nom_saisi }}</strong>. Le nom qui se rapproche le plus est <strong>{{ nom_le_plus_frequent }}</strong>. C'est lui que nous allons utiliser.</p>
+{% endif %}
+
+ {% if top_3_films %}
+    <p>Les 3 films les mieux notés de <strong>{{ nom_le_plus_frequent }}</strong> sont :</p>
+    <ul>
+        {% for film in top_3_films %}
+
+            <li><strong>{{ film.title }}</strong> {{ film.startYear }} Note :{{ film.averageRating }}, Votants :{{ film.numVotes }} </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+
+    {% if df_acteur %}
+        <h2 class="mb-3">Informations sur l'acteur :</h2>
+        <div class="row">
+            {% for film in df_acteur %}
+            <div class="col-md-6 col-lg-4 mb-3">
+                <div class="card" style="background-color: #cccccc; color: black;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ film.primaryTitle }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ film.startYear }}</h6>
+                        <p class="card-text">
+                            Nom: {{ film.primaryName }}<br>
+                            Note: {{ film.averageRating }} ({{ film.numVotes }} votes)<br>
+                            Genre: {{ film.genres }}<br>
+                            Durée: {{ film.genres }} minutes
+                        </p>
+                        <p>Casting :</p>
+            <ul>
+                {% with film_casting=casting|get_item:film.tconst %}
+                    {% for acteur in film_casting %}
+                        <li>{{ acteur }}</li>
+                    {% endfor %}
+                {% endwith %}
+            </ul>
+                          </ul>
+
+
+                    </div>
+                        <div class="card-footer text-muted">
+                          tconst: {{ film.tconst }}
+                        </div>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+    {% else %}
+    {% comment %} <p class="alert alert-warning" role="alert">Aucune information sur l'acteur à afficher.</p> {% endcomment %}
+    {% endif %}
+
+</div>
+{% endblock %}

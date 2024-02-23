@@ -65,6 +65,9 @@ db.sqlite3-journal
 instance/
 .webassets-cache
 
+# Streamlit:
+*.js
+
 # Scrapy stuff:
 .scrapy
 
@@ -156,7 +159,6 @@ cython_debug/
 .vscode/
 /datas/fd_Basic_*
 /datas/commandes_git.txt
-/Presentations/config.py
 Projets\Méteo
 
 

@@ -1,0 +1,127 @@
+
+
+<style>
+/* Style général de la barre de navigation */
+.navbar {
+    background: linear-gradient(to right, #4b6cb7, #182848); /* Exemple de gradient */
+    padding: 0.5rem 1rem;
+}
+
+/* Logo */
+.navbar-brand img {
+    height: 60px; /* Vous avez déjà défini cela inline, mais il est généralement préférable de le déplacer dans le CSS */
+}
+
+/* Liens de navigation */
+.nav-link {
+    color: #fff; /* Couleur des liens */
+    margin: 0 0.5rem; /* Espacement autour des liens */
+    transition: color 0.3s; /* Animation de transition pour les changements de couleur */
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #f0f0f0; /* Couleur des liens lors du survol */
+    text-decoration: none; /* Supprimer le soulignement au survol */
+}
+
+/* Bouton de déconnexion */
+button {
+    background-color: #a3958d; /* Couleur de fond pour le bouton de déconnexion */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    padding: 0.5rem 1rem; /* Padding interne */
+    border-radius: 0.3rem; /* Bordures arrondies */
+    cursor: pointer; /* Afficher un pointeur au survol */
+    transition: background-color 0.3s; /* Animation pour le changement de couleur de fond */
+}
+
+button:hover {
+    background-color: #d32f2f; /* Changement de couleur de fond au survol */
+}
+
+/* Bouton Jour/Nuit */
+.toggle-theme-btn {
+    background-color: transparent; /* Fond transparent pour intégrer l'arrière-plan */
+    border: none; /* Aucune bordure */
+    cursor: pointer; /* Style du curseur pour indiquer la possibilité de cliquer */
+    padding: 0.5rem; /* Espacement interne pour augmenter la zone cliquable */
+    border-radius: 50%; /* Forme ronde */
+    transition: background-color 0.3s, transform 0.3s; /* Transition douce pour l'interaction */
+}
+
+.toggle-theme-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Légère couleur de fond au survol */
+    transform: scale(1.1); /* Légèrement plus grand au survol */
+}
+
+.toggle-theme-btn img {
+    display: block; /* Empêche l'espace supplémentaire sous l'image */
+    width: 30px; /* Largeur fixe */
+    height: 30px; /* Hauteur fixe */
+}
+
+
+
+
+</style>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(to right, #adabab, #adabab);">
+           <a class="navbar-brand" href="/static/images/logo_NetFlop.png">
+        <img src="/static/images/logo_NetFlop.png" alt="Netflop Logo" style="height: 60px;">
+         <!-- Ajoutez le chemin correct de l'image -->
+
+    </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accueil' %}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'recommandation' %}">Recommandation</a>
+                </li>
+                {% if acteur %}
+                    <a class="nav-link" href="{% url 'kpi_acteur' acteur %}">Kpi</a>
+                {% else %}
+                    <a class="nav-link" href="{% url 'annexe'  %}">Kpi</a>  <!-- ou une autre URL par défaut -->
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'graphe' %}">Graphiques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'etude' %}">Etude</a>
+                </li>
+                {% comment %} <li class="nav-item">
+                    <a class="nav-link" href="{% url 'a_propos' %}">À propos</a>
+                </li> {% endcomment %}
+                {% comment %} <li class="nav-item">
+                    <a class="nav-link" href="{% url 'analyse' %}">Analyse</a>
+                </li> {% endcomment %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'kpi' %}">Acteurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">CKiL'Boss</a>
+                </li>
+                {% comment %} <li class="nav-item"> {% endcomment %}
+                {% comment %} </li> {% endcomment %}
+
+            </ul>
+
+                <a class="nav-link" href="{% url 'deconnexion' %}">
+                        <button class="btn-deconnexion">Déconnexion</button>
+                </a>
+{% comment %}
+            <form action="{% url 'deconnexion' %}" method="post" style="display: inline;">
+    {% csrf_token %}
+    <button type="submit" class="btn-deconnexion">Déconnexion</button>
+</form> {% endcomment %}
+                <button onclick="toggleTheme()" class="toggle-theme-btn"> <img src="/static/images/jour_nuit.png"  width="30" height="30" alt="Mode jour/nuit"></button>
+
+        </div>
+    </nav>
+
+
+

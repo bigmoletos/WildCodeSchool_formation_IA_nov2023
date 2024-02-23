@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Recommandations de films</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="film">Entrez le nom d'un film :</label><br>
+    <input type="text" id="film" name="film" value="{{ film }}"><br>
+    <input type="submit" value="Obtenir des recommandations">
+  </form>
+
+{% if infos_film %}
+  <h2>Informations sur le film choisi :</h2>
+  <ul>
+    {% for info in infos_film %}
+      <li>{{ info | join:", " }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<div class="container">
+  <div class="row">
+    {% for film in liste_des_films %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="film-block">
+          <h3>{{ film.nom_du_film }}</h3>
+          <img src="{{ film.image_de_la_pochette }}" alt="Pochette de {{ film.nom_du_film }}">
+          <p>Genre: {{ film.genre }}</p>
+          <p>Acteurs: {{ film.acteurs | join:", " }}</p>
+          <p>Réalisateur: {{ film.realisateur }}</p>
+          <p>Compositeur: {{ film.compositeur }}</p>
+          <p>Durée: {{ film.duree }}</p>
+          <p>Année de sortie: {{ film.annee_de_sortie }}</p>
+          <p>Note: {{ film.note }}</p>
+          <p>Similitudes avec votre film: {{ film.similitudes_avec_votre_film }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+
