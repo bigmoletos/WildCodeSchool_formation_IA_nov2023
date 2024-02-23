@@ -20,6 +20,11 @@
 19. `git show <commit>` - Affiche les informations sur un commit.
 20. `git config --global user.name "<nom>"` - Définit le nom de l'utilisateur Git.
 
+# SUITE ERRREUR DE MERGE
+## suite à une erruer de merge d'une branche, par exemple je suis sur master et je fais un merge main qui vient ecrasé tout master
+## alors que je voulais faire l'inverse pour tout annuler et revenir à l'état initial. Cela fonctionne si on as pas encore fait le push sur github
+`git checkout -- .`
+
 
 # Top 20 des commandes Git avec exmples
 1. `git init`
