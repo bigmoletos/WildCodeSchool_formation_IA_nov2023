@@ -104,13 +104,10 @@ print(f"====liste des colonnes non numeriques====: \n{
       your_dataframe.select_dtypes(exclude=[np.number]).columns.tolist()} ")
 print("#"+"#"*20)
 print("#"+"-"*79)
-print(f"\n====shape====: {your_dataframe.shape} \n====list columns==== :\n{
-      your_dataframe.columns.tolist()} ")
-print(f"====Noms des colonnes avec au moins une valeur NA==== : {
-      your_dataframe.columns[your_dataframe.isna().any()].tolist()}")
+print(f"\n====shape====: {your_dataframe.shape} \n====list columns==== :\n{      your_dataframe.columns.tolist()} ")
+print(f"====Noms des colonnes avec au moins une valeur NA==== : {      your_dataframe.columns[your_dataframe.isna().any()].tolist()}")
 print("#"+"#"*20)
-print(f"====Nombre de lignes avec au moins une valeur NA==== : {
-      your_dataframe.isna().any(axis=1).sum()}")
+print(f"====Nombre de lignes avec au moins une valeur NA==== : {      your_dataframe.isna().any(axis=1).sum()}")
 print("#"+"#"*20)
 print(f"====Colonne avec des na==== :{your_dataframe.isna().sum()} \n")
 print("#"+"#"*20)
@@ -543,20 +540,16 @@ print(f"\ntype du dataset :\n{type_dataset} \n")
 # Résumé des informations du dataframe
 your_dataframe = df
 print("#"+"-"*79)
-print(f"\n====shape====: {your_dataframe.shape} \n====list columns==== :\n{
-      your_dataframe.columns.tolist()} ")
+print(f"\n====shape====: {your_dataframe.shape} \n====list columns==== :\n{      your_dataframe.columns.tolist()} ")
 print("#"+"#"*20)
-print(f"====liste des colonnes numeriques====: \n{
-      your_dataframe.select_dtypes(include=[np.number]).columns.tolist()}\n")
+print(f"====liste des colonnes numeriques====: \n{      your_dataframe.select_dtypes(include=[np.number]).columns.tolist()}\n")
 print("#"+"#"*20)
-print(f"====liste des colonnes non numeriques====: \n{
-      your_dataframe.select_dtypes(exclude=[np.number]).columns.tolist()} ")
+print(f"====liste des colonnes non numeriques====: \n{      your_dataframe.select_dtypes(exclude=[np.number]).columns.tolist()} ")
 print("#"+"#"*20)
 print("valeurs uniques des colonnes:")
 for col in your_dataframe.columns:
     print("#"+"#"*20)
-    print(f"====colonne====: {col} \n====nb valeur uniques====:{
-          your_dataframe[col].nunique()} ")
+    print(f"====colonne====: {col} \n====nb valeur uniques====:{          your_dataframe[col].nunique()} ")
     if your_dataframe[col].nunique() < 15:
         print(r", ".join(
             f"'{item}'" for item in your_dataframe[col].unique().tolist()))
@@ -1029,25 +1022,19 @@ print(f"Meilleur score: {meilleur_score}")
 # Résumé des informations du dataframe
 your_dataframe = df_pre
 print("#"+"-"*79)
-print(f"\n====shape====: {your_dataframe.shape} \n====list columns==== :\n{
-      your_dataframe.columns.tolist()} ")
+print(f"\n====shape====: {your_dataframe.shape} \n====list columns==== :\n{      your_dataframe.columns.tolist()} ")
 print("#"+"#"*20)
-print(f"====liste des colonnes numeriques====: \n{
-      your_dataframe.select_dtypes(include=[np.number]).columns.tolist()}\n")
+print(f"====liste des colonnes numeriques====: \n{      your_dataframe.select_dtypes(include=[np.number]).columns.tolist()}\n")
 print("#"+"#"*20)
-print(f"====liste des colonnes non numeriques====: \n{
-      your_dataframe.select_dtypes(exclude=[np.number]).columns.tolist()} ")
+print(f"====liste des colonnes non numeriques====: \n{      your_dataframe.select_dtypes(exclude=[np.number]).columns.tolist()} ")
 print("#"+"#"*20)
-print(f"====Noms des colonnes avec au moins une valeur NA==== : {
-      your_dataframe.columns[your_dataframe.isna().any()].tolist()}")
+print(f"====Noms des colonnes avec au moins une valeur NA==== : {      your_dataframe.columns[your_dataframe.isna().any()].tolist()}")
 print("#"+"#"*20)
-print(f"====Nombre de lignes avec au moins une valeur NA==== : {
-      your_dataframe.isna().any(axis=1).sum()}")
+print(f"====Nombre de lignes avec au moins une valeur NA==== : {      your_dataframe.isna().any(axis=1).sum()}")
 print("valeurs uniques des colonnes:")
 for col in your_dataframe.columns:
     print("#"+"#"*20)
-    print(f"====colonne====: {col} \n====nb valeur uniques====:{
-          your_dataframe[col].nunique()} ")
+    print(f"====colonne====: {col} \n====nb valeur uniques====:{          your_dataframe[col].nunique()} ")
     if your_dataframe[col].nunique() < 15:
         print(r", ".join(
             f"'{item}'" for item in your_dataframe[col].unique().tolist()))

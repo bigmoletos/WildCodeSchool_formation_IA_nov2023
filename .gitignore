@@ -151,6 +151,14 @@ cython_debug/
 *.pptx
 *.csv
 *.tsv
+<<<<<<< HEAD
+=======
+*.gz
+*.targz
+*.pkl
+*.mp4
+*.tsv
+>>>>>>> dev1
 *.pkl
 *.gz
 
@@ -158,7 +166,10 @@ cython_debug/
 .vscode/
 /datas/fd_Basic_*
 /datas/commandes_git.txt
+<<<<<<< HEAD
 /Presentations/config.py
+=======
+>>>>>>> dev1
 Projets\Méteo
 
 */kaggle.json
@@ -178,3 +189,5 @@ quêtes/data/cifar-10-python.tar/cifar-10-batches-py/test_batch
 Projets\Projet Méteo\100JoursDeML-main\*
 
 Projets/Projet Méteo/100JoursDeML-main/*
+programmation/knime/*
+administratif/franck 34.png
