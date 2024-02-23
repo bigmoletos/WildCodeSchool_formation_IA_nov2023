@@ -158,3 +158,16 @@ cython_debug/
 /datas/commandes_git.txt
 /Presentations/config.py
 Projets\Méteo
+
+
+# Ignorer les dossiers spécifiques
+Projets/Projet Météo/
+Projets/Projet2_NetFlix/Django/projet_recommandation_films/
+administratif/
+kaggle/API/
+live_coding/Corrections quêtes-1/
+live_coding/Projet2 Netflix/
+live_coding/Révision - semaine du 2 Janvier 2024-1/
+programmation/
+quêtes/data/cifar-10-python.tar/
+quêtes/semaine11/
